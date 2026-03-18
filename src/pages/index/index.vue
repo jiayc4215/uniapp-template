@@ -7,16 +7,15 @@
   </view>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      title: "Hello",
-    };
+<script setup>
+definePage({
+  style: {
+    navigationBarTitleText: "首页",
   },
-  onLoad() {},
-  methods: {},
-};
+});
+import { ref } from "vue";
+
+const title = ref("Hello");
 </script>
 
 <style>
