@@ -19,3 +19,7 @@ dist
 *.njsproj
 *.sln
 *.sw?
+
+#插件生成不用提交
+src/manifest.json
+src/pages.json
