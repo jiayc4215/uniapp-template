@@ -2,7 +2,7 @@ import { defineUniPages } from "@uni-helper/vite-plugin-uni-pages";
 
 export default defineUniPages({
   globalStyle: {
-    navigationBarTextStyle: "black",
-    navigationBarTitleText: "@uni-helper",
+    navigationBarTextStyle: "white",
+    navigationBarTitleText: "uni-helper",
   },
 });
