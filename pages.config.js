@@ -5,4 +5,10 @@ export default defineUniPages({
     navigationBarTextStyle: "white",
     navigationBarTitleText: "uni-helper",
   },
+  easycom: {
+    autoscan: true,
+    custom: {
+      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue",
+    },
+  },
 });

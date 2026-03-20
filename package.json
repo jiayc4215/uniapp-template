@@ -59,8 +59,10 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-4080720251210001",
     "@uni-helper/unh": "^0.2.11",
     "@uni-helper/vite-plugin-uni-pages": "^0.3.23",
+    "sass": "1.77.8",
     "vue": "^3.4.21",
-    "vue-i18n": "^9.1.9"
+    "vue-i18n": "^9.1.9",
+    "wot-design-uni": "^1.14.0"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.4.8",
@@ -71,6 +73,7 @@
     "@tailwindcss/postcss": "^4.2.1",
     "@uni-helper/plugin-uni": "^0.1.0",
     "@uni-helper/vite-plugin-uni-manifest": "^0.2.12",
+    "@uni-ku/root": "^1.4.1",
     "@vue/runtime-core": "^3.4.21",
     "tailwindcss": "^4.2.1",
     "vite": "5.2.8",

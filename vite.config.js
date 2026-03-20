@@ -9,12 +9,14 @@ import { UnifiedViteWeappTailwindcssPlugin } from "weapp-tailwindcss/vite";
 import tailwindcss from "@tailwindcss/postcss";
 import UniPages from "@uni-helper/vite-plugin-uni-pages";
 import UniManifest from "@uni-helper/vite-plugin-uni-manifest";
+import UniKuRoot from "@uni-ku/root";
 import path from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     UniPages(),
+    UniKuRoot(),
     UniManifest(),
     // 改成 mts，则爆 uni is not a function
     Uni(),
