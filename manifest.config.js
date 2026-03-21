@@ -7,6 +7,11 @@ export default defineManifestConfig({
   versionName: "1.0.0",
   versionCode: "100",
   transformPx: false,
+  // H5 配置
+  h5: {
+    darkmode: true,
+    themeLocation: "theme.json",
+  },
   /* 5+App特有相关 */
   "app-plus": {
     usingComponents: true,
@@ -62,6 +67,8 @@ export default defineManifestConfig({
       urlCheck: false,
     },
     usingComponents: true,
+    darkmode: true,
+    themeLocation: "theme.json",
   },
   "mp-alipay": {
     usingComponents: true,

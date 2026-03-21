@@ -59,6 +59,7 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-4080720251210001",
     "@uni-helper/unh": "^0.2.11",
     "@uni-helper/vite-plugin-uni-pages": "^0.3.23",
+    "pinia": "^3.0.4",
     "sass": "1.77.8",
     "vue": "^3.4.21",
     "vue-i18n": "^9.1.9",
