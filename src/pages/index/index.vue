@@ -1,5 +1,5 @@
 <template>
-  <view class="content bg-amber-400 h-screen">
+  <view class="content">
     <image class="logo" src="/static/logo.png"></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>

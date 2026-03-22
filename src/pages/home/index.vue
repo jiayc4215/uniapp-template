@@ -1,11 +1,14 @@
 <template>
-  <view class="content bg-amber-400 h-screen">
-    <wd-button>主要按钮</wd-button>
-    <wd-button type="success">成功按钮</wd-button>
-    <wd-button type="info">信息按钮</wd-button>
-    <wd-button type="warning">警告按钮</wd-button>
-    <wd-button type="error">危险按钮</wd-button>
+  <view class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    内容区域
   </view>
+  <view
+    class="bg-white dark:bg-(--wot-dark-background) text-gray-800 dark:text-(--wot-dark-color)"
+  >
+    自动适配暗黑模式的内容
+  </view>
+  <view class="i-mdi-home text-3xl text-red-600"></view>
+  <view class="i-mdi-airballoon text-3xl text-red-600"></view>
 </template>
 
 <script setup>

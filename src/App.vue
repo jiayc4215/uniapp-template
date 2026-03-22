@@ -1,17 +1,25 @@
 <script>
 export default {
   onLaunch: function () {
-    console.log('App Launch')
+    console.log("App Launch");
   },
   onShow: function () {
-    console.log('App Show')
+    console.log("App Show");
   },
   onHide: function () {
-    console.log('App Hide')
+    console.log("App Hide");
   },
-}
+};
 </script>
 
-<style>
-/*每个页面公共css */
+<style lang="scss">
+.page-wraper {
+  min-height: calc(100vh - var(--window-top) - var(--window-bottom));
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.wot-theme-dark.page-wraper {
+  background: #222;
+}
 </style>

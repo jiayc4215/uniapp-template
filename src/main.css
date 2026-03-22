@@ -1,2 +1,5 @@
 @import "tailwindcss";
 @source not "dist";
+
+/* 添加下面这一行，路径为你创建的 tailwind.config.js 文件路径 */
+@config "../tailwind.config.js";
