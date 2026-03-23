@@ -9,6 +9,7 @@
   </view>
   <view class="i-mdi-home text-3xl text-red-600"></view>
   <view class="i-mdi-airballoon text-3xl text-red-600"></view>
+  <demo></demo>
 </template>
 
 <script setup>
@@ -18,9 +19,11 @@ definePage({
   },
   type: "home",
 });
-import { ref } from "vue";
 
 const title = ref("home");
+onShow(() => {
+  console.log("onShow");
+});
 </script>
 
 <style>

@@ -35,7 +35,7 @@
  * ```
  */
 import { useThemeStore } from "../store/themeStore";
-import { onBeforeMount, onUnmounted, computed } from "vue";
+
 export function useTheme() {
   const store = useThemeStore();
 
