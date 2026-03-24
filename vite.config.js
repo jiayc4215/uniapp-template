@@ -16,6 +16,7 @@ import path from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  envDir: "./env", // 自定义env目录
   plugins: [
     UniPages({
       exclude: ["**/components/**/**.*"],

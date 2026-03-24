@@ -1,8 +1,26 @@
+import path from "node:path";
+import process from "node:process";
+import { loadEnv } from "vite";
 import { defineManifestConfig } from "@uni-helper/vite-plugin-uni-manifest";
+// 手动解析命令行参数获取 mode
+function getMode() {
+  const args = process.argv.slice(2);
+  const modeFlagIndex = args.findIndex((arg) => arg === "--mode");
+  return modeFlagIndex !== -1
+    ? args[modeFlagIndex + 1]
+    : args[0] === "build"
+      ? "production"
+      : "development"; // 默认 development
+}
+// 获取环境变量的范例
+const env = loadEnv(getMode(), path.resolve(process.cwd(), "env"));
+const { VITE_APP_TITLE, VITE_UNI_APPID, VITE_WX_APPID, VITE_APP_PUBLIC_BASE } =
+  env;
+console.log(env);
 
 export default defineManifestConfig({
-  name: "uni-helper",
-  appid: "",
+  name: VITE_APP_TITLE,
+  appid: VITE_UNI_APPID,
   description: "",
   versionName: "1.0.0",
   versionCode: "100",
@@ -11,6 +29,9 @@ export default defineManifestConfig({
   h5: {
     darkmode: true,
     themeLocation: "theme.json",
+    router: {
+      base: VITE_APP_PUBLIC_BASE,
+    },
   },
   /* 5+App特有相关 */
   "app-plus": {
@@ -62,7 +83,7 @@ export default defineManifestConfig({
   quickapp: {},
   /* 小程序特有相关 */
   "mp-weixin": {
-    appid: "",
+    appid: VITE_WX_APPID,
     setting: {
       urlCheck: false,
     },
