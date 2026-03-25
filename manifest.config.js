@@ -16,7 +16,6 @@ function getMode() {
 const env = loadEnv(getMode(), path.resolve(process.cwd(), "env"));
 const { VITE_APP_TITLE, VITE_UNI_APPID, VITE_WX_APPID, VITE_APP_PUBLIC_BASE } =
   env;
-console.log(env);
 
 export default defineManifestConfig({
   name: VITE_APP_TITLE,

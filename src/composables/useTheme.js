@@ -34,7 +34,7 @@
  * </template>
  * ```
  */
-import { useThemeStore } from "../store/themeStore";
+import { useThemeStore } from "@/store/themeStore";
 
 export function useTheme() {
   const store = useThemeStore();
