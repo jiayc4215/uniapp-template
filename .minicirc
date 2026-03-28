@@ -1,0 +1,21 @@
+// .minicirc
+{
+  "weixin": {
+    "appid": "wxa9d6a290dbfdc500",
+    "privateKeyPath": "build/key/private.wxa9d6a290dbfdc500.key",
+    "projectPath": "dist/build/mp-weixin",
+    "ignores": ["node_modules/**/*"],
+    "robot":"1",
+    "setting":{
+        "es6":false,
+        "es7":false,
+        "minifyJS":true,
+        "minifyWXML":true,
+        "minifyWXSS":true,
+        "minify":true,
+        "autoPrefixWXSS":true
+    }
+  },
+  "version": "0.0.1",
+  "desc": "版本描述"
+}

@@ -24,3 +24,4 @@ dist
 src/manifest.json
 src/pages.json
 src/types
+build/key
