@@ -4,6 +4,9 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
+    <view class="mt-8">
+      <wd-button @click="goToLogin">Go to Login</wd-button>
+    </view>
   </view>
 </template>
 
@@ -15,6 +18,12 @@ definePage({
 });
 
 const title = ref("Hello");
+
+const goToLogin = () => {
+  uni.navigateTo({
+    url: '/pages/login/index'
+  });
+};
 </script>
 
 <style>
