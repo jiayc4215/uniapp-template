@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import process from "node:process";
-
+import { UniEcharts } from "uni-echarts/vite";
+import { UniEchartsResolver } from "uni-echarts/resolver";
 const isH5 = process.env.UNI_PLATFORM === "h5";
 const isApp = process.env.UNI_PLATFORM === "app";
 const WeappTailwindcssDisabled = isH5 || isApp;
@@ -36,6 +37,7 @@ export default defineConfig(({ command, mode }) => {
     envDir: "./env", // 自定义env目录
     base: VITE_APP_PUBLIC_BASE,
     plugins: [
+      UniEcharts(),
       UniPages({
         exclude: ["**/components/**/**.*"],
         // pages 目录为 src/pages，分包目录不能配置在pages目录下！！
@@ -50,6 +52,7 @@ export default defineConfig(({ command, mode }) => {
       UniManifest(),
       // 改成 mts，则爆 uni is not a function
       Components({
+        resolvers: [UniEchartsResolver()],
         // 扫描组件目录
         dirs: ["src/components"],
         // 扫描子目录

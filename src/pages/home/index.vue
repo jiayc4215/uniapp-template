@@ -1,55 +1,77 @@
 <template>
-  <view class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-    内容区域
-  </view>
-  <view
-    class="bg-white dark:bg-(--wot-dark-background) text-gray-800 dark:text-(--wot-dark-color)"
-  >
-    自动适配暗黑模式的内容
-  </view>
-  <view class="i-mdi-home text-3xl text-red-600"></view>
-  <view class="i-mdi-airballoon text-3xl text-red-600"></view>
-  <demo></demo>
+  <uni-echarts custom-class="chart" :option="option"></uni-echarts>
 </template>
 
 <script setup>
-definePage({
-  style: {
-    navigationBarTitleText: "home",
-  },
-  type: "home",
-});
+import { PieChart } from "echarts/charts";
+import {
+  DatasetComponent,
+  LegendComponent,
+  TooltipComponent,
+} from "echarts/components";
+import * as echarts from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
 
-const title = ref("home");
-onShow(() => {
-  console.log("onShow");
+import { ref } from "vue";
+
+echarts.use([
+  LegendComponent,
+  TooltipComponent,
+  DatasetComponent,
+  PieChart,
+  CanvasRenderer,
+]);
+
+const option = ref({
+  legend: {
+    top: 10,
+    left: "center",
+  },
+  tooltip: {
+    trigger: "item",
+    textStyle: {
+      // #ifdef MP-WEIXIN
+      // 临时解决微信小程序 tooltip 文字阴影问题
+      textShadowBlur: 1,
+      // #endif
+    },
+  },
+  series: [
+    {
+      type: "pie",
+      radius: ["30%", "52%"],
+      label: {
+        show: false,
+        position: "center",
+      },
+      itemStyle: {
+        borderWidth: 2,
+        borderColor: "#ffffff",
+        borderRadius: 10,
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 20,
+        },
+      },
+    },
+  ],
+  dataset: {
+    dimensions: ["来源", "数量"],
+    source: [
+      ["Search Engine", 1048],
+      ["Direct", 735],
+      ["Email", 580],
+      ["Union Ads", 484],
+      ["Video Ads", 300],
+    ],
+  },
 });
 </script>
 
 <style>
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+.chart {
+  height: 300px;
 }
 </style>
