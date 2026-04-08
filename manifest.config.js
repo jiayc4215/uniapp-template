@@ -86,6 +86,9 @@ export default defineManifestConfig({
     setting: {
       urlCheck: false,
     },
+    optimization: {
+      subPackages: true,
+    },
     usingComponents: true,
     darkmode: true,
     themeLocation: "theme.json",

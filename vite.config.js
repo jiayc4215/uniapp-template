@@ -17,6 +17,7 @@ import path from "node:path";
 import ViteRestart from "vite-plugin-restart";
 import dayjs from "dayjs";
 import eruda from "./scripts/vite-plugin-eruda";
+import Optimization from "@uni-ku/bundle-optimizer";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, path.resolve(process.cwd(), "env"));
@@ -42,7 +43,7 @@ export default defineConfig(({ command, mode }) => {
         exclude: ["**/components/**/**.*"],
         // pages 目录为 src/pages，分包目录不能配置在pages目录下！！
         // 是个数组，可以配置多个，但是不能为pages里面的目录！！
-        subPackages: [],
+        subPackages: ["src/subEcharts"],
         dts: "src/types/pages.d.ts",
       }),
       UniKuRoot({
@@ -63,6 +64,9 @@ export default defineConfig(({ command, mode }) => {
         directoryAsNamespace: false,
       }), // 必须在 Uni() 之前
       Uni(),
+      Optimization({
+        logger: false, // 是否输出日志
+      }),
       ViteRestart({
         // 通过这个插件，在修改vite.config.js文件则不需要重新运行也生效配置
         restart: ["vite.config.js"],
