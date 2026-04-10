@@ -18,6 +18,7 @@ import ViteRestart from "vite-plugin-restart";
 import dayjs from "dayjs";
 import eruda from "./scripts/vite-plugin-eruda";
 import Optimization from "@uni-ku/bundle-optimizer";
+import { isMpWeixin } from "@uni-helper/uni-env";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, path.resolve(process.cwd(), "env"));
@@ -65,7 +66,8 @@ export default defineConfig(({ command, mode }) => {
       }), // 必须在 Uni() 之前
       Uni(),
       Optimization({
-        logger: false, // 是否输出日志
+        enable: isMpWeixin,
+        logger: false,
       }),
       ViteRestart({
         // 通过这个插件，在修改vite.config.js文件则不需要重新运行也生效配置

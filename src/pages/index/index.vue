@@ -3,6 +3,7 @@
     <image class="logo" src="/static/logo.png"></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>
+      <view>{{ isMpWeixin ? "微信" : "h5" }}</view>
     </view>
     <view class="mt-8">
       <wd-button @click="goToLogin">Go to Login</wd-button>
@@ -11,6 +12,7 @@
 </template>
 
 <script setup>
+import { isMpWeixin } from "@uni-helper/uni-env";
 definePage({
   style: {
     navigationBarTitleText: "首页",
@@ -21,7 +23,7 @@ const title = ref("Hello");
 
 const goToLogin = () => {
   uni.navigateTo({
-    url: '/pages/login/index'
+    url: "/pages/login/index",
   });
 };
 </script>
