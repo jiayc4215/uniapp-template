@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/backtop.md'
+url: "https://wot-ui.cn/component/backtop.md"
 ---
 
 # Backtop 回到顶部
@@ -12,12 +12,12 @@ url: 'https://wot-ui.cn/component/backtop.md'
 所以只能在页面的`onPageScroll`生命周期中获取滚动条位置，再通过`Props`传递给组件。
 
 ```html
-  <wd-backtop :scrollTop="scrollTop"></wd-backtop>
+<wd-backtop :scrollTop="scrollTop"></wd-backtop>
 ```
 
 ```typescript
 const scrollTop = ref<number>(0)
-onPageScroll((e) => {
+onPageScroll(e => {
   scrollTop.value = e.scrollTop
 })
 ```
@@ -33,7 +33,7 @@ onPageScroll((e) => {
 ## 自定义样式
 
 ```html
-  <wd-backtop :scrollTop="scrollTop" customStyle="background: #007aff;color:white;"></wd-backtop>
+<wd-backtop :scrollTop="scrollTop" customStyle="background: #007aff;color:white;"></wd-backtop>
 ```
 
 ## Attributes

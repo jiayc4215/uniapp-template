@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/tooltip.md'
+url: "https://wot-ui.cn/component/tooltip.md"
 ---
 
 # Tooltip 文字提示
@@ -16,9 +16,9 @@ url: 'https://wot-ui.cn/component/tooltip.md'
 
 由`placement`属性决定展示效果：
 
-* `placement`属性值为：`方向-对齐位置`；
-* 四个方向：`top`、`left`、`right`、`bottom`；
-* 三种对齐位置：`start`、''(默认空为居中)、 `end`；
+- `placement`属性值为：`方向-对齐位置`；
+- 四个方向：`top`、`left`、`right`、`bottom`；
+- 三种对齐位置：`start`、''(默认空为居中)、 `end`；
 
 如 `placement="left-end"`，则提示信息出现在目标元素的左侧，且提示信息的底部与目标元素的底部对齐。
 
@@ -37,12 +37,11 @@ url: 'https://wot-ui.cn/component/tooltip.md'
 ```
 
 ```typescript
-import { useQueue } from '@/uni_modules/wot-design-uni'
+import { useQueue } from "@/uni_modules/wot-design-uni"
 
 const { closeOutside } = useQueue()
 
 const show = ref<boolean>(false)
-
 ```
 
 ## 更多 Content
@@ -71,7 +70,7 @@ const show = ref<boolean>(false)
 ```
 
 ```typescript
-import { useQueue } from '@/uni_modules/wot-design-uni'
+import { useQueue } from "@/uni_modules/wot-design-uni"
 
 const { closeOutside } = useQueue()
 const show = ref<boolean>(false)
@@ -92,18 +91,15 @@ Tooltip 组件通过属性`show-close` 控制是否显示关闭按钮。
 通过绑定`v-model`控制 `tooltip` 的显隐。
 
 ```html
-<wd-button plain @click="control" size="small" class="button-control">
-  {{ show ? '关闭' : '打开' }}
-</wd-button>
+<wd-button plain @click="control" size="small" class="button-control"> {{ show ? '关闭' : '打开' }} </wd-button>
 
 <wd-tooltip placement="top" content="控制显隐" v-model="show">
   <wd-button :round="false">top</wd-button>
 </wd-tooltip>
-
 ```
 
 ```ts
-import { ref } from 'vue'
+import { ref } from "vue"
 
 const show = ref<boolean>(false)
 
@@ -151,23 +147,23 @@ const control = () => {
 
 ## Attributes
 
-| 参数          | 说明                                       | 类型              | 可选值                                                                                                                          | 默认值       | 最低版本 |
-|---------------|--------------------------------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------|----------|
-| show          | 状态是否可见                               | boolean           | -                                                                                                                               | false        | -        |
-| content       | 显示的内容，也可以通过 `slot#content` 传入 | string / array    | -                                                                                                                               | -            | -        |
-| placement     | Tooltip 的出现位置                         | string            | top / top-start / top-end / bottom / bottom-start / bottom-end / left / left-start / left-end / right / right-start / right-end | bottom       | -        |
-| disabled      | Tooltip 是否可用                           | boolean           | -                                                                                                                               | false        | -        |
-| visible-arrow | 是否显示 Tooltip 箭头                      | boolean           | -                                                                                                                               | true         | -        |
+| 参数          | 说明                                       | 类型               | 可选值                                                                                                                          | 默认值       | 最低版本 |
+| ------------- | ------------------------------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- |
+| show          | 状态是否可见                               | boolean            | -                                                                                                                               | false        | -        |
+| content       | 显示的内容，也可以通过 `slot#content` 传入 | string / array     | -                                                                                                                               | -            | -        |
+| placement     | Tooltip 的出现位置                         | string             | top / top-start / top-end / bottom / bottom-start / bottom-end / left / left-start / left-end / right / right-start / right-end | bottom       | -        |
+| disabled      | Tooltip 是否可用                           | boolean            | -                                                                                                                               | false        | -        |
+| visible-arrow | 是否显示 Tooltip 箭头                      | boolean            | -                                                                                                                               | true         | -        |
 | offset        | 出现位置的偏移量                           | number / number\[] | -                                                                                                                               | `{x:0, y:0}` | 1.3.12   |
-| show-close    | 是否显示 Tooltip 内部的关闭按钮            | boolean           | -                                                                                                                               | false        | -        |
+| show-close    | 是否显示 Tooltip 内部的关闭按钮            | boolean            | -                                                                                                                               | false        | -        |
 
 ## Events
 
-| 事件名称    | 说明             | 回调参数 | 最低版本 |
-| ----------- | ---------------- | -------- | -------- |
-| open   | 显示时触发       | -        | -        |
-| close  | 隐藏时触发       | -        | -        |
-| change | 显隐值变化时触发 | -        | -        |
+| 事件名称 | 说明             | 回调参数 | 最低版本 |
+| -------- | ---------------- | -------- | -------- |
+| open     | 显示时触发       | -        | -        |
+| close    | 隐藏时触发       | -        | -        |
+| change   | 显隐值变化时触发 | -        | -        |
 
 ## Methods
 

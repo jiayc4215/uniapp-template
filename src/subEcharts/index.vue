@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang="ts">
-import Chart from "./components/chart/chart.vue";
+import Chart from "./components/chart/chart.vue"
 </script>
 
 <style lang="scss" scoped></style>

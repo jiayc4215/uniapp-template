@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/watermark.md'
+url: "https://wot-ui.cn/component/watermark.md"
 ---
 
 # Watermark 水印
@@ -21,7 +21,6 @@ url: 'https://wot-ui.cn/component/watermark.md'
 
 ```html
 <wd-watermark image="https://wot-ui.cn/logo.png" :image-width="38" :image-height="38"></wd-watermark>
-
 ```
 
 ### 局部水印
@@ -42,22 +41,22 @@ url: 'https://wot-ui.cn/component/watermark.md'
 
 ## Attributes
 
-| 参数          | 说明                     | 类型    | 可选值                               | 默认值 | 最低版本 |
-| ------------- | ------------------------ | ------- | ------------------------------------ | ------ | -------- |
-| `content`      | 显示内容                   | string  | -                                    | `''`   | 0.1.16   |
-| `image`        | 显示图片的地址，支持网络图片和base64（钉钉小程序支持网络图片） | string  | -                                    | `''`   | 0.1.16   |
-| `imageHeight`  | 图片高度                   | number  | -                                    | `100`  | 0.1.16   |
-| `imageWidth`   | 图片宽度                   | number  | -                                    | `100`  | 0.1.16   |
-| `gutterX`      | X轴间距，单位px           | number  | -                                    | `0`    | 0.1.16   |
-| `gutterY`      | Y轴间距，单位px           | number  | -                                    | `0`    | 0.1.16   |
-| `width`        | canvas画布宽度，单位px    | number  | -                                    | `100`  | 0.1.16   |
-| `height`       | canvas画布高度，单位px    | number  | -                                    | `100`  | 0.1.16   |
-| `fullScreen`   | 是否为全屏水印            | boolean | -                                    | `true` | 0.1.16   |
-| `color`        | 水印字体颜色              | string  | -                                    | `'#8c8c8c'` | 0.1.16   |
-| `size`         | 水印字体大小，单位px      | number  | -                                    | `14`   | 0.1.16   |
-| `fontStyle`    | 水印字体样式（仅微信、支付宝和h5支持） | string  | `normal` / `italic` / `oblique`  | `'normal'`  | 0.1.16   |
-| `fontWeight`   | 水印字体的粗细（仅微信、支付宝和h5支持） | string  | `normal` / `bold` / `bolder`   | `'normal'`  | 0.1.16   |
-| `fontFamily`   | 水印字体系列（仅微信、支付宝和h5支持） | string  | -                             | `'PingFang SC'` | 0.1.16   |
-| `rotate`       | 水印旋转角度              | number  | -                             | `-25`  | 0.1.16   |
-| `zIndex`       | 自定义层级                | number  | -                             | `1100` | 0.1.16   |
-| `opacity`      | 自定义透明度，取值 0~1     | number  | -                             | `0.5`  | 0.1.16   |
+| 参数          | 说明                                                           | 类型    | 可选值                          | 默认值          | 最低版本 |
+| ------------- | -------------------------------------------------------------- | ------- | ------------------------------- | --------------- | -------- |
+| `content`     | 显示内容                                                       | string  | -                               | `''`            | 0.1.16   |
+| `image`       | 显示图片的地址，支持网络图片和base64（钉钉小程序支持网络图片） | string  | -                               | `''`            | 0.1.16   |
+| `imageHeight` | 图片高度                                                       | number  | -                               | `100`           | 0.1.16   |
+| `imageWidth`  | 图片宽度                                                       | number  | -                               | `100`           | 0.1.16   |
+| `gutterX`     | X轴间距，单位px                                                | number  | -                               | `0`             | 0.1.16   |
+| `gutterY`     | Y轴间距，单位px                                                | number  | -                               | `0`             | 0.1.16   |
+| `width`       | canvas画布宽度，单位px                                         | number  | -                               | `100`           | 0.1.16   |
+| `height`      | canvas画布高度，单位px                                         | number  | -                               | `100`           | 0.1.16   |
+| `fullScreen`  | 是否为全屏水印                                                 | boolean | -                               | `true`          | 0.1.16   |
+| `color`       | 水印字体颜色                                                   | string  | -                               | `'#8c8c8c'`     | 0.1.16   |
+| `size`        | 水印字体大小，单位px                                           | number  | -                               | `14`            | 0.1.16   |
+| `fontStyle`   | 水印字体样式（仅微信、支付宝和h5支持）                         | string  | `normal` / `italic` / `oblique` | `'normal'`      | 0.1.16   |
+| `fontWeight`  | 水印字体的粗细（仅微信、支付宝和h5支持）                       | string  | `normal` / `bold` / `bolder`    | `'normal'`      | 0.1.16   |
+| `fontFamily`  | 水印字体系列（仅微信、支付宝和h5支持）                         | string  | -                               | `'PingFang SC'` | 0.1.16   |
+| `rotate`      | 水印旋转角度                                                   | number  | -                               | `-25`           | 0.1.16   |
+| `zIndex`      | 自定义层级                                                     | number  | -                               | `1100`          | 0.1.16   |
+| `opacity`     | 自定义透明度，取值 0~1                                         | number  | -                               | `0.5`           | 0.1.16   |

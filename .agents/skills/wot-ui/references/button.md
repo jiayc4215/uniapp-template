@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/button.md'
+url: "https://wot-ui.cn/component/button.md"
 ---
 
 # Button 按钮
@@ -116,7 +116,10 @@ url: 'https://wot-ui.cn/component/button.md'
 .page-class {
   :deep() {
     .custom-shadow {
-      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+      box-shadow:
+        0 3px 1px -2px rgb(0 0 0 / 20%),
+        0 2px 2px 0 rgb(0 0 0 / 14%),
+        0 1px 5px 0 rgb(0 0 0 / 12%);
     }
   }
 }
@@ -138,7 +141,7 @@ url: 'https://wot-ui.cn/component/button.md'
 | loading-color          | 加载图标颜色                                                                                                                                                   | string      | -                                                        | -            | -        |
 | open-type              | 微信开放能力                                                                                                                                                   | string      | -                                                        | -            | -        |
 | hover-stop-propagation | 指定是否阻止本节点的祖先节点出现点击态                                                                                                                         | boolean     | -                                                        | false        | -        |
-| lang                   | 指定返回用户信息的语言，zh\_CN 简体中文，zh\_TW 繁体中文，en 英文                                                                                                | string      | zh\_CN / zh\_TW                                            | en           | -        |
+| lang                   | 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文                                                                                                | string      | zh_CN / zh_TW                                            | en           | -        |
 | session-from           | 会话来源，open-type="contact"时有效                                                                                                                            | string      | -                                                        | -            | -        |
 | send-message-title     | 会话内消息卡片标题，open-type="contact"时有效                                                                                                                  | string      | -                                                        | 当前标题     | -        |
 | send-message-path      | 会话内消息卡片点击跳转小程序路径，open-type="contact"时有效                                                                                                    | string      | -                                                        | 当前分享路径 | -        |
@@ -158,7 +161,7 @@ url: 'https://wot-ui.cn/component/button.md'
 | getUserInfo               | 获取用户信息，可以从@getuserinfo 回调中获取到用户信息                                      |
 | contact                   | 打开客服会话，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息   |
 | getPhoneNumber            | 获取用户手机号，可以从@getphonenumber 回调中获取到用户信息                                 |
-| getRealtimePhoneNumber    | 实时获取用户手机号，可以从@getrealtimephonenumber 回调中获取到用户信息，仅微信小程序          |
+| getRealtimePhoneNumber    | 实时获取用户手机号，可以从@getrealtimephonenumber 回调中获取到用户信息，仅微信小程序       |
 | launchApp                 | 小程序中打开 APP，可以通过 app-parameter 属性设定向 APP 传的参数                           |
 | openSetting               | 打开授权设置页                                                                             |
 | chooseAvatar              | 获取用户头像，可以从@chooseavatar 回调中获取到头像信息                                     |
@@ -169,17 +172,17 @@ url: 'https://wot-ui.cn/component/button.md'
 
 ## Events
 
-| 事件名称       | 说明                                                         | 参数     | 最低版本 |
-| -------------- | ------------------------------------------------------------ | -------- | -------- |
-| click          | 点击事件                                                     | `event`  | -        |
-| getuserinfo    | 获取用户信息                                                 | `detail` | -        |
-| contact        | 客服消息回调，open-type="contact"时有效                      | `detail` | -        |
-| getphonenumber | 获取用户手机号回调，open-type=getPhoneNumber 时有效          | `detail` | -        |
-| getrealtimephonenumber | 实时获取用户手机号回调，open-type=getRealtimePhoneNumber 时有效          | `detail` | 1.13.0 |
-| error          | 当使用开放能力时，发生错误的回调，open-type=launchApp 时有效 | `detail` | -        |
-| launchapp      | 打开 APP 成功的回调，open-type=launchApp 时有效              | `detail` | -        |
-| opensetting    | 在打开授权设置页后回调，open-type=openSetting 时有效         | `detail` | -        |
-| chooseavatar   | 获取用户头像回调，open-type=chooseAvatar 时有效              | `detail` | -        |
+| 事件名称                  | 说明                                                             | 参数     | 最低版本 |
+| ------------------------- | ---------------------------------------------------------------- | -------- | -------- |
+| click                     | 点击事件                                                         | `event`  | -        |
+| getuserinfo               | 获取用户信息                                                     | `detail` | -        |
+| contact                   | 客服消息回调，open-type="contact"时有效                          | `detail` | -        |
+| getphonenumber            | 获取用户手机号回调，open-type=getPhoneNumber 时有效              | `detail` | -        |
+| getrealtimephonenumber    | 实时获取用户手机号回调，open-type=getRealtimePhoneNumber 时有效  | `detail` | 1.13.0   |
+| error                     | 当使用开放能力时，发生错误的回调，open-type=launchApp 时有效     | `detail` | -        |
+| launchapp                 | 打开 APP 成功的回调，open-type=launchApp 时有效                  | `detail` | -        |
+| opensetting               | 在打开授权设置页后回调，open-type=openSetting 时有效             | `detail` | -        |
+| chooseavatar              | 获取用户头像回调，open-type=chooseAvatar 时有效                  | `detail` | -        |
 | agreeprivacyauthorization | 用户同意隐私协议回调，open-type=agreePrivacyAuthorization 时有效 | `detail` | -        |
 
 ## 外部样式类

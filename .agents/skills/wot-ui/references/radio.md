@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/radio.md'
+url: "https://wot-ui.cn/component/radio.md"
 ---
 
 # Radio 单选框
@@ -143,26 +143,26 @@ const value = ref<number>(1)
 radio设置的props优先级比radioGroup上设置的props优先级更高
 
 ```html
-  <wd-radio-group v-model="value" shape="button" disabled checked-color="#f00">
-    <wd-radio value="1" :disabled="false" checked-color="#000">商家后台</wd-radio>
-    <wd-radio value="2" :disabled="false">沃特</wd-radio>
-    <wd-radio value="3">商家智能</wd-radio>
-  </wd-radio-group>
+<wd-radio-group v-model="value" shape="button" disabled checked-color="#f00">
+  <wd-radio value="1" :disabled="false" checked-color="#000">商家后台</wd-radio>
+  <wd-radio value="2" :disabled="false">沃特</wd-radio>
+  <wd-radio value="3">商家智能</wd-radio>
+</wd-radio-group>
 ```
 
 ## RadioGroup Attributes
 
-| 参数           | 说明                        | 类型                      | 可选值               | 默认值  | 最低版本         |
-| -------------- | --------------------------- | ------------------------- | -------------------- | ------- | ---------------- |
-| v-model        | 会自动选中value对应的单选框 | string / number / boolean | -                    | -       | -                |
-| shape          | 单选框形状                  | string                    | dot / button / check | check   | -                |
-| size           | 设置大小                    | string                    | large                | -       | -                |
-| checked-color  | 选中的颜色                  | string                    | -                    | #4D80F0 | -                |
-| disabled       | 禁用                        | boolean                   | -                    | false   | -                |
-| max-width      | 文字位置最大宽度            | string                    | -                    | -       | -                |
-| inline         | 同行展示                    | boolean                   | -                    | false   | -                |
-| cell           | 表单模式                    | boolean                   | -                    | false   | -                |
-| icon-placement | 勾选图标对齐方式            | string                    | left / right/ auto   | auto    | 1.5.0 |
+| 参数           | 说明                        | 类型                      | 可选值               | 默认值  | 最低版本 |
+| -------------- | --------------------------- | ------------------------- | -------------------- | ------- | -------- |
+| v-model        | 会自动选中value对应的单选框 | string / number / boolean | -                    | -       | -        |
+| shape          | 单选框形状                  | string                    | dot / button / check | check   | -        |
+| size           | 设置大小                    | string                    | large                | -       | -        |
+| checked-color  | 选中的颜色                  | string                    | -                    | #4D80F0 | -        |
+| disabled       | 禁用                        | boolean                   | -                    | false   | -        |
+| max-width      | 文字位置最大宽度            | string                    | -                    | -       | -        |
+| inline         | 同行展示                    | boolean                   | -                    | false   | -        |
+| cell           | 表单模式                    | boolean                   | -                    | false   | -        |
+| icon-placement | 勾选图标对齐方式            | string                    | left / right/ auto   | auto    | 1.5.0    |
 
 ## RadioGroup Events
 

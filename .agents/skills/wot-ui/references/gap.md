@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/gap.md'
+url: "https://wot-ui.cn/component/gap.md"
 ---
 
 # Gap 间隔槽
@@ -34,14 +34,14 @@ url: 'https://wot-ui.cn/component/gap.md'
 
 ## Attributes
 
-| 参数              | 说明      | 类型      | 可选值        | 默认值         | 最低版本 |
-|-----------------|---------|---------|------------|-------------| -------- |
-| height          | 高度      | `string`/`number`  | -          | 15       | -        |
-| bgColor      | 背景颜色    | string  |            | transparent | -        |
-| safeAreaBottom | 开启底部安全区  | boolean | true/false | false       | -        |
+| 参数           | 说明           | 类型              | 可选值     | 默认值      | 最低版本 |
+| -------------- | -------------- | ----------------- | ---------- | ----------- | -------- |
+| height         | 高度           | `string`/`number` | -          | 15          | -        |
+| bgColor        | 背景颜色       | string            |            | transparent | -        |
+| safeAreaBottom | 开启底部安全区 | boolean           | true/false | false       | -        |
 
 ## 外部样式类
 
-| 类名                 | 说明             | 最低版本 |
-| -------------------- | ---------------- | -------- |
-| custom-class         | 自定义样式 | -        |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 自定义样式 | -        |

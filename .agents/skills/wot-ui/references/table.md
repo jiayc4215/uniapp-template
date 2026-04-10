@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/table.md'
+url: "https://wot-ui.cn/component/table.md"
 ---
 
 # Table 表格
@@ -27,19 +27,19 @@ url: 'https://wot-ui.cn/component/table.md'
 ```ts
 const dataList = reactive([
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业'
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业"
   },
   {
-    name: '孔明',
-    school: '武汉市阳逻卧龙学院',
-    major: '计算机科学与技术专业'
+    name: "孔明",
+    school: "武汉市阳逻卧龙学院",
+    major: "计算机科学与技术专业"
   },
   {
-    name: '刘备',
-    school: '武汉市阳逻编织学院',
-    major: '计算机科学与技术专业'
+    name: "刘备",
+    school: "武汉市阳逻编织学院",
+    major: "计算机科学与技术专业"
   }
 ])
 ```
@@ -129,7 +129,7 @@ const dataList = reactive([
 
 ```ts
 function handleSort(e) {
-  console.log('这里是排序事件')
+  console.log("这里是排序事件")
 }
 ```
 
@@ -160,7 +160,7 @@ function handleSort(e) {
 ```
 
 ```ts
-import { ref } from 'vue'
+import { ref } from "vue"
 interface TableData {
   name: string
   school: string
@@ -174,64 +174,64 @@ interface TableData {
 
 const dataList = ref<TableData[]>([
   {
-    name: '张飞',
-    school: '武汉市阳逻杀猪学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "张飞",
+    school: "武汉市阳逻杀猪学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 56,
-    compare: '10%',
-    hobby: '燕人张飞在此！'
+    compare: "10%",
+    hobby: "燕人张飞在此！"
   },
   {
-    name: '关羽',
-    school: '武汉市阳逻绿豆学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "关羽",
+    school: "武汉市阳逻绿豆学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 66,
-    compare: '11%',
-    hobby: '颜良文丑，以吾观之，如土鸡瓦犬耳。'
+    compare: "11%",
+    hobby: "颜良文丑，以吾观之，如土鸡瓦犬耳。"
   },
   {
-    name: '刘备',
-    school: '武汉市阳逻编织学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "刘备",
+    school: "武汉市阳逻编织学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 45,
-    compare: '1%',
-    hobby: '我得空明，如鱼得水也'
+    compare: "1%",
+    hobby: "我得空明，如鱼得水也"
   },
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 69,
-    compare: '14%',
-    hobby: '子龙，子龙，世无双'
+    compare: "14%",
+    hobby: "子龙，子龙，世无双"
   },
   {
-    name: '孔明',
-    school: '武汉市阳逻卧龙学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "孔明",
+    school: "武汉市阳逻卧龙学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 88,
-    compare: '21%',
-    hobby: '兴汉讨贼，克复中原'
+    compare: "21%",
+    hobby: "兴汉讨贼，克复中原"
   },
   {
-    name: '姜维',
-    school: '武汉市阳逻停水停电技术学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "姜维",
+    school: "武汉市阳逻停水停电技术学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 87,
-    compare: '32%',
-    hobby: '我计不成，乃天命也！'
+    compare: "32%",
+    hobby: "我计不成，乃天命也！"
   }
 ])
 
@@ -290,154 +290,154 @@ interface TableData {
 
 const dataList = ref<TableData[]>([
   {
-    name: '关羽',
-    school: '武汉市阳逻绿豆学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "关羽",
+    school: "武汉市阳逻绿豆学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 66,
-    compare: '48%',
-    hobby: '颜良文丑，以吾观之，如土鸡瓦犬耳。'
+    compare: "48%",
+    hobby: "颜良文丑，以吾观之，如土鸡瓦犬耳。"
   },
   {
-    name: '刘备',
-    school: '武汉市阳逻编织学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "刘备",
+    school: "武汉市阳逻编织学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 68,
-    compare: '21%',
-    hobby: '我得空明，如鱼得水也'
+    compare: "21%",
+    hobby: "我得空明，如鱼得水也"
   },
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 91,
-    compare: '12%',
-    hobby: '子龙，子龙，世无双'
+    compare: "12%",
+    hobby: "子龙，子龙，世无双"
   },
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 91,
-    compare: '12%',
-    hobby: '子龙，子龙，世无双'
+    compare: "12%",
+    hobby: "子龙，子龙，世无双"
   },
   {
-    name: '孔明',
-    school: '武汉市阳逻卧龙学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "孔明",
+    school: "武汉市阳逻卧龙学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 99,
-    compare: '18%',
-    hobby: '兴汉讨贼，克复中原'
+    compare: "18%",
+    hobby: "兴汉讨贼，克复中原"
   },
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 36,
-    compare: '48%',
-    hobby: '子龙，子龙，世无双'
+    compare: "48%",
+    hobby: "子龙，子龙，世无双"
   },
   {
-    name: '关羽',
-    school: '武汉市阳逻绿豆学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "关羽",
+    school: "武汉市阳逻绿豆学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 66,
-    compare: '48%',
-    hobby: '颜良文丑，以吾观之，如土鸡瓦犬耳。'
+    compare: "48%",
+    hobby: "颜良文丑，以吾观之，如土鸡瓦犬耳。"
   },
   {
-    name: '刘备',
-    school: '武汉市阳逻编织学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "刘备",
+    school: "武汉市阳逻编织学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 68,
-    compare: '21%',
-    hobby: '我得空明，如鱼得水也'
+    compare: "21%",
+    hobby: "我得空明，如鱼得水也"
   },
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 91,
-    compare: '12%',
-    hobby: '子龙，子龙，世无双'
+    compare: "12%",
+    hobby: "子龙，子龙，世无双"
   },
   {
-    name: '孔明',
-    school: '武汉市阳逻卧龙学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "孔明",
+    school: "武汉市阳逻卧龙学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 99,
-    compare: '18%',
-    hobby: '兴汉讨贼，克复中原'
+    compare: "18%",
+    hobby: "兴汉讨贼，克复中原"
   },
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 36,
-    compare: '48%',
-    hobby: '子龙，子龙，世无双'
+    compare: "48%",
+    hobby: "子龙，子龙，世无双"
   },
   {
-    name: '关羽',
-    school: '武汉市阳逻绿豆学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "关羽",
+    school: "武汉市阳逻绿豆学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 66,
-    compare: '48%',
-    hobby: '颜良文丑，以吾观之，如土鸡瓦犬耳。'
+    compare: "48%",
+    hobby: "颜良文丑，以吾观之，如土鸡瓦犬耳。"
   },
   {
-    name: '刘备',
-    school: '武汉市阳逻编织学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "刘备",
+    school: "武汉市阳逻编织学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 68,
-    compare: '21%',
-    hobby: '我得空明，如鱼得水也'
+    compare: "21%",
+    hobby: "我得空明，如鱼得水也"
   },
   {
-    name: '赵云',
-    school: '武汉市阳逻妇幼保健学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "赵云",
+    school: "武汉市阳逻妇幼保健学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 91,
-    compare: '12%',
-    hobby: '子龙，子龙，世无双'
+    compare: "12%",
+    hobby: "子龙，子龙，世无双"
   },
   {
-    name: '孔明',
-    school: '武汉市阳逻卧龙学院',
-    major: '计算机科学与技术专业',
-    gender: '男',
-    graduation: '2022年1月12日',
+    name: "孔明",
+    school: "武汉市阳逻卧龙学院",
+    major: "计算机科学与技术专业",
+    gender: "男",
+    graduation: "2022年1月12日",
     grade: 99,
-    compare: '18%',
-    hobby: '兴汉讨贼，克复中原'
+    compare: "18%",
+    hobby: "兴汉讨贼，克复中原"
   }
 ])
 const page = ref<number>(1)
@@ -455,17 +455,17 @@ const paginationData = computed(() => {
 
 ## Attributes
 
-| 参数            | 说明                                                | 类型                         | 可选值 | 默认值 | 最低版本         |
-| --------------- | --------------------------------------------------- | ---------------------------- | ------ | ------ | ---------------- |
-| data            | 显示的数据                                          | Array                        | -      | -      | 0.0.39           |
-| border          | 是否带有边框                                        | boolean                      | -      | true   | 0.0.39           |
-| stripe          | 是否为斑马纹表                                      | boolean                      | -      | true   | 0.0.39           |
-| height          | Table 的高度，无默认值，设置后自动开启固定表头。        | `number / string`            | -      | -      | 0.0.39           |
-| rowHeight       | 行高                                                | `number / string`            | -      | 50     | 0.0.39           |
-| showHeader      | 是否显示表头                                        | boolean                      | -      | true   | 0.0.39           |
-| ellipsis        | 是否超出 2 行隐藏                                   | boolean                      | -      | true   | 0.0.39           |
-| index           | 是否显示索引列，可传入`boolean`也可传入 column 配置 | `boolean / TableColumnProps` |        | false  | 1.2.19           |
-| fixed-header    | 是否固定表头，需要结合`height`才可以实现固定表头的效果。      | boolean                      | -      | true   | 1.5.0 |
+| 参数         | 说明                                                     | 类型                         | 可选值 | 默认值 | 最低版本 |
+| ------------ | -------------------------------------------------------- | ---------------------------- | ------ | ------ | -------- |
+| data         | 显示的数据                                               | Array                        | -      | -      | 0.0.39   |
+| border       | 是否带有边框                                             | boolean                      | -      | true   | 0.0.39   |
+| stripe       | 是否为斑马纹表                                           | boolean                      | -      | true   | 0.0.39   |
+| height       | Table 的高度，无默认值，设置后自动开启固定表头。         | `number / string`            | -      | -      | 0.0.39   |
+| rowHeight    | 行高                                                     | `number / string`            | -      | 50     | 0.0.39   |
+| showHeader   | 是否显示表头                                             | boolean                      | -      | true   | 0.0.39   |
+| ellipsis     | 是否超出 2 行隐藏                                        | boolean                      | -      | true   | 0.0.39   |
+| index        | 是否显示索引列，可传入`boolean`也可传入 column 配置      | `boolean / TableColumnProps` |        | false  | 1.2.19   |
+| fixed-header | 是否固定表头，需要结合`height`才可以实现固定表头的效果。 | boolean                      | -      | true   | 1.5.0    |
 
 ## Events
 

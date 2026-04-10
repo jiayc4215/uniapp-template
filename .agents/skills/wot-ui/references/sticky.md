@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/sticky.md'
+url: "https://wot-ui.cn/component/sticky.md"
 ---
 
 # Sticky 粘性布局
@@ -43,11 +43,10 @@ function display() {
 onShow(() => {
   setTimeout(display, 5000)
 })
-
 ```
 
 ```scss
-page{
+page {
   height: 200vh;
 }
 ```
@@ -82,26 +81,27 @@ page{
 ```
 
 ```scss
-.container{
-    height: 150px;width: 100vw;
+.container {
+  height: 150px;
+  width: 100vw;
 }
 ```
 
 ## Sticky Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|--------|
-| z-index | 堆叠顺序 | number | - | 1 | - |
-| offset-top | 吸顶距离 | number | - | 0 | - |
+| 参数       | 说明     | 类型   | 可选值 | 默认值 | 最低版本 |
+| ---------- | -------- | ------ | ------ | ------ | -------- |
+| z-index    | 堆叠顺序 | number | -      | 1      | -        |
+| offset-top | 吸顶距离 | number | -      | 0      | -        |
 
 ## Sticky 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | 根节点样式 | - |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | -        |
 
 ## Sticky Box 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | 根节点样式 | - |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | -        |

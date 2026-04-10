@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/guide/common-problems.md'
+url: "https://wot-ui.cn/guide/common-problems.md"
 ---
 
 # 常见问题 FAQ
@@ -239,13 +239,13 @@ uni-app 3.99.2023122704 将支付宝小程序的`styleIsolation`默认值设置�
 
 ```ts
 // useToast、useNotify等同理
-import { useMessage } from '@/uni_modules/wot-design-uni'
+import { useMessage } from "@/uni_modules/wot-design-uni"
 ```
 
 替换为
 
 ```ts
-import { useMessage } from 'wot-design-uni'
+import { useMessage } from "wot-design-uni"
 ```
 
 ## uni-app 如何自定义编译平台，例如钉钉小程序？
@@ -278,7 +278,7 @@ import { useMessage } from 'wot-design-uni'
 多次执行`use`后，`useToast`、`useMessage`、`useNotify`、`useQueue`等 hooks 不生效的问题已在1.3.14版本修复，请升级到最新版本。
 :::
 
-***可以按照以下步骤进行排查***
+**_可以按照以下步骤进行排查_**
 
 1. `uni-app`平台不支持全局挂载组件，所以`Message`、`Toast`、`Notify`等组件需在 SFC 中显式使用，例如：
 
@@ -289,13 +289,12 @@ import { useMessage } from 'wot-design-uni'
 2. `useToast`、`useMessage`、`useNotify`、`useQueue`等 hooks 不生效，请检查是否在`setup`中调用，如果`setup`中调用，请检查当前页面是否存在多次执行`use`的场景，例如在多个组件中执行，这样会导致上一次`use`的失效。针对此场景，组件的函数式调用都支持传入`selector`参数，可以通过`selector`参数来指定组件，例如：
 
 ```html
-<wd-toast></wd-toast>
-<wd-toast selector="my-toast"></wd-toast>
+<wd-toast></wd-toast> <wd-toast selector="my-toast"></wd-toast>
 ```
 
 ```ts
 const toast = useToast()
-const myToast = useToast('my-toast')
+const myToast = useToast("my-toast")
 ```
 
 ## 为什么在微信小程序上使用`Popup`、`ActionSheet`、`DropDownItem`等弹出框组件包裹`Slider`、`Tabs`等组件时，`Slider`、`Tabs`表现异常？
@@ -314,7 +313,7 @@ const myToast = useToast('my-toast')
 
 ```html
 <wd-popup v-model="show" position="bottom" closable custom-style="height: 200px;" @after-enter="handleOpened">
-<wd-slider v-model="value" ref="slider"></wd-slider>
+  <wd-slider v-model="value" ref="slider"></wd-slider>
 </wd-popup>
 ```
 
@@ -324,7 +323,6 @@ const slider = ref()
 function handleOpened() {
   slider.value!.initSlider()
 }
-
 ```
 
 ## 为何messageBox弹出了多个？

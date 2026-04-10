@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/segmented.md'
+url: "https://wot-ui.cn/component/segmented.md"
 ---
 
 # Segmented 分段器
@@ -8,8 +8,8 @@ url: 'https://wot-ui.cn/component/segmented.md'
 
 ## 何时使用
 
-* 用于展示多个选项并允许用户选择其中单个选项；
-* 当切换选中选项时，关联区域的内容会发生变化。
+- 用于展示多个选项并允许用户选择其中单个选项；
+- 当切换选中选项时，关联区域的内容会发生变化。
 
 ## 基本用法
 
@@ -20,9 +20,9 @@ url: 'https://wot-ui.cn/component/segmented.md'
 ```
 
 ```ts
-const list = ref<string[]>(['评论', '点赞', '贡献', '打赏'])
+const list = ref<string[]>(["评论", "点赞", "贡献", "打赏"])
 
-const current = ref('点赞')
+const current = ref("点赞")
 ```
 
 ## 大型分段器
@@ -75,17 +75,17 @@ const current = ref('点赞')
 ```ts
 const list = ref([
   {
-    value: '李雷',
+    value: "李雷",
     disabled: false,
     payload: {
-      avatar: 'https://wot-ui.cn/assets/redpanda.jpg'
+      avatar: "https://wot-ui.cn/assets/redpanda.jpg"
     }
   },
   {
-    value: '韩梅梅',
+    value: "韩梅梅",
     disabled: false,
     payload: {
-      avatar: 'https://wot-ui.cn/assets/capybara.jpg'
+      avatar: "https://wot-ui.cn/assets/capybara.jpg"
     }
   }
 ])
@@ -108,15 +108,21 @@ const list = ref([
 
 ```html
 <wd-button @click="handleClick">打开弹窗</wd-button>
-<wd-popup v-model="showPopup" position="bottom" @after-enter="handlePopupShow" closable custom-style="height: 200px;padding: 0 24rpx;">
+<wd-popup
+  v-model="showPopup"
+  position="bottom"
+  @after-enter="handlePopupShow"
+  closable
+  custom-style="height: 200px;padding: 0 24rpx;"
+>
   <view class="title">在弹出框中使用</view>
   <wd-segmented :options="list" v-model:value="current" ref="segmentedRef"></wd-segmented>
 </wd-popup>
 ```
 
 ```ts
-const list = ref<string[]>(['评论', '点赞', '贡献', '打赏'])
-const current = ref('点赞')
+const list = ref<string[]>(["评论", "点赞", "贡献", "打赏"])
+const current = ref("点赞")
 
 const segmentedRef = ref<SegmentedInstance>() // 获取分段器实例
 const showPopup = ref(false) // 控制popup显示
@@ -146,21 +152,21 @@ function handlePopupShow() {
 
 ## Attributes
 
-| 参数                | 说明               | 类型                                        | 可选值                         | 默认值   | 最低版本 |
-| ------------------- | ------------------ | ------------------------------------------- | ------------------------------ | -------- | -------- |
-| value/v-model:value | 当前选中的值       | string / number                            | -                              | -        | 0.1.23   |
-| disabled            | 是否禁用分段器     | boolean                                     | true / false                  | `false`  | 0.1.23   |
-| size                | 控件尺寸           | string                                      | `large` / `middle` / `small` | `middle` | 0.1.23   |
-| options             | 数据集合           | `string[] / number[] / SegmentedOption[]` | -                              | \[]       | 0.1.23   |
-| vibrateShort        | 切换选项时是否振动 | boolean                                     | true / false                  | `false`  | 0.1.23   |
+| 参数                | 说明               | 类型                                      | 可选值                       | 默认值   | 最低版本 |
+| ------------------- | ------------------ | ----------------------------------------- | ---------------------------- | -------- | -------- |
+| value/v-model:value | 当前选中的值       | string / number                           | -                            | -        | 0.1.23   |
+| disabled            | 是否禁用分段器     | boolean                                   | true / false                 | `false`  | 0.1.23   |
+| size                | 控件尺寸           | string                                    | `large` / `middle` / `small` | `middle` | 0.1.23   |
+| options             | 数据集合           | `string[] / number[] / SegmentedOption[]` | -                            | \[]      | 0.1.23   |
+| vibrateShort        | 切换选项时是否振动 | boolean                                   | true / false                 | `false`  | 0.1.23   |
 
 ### SegmentedOption
 
-| 参数     | 说明     | 类型             | 可选值        | 默认值 | 最低版本 |
-| -------- | -------- | ---------------- | ------------- | ------ | -------- |
-| value    | 选中值   | string / number | -             | -      | 0.1.23   |
-| disabled | 是否禁用 | boolean          | true / false | -      | 0.1.23   |
-| payload  | 更多数据 | any              | -             | -      | 0.1.23   |
+| 参数     | 说明     | 类型            | 可选值       | 默认值 | 最低版本 |
+| -------- | -------- | --------------- | ------------ | ------ | -------- |
+| value    | 选中值   | string / number | -            | -      | 0.1.23   |
+| disabled | 是否禁用 | boolean         | true / false | -      | 0.1.23   |
+| payload  | 更多数据 | any             | -            | -      | 0.1.23   |
 
 ## Events
 

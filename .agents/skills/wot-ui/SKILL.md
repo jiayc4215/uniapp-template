@@ -10,6 +10,7 @@ description: wot-ui uni-app 组件库开发指南。当用户询问 wot-ui 组�
 ## 何时使用
 
 当用户需要以下帮助时使用此技能：
+
 - 实现特定的 wot-ui 组件（例如，“如何使用 Calendar 日历组件？”）
 - 配置全局 Provider 或主题
 - 排查组件行为问题

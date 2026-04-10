@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/grid.md'
+url: "https://wot-ui.cn/component/grid.md"
 ---
 
 # Grid 宫格
@@ -137,11 +137,11 @@ url: 'https://wot-ui.cn/component/grid.md'
 
 注意:
 
-* 设定宽高这类可能会影响布局的属性时，请将 `custom-class` 作用到当前 `Grid` 下的所有 `GridItem` 以确保所有 `GridItem` 样式相同。
+- 设定宽高这类可能会影响布局的属性时，请将 `custom-class` 作用到当前 `Grid` 下的所有 `GridItem` 以确保所有 `GridItem` 样式相同。
 
-* **如果想改变 `GridItem` 高度, 不要直接设置 `Grid` 的高度, 修改单独的** `GridItem`。
+- **如果想改变 `GridItem` 高度, 不要直接设置 `Grid` 的高度, 修改单独的** `GridItem`。
 
-* **如果想改变 `icon` 大小设置 `icon-size` 属性, `custom-icon` 不能改变当前 icon 宽高。**
+- **如果想改变 `icon` 大小设置 `icon-size` 属性, `custom-icon` 不能改变当前 icon 宽高。**
 
 ```html
 <wd-grid>
@@ -150,7 +150,11 @@ url: 'https://wot-ui.cn/component/grid.md'
     icon="search"
     text="京东JD.COM-专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、母婴、服装等13大品类。"
   />
-  <wd-grid-item custom-class="custom-item" icon="person" text="秉承客户为先的理念，京东所售商品为正品行货、全国联保、机打发票。" />
+  <wd-grid-item
+    custom-class="custom-item"
+    icon="person"
+    text="秉承客户为先的理念，京东所售商品为正品行货、全国联保、机打发票。"
+  />
 </wd-grid>
 ```
 
@@ -203,8 +207,20 @@ url: 'https://wot-ui.cn/component/grid.md'
 
 ```html
 <wd-grid clickable>
-  <wd-grid-item link-type="redirectTo" url="/pages/button/index" @itemclick="click" icon="search" text="Redirect to ..." />
-  <wd-grid-item link-type="navigateTo" url="/pages/button/index" @itemclick="click" icon="setting" text="Navigate to ..." />
+  <wd-grid-item
+    link-type="redirectTo"
+    url="/pages/button/index"
+    @itemclick="click"
+    icon="search"
+    text="Redirect to ..."
+  />
+  <wd-grid-item
+    link-type="navigateTo"
+    url="/pages/button/index"
+    @itemclick="click"
+    icon="setting"
+    text="Navigate to ..."
+  />
 </wd-grid>
 ```
 
@@ -223,15 +239,15 @@ url: 'https://wot-ui.cn/component/grid.md'
 
 ## Grid Attributes
 
-| 参数        | 说明                           | 类型    | 可选值 | 默认值                       | 最低版本         |
-| ----------- | ------------------------------ | ------- | ------ | ---------------------------- | ---------------- |
-| column      | 列数                           | number  | -      | -                            | -                |
-| border      | 是否显示边框                   | boolean | -      | false                        | -                |
-| gutter      | 格子之间的间距，默认单位为`px` | number  | -      | -                            | -                |
-| square      | 是否将格子固定为正方形         | boolean | -      | false                        | -                |
-| clickable   | 是否开启格子点击反馈           | boolean | -      | false                        | -                |
-| bg-color    | 背景颜色设置                   | string  | -      | #ffffff                      | -                |
-| hover-class | 指定grid-item按下去的样式类    | string  | -      | wd-grid-item\_\_content--hover | 1.9.0 |
+| 参数        | 说明                           | 类型    | 可选值 | 默认值                         | 最低版本 |
+| ----------- | ------------------------------ | ------- | ------ | ------------------------------ | -------- |
+| column      | 列数                           | number  | -      | -                              | -        |
+| border      | 是否显示边框                   | boolean | -      | false                          | -        |
+| gutter      | 格子之间的间距，默认单位为`px` | number  | -      | -                              | -        |
+| square      | 是否将格子固定为正方形         | boolean | -      | false                          | -        |
+| clickable   | 是否开启格子点击反馈           | boolean | -      | false                          | -        |
+| bg-color    | 背景颜色设置                   | string  | -      | #ffffff                        | -        |
+| hover-class | 指定grid-item按下去的样式类    | string  | -      | wd-grid-item\_\_content--hover | 1.9.0    |
 
 ## GridItem Attributes
 
@@ -245,9 +261,9 @@ url: 'https://wot-ui.cn/component/grid.md'
 | max           | 图标右上角 `badge` 最大值，超过最大值会显示 '{max}+'，要求 value 是 Number 类型                                           | number         | -                                           | -      | -        |
 | url           | 点击后跳转的链接地址                                                                                                      | string         | -                                           | -      | -        |
 | link-type     | 页面跳转方式, 参考[微信小程序路由文档](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/route.html) | string         | navigateTo / switchTab / reLaunch           | -      | -        |
-| use-slot | 是否开启 `GridItem` 内容插槽 **（1.12.0已废弃，直接使用默认插槽即可）**                                                          | boolean        | -                                           | false  | -        |
-| use-icon-slot | 是否开启 `GridItem` icon 插槽 **（1.12.0已废弃，组件会自动检测icon插槽的存在）**                                                | boolean        | -                                           | false  | -        |
-| use-text-slot | 是否开启 `GridItem` text 内容插槽 **（1.12.0已废弃，组件会自动检测text插槽的存在）**                                            | boolean        | -                                           | false  | -        |
+| use-slot      | 是否开启 `GridItem` 内容插槽 **（1.12.0已废弃，直接使用默认插槽即可）**                                                   | boolean        | -                                           | false  | -        |
+| use-icon-slot | 是否开启 `GridItem` icon 插槽 **（1.12.0已废弃，组件会自动检测icon插槽的存在）**                                          | boolean        | -                                           | false  | -        |
+| use-text-slot | 是否开启 `GridItem` text 内容插槽 **（1.12.0已废弃，组件会自动检测text插槽的存在）**                                      | boolean        | -                                           | false  | -        |
 | icon-size     | 图标大小                                                                                                                  | string         | -                                           | 26px   | -        |
 | badge-props   | 自定义徽标的属性，传入的对象会被透传给 [Badge 组件的 props](/component/badge#attributes)                                  | BadgeProps     | -                                           | -      | 0.1.50   |
 

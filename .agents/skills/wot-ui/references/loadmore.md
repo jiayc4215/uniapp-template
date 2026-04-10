@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/loadmore.md'
+url: "https://wot-ui.cn/component/loadmore.md"
 ---
 
 # loadmore 加载更多
@@ -52,7 +52,9 @@ url: 'https://wot-ui.cn/component/loadmore.md'
 ```html
 <view class="container">
   <view v-for="index in num" :key="index" class="list-item">
-    <image src="https://img10.360buyimg.com/jmadvertisement/jfs/t1/70325/36/14954/36690/5dcd3e3bEee5006e0/aed1ccf6d5ffc764.png" />
+    <image
+      src="https://img10.360buyimg.com/jmadvertisement/jfs/t1/70325/36/14954/36690/5dcd3e3bEee5006e0/aed1ccf6d5ffc764.png"
+    />
     <view class="right">这是一条测试{{ index + 1 }}</view>
   </view>
   <wd-loadmore :state="state" @reload="loadmore" />
@@ -60,20 +62,19 @@ url: 'https://wot-ui.cn/component/loadmore.md'
 ```
 
 ```typescript
-import { onLoad, onReachBottom } from '@dcloudio/uni-app'
+import { onLoad, onReachBottom } from "@dcloudio/uni-app"
 
-
-const state = ref<string>('loading')
+const state = ref<string>("loading")
 const num = ref<number>(0)
 const max = ref<number>(60)
 
 onReachBottom(() => {
   if (num.value === 45) {
-    state.value = 'error'
+    state.value = "error"
   } else if (num.value < max.value) {
     loadmore()
   } else if (num.value === max.value) {
-    state.value = 'finished'
+    state.value = "finished"
   }
 })
 
@@ -84,7 +85,7 @@ onLoad(() => {
 function loadmore() {
   setTimeout(() => {
     num.value = num.value + 15
-    state.value = 'loading'
+    state.value = "loading"
   }, 200)
 }
 ```
@@ -101,7 +102,7 @@ function loadmore() {
 .list-item:after {
   position: absolute;
   display: block;
-  content: '';
+  content: "";
   height: 1px;
   left: 0;
   width: 100%;
@@ -124,13 +125,13 @@ image {
 
 ## Attributes
 
-| 参数          | 说明                 | 类型   | 可选值                 | 默认值             | 最低版本 |
-| ------------- | -------------------- | ------ | ---------------------- | ------------------ | -------- |
-| state         | 加载状态             | string | loading/finished/error | -                  | -        |
-| loading-text  | 加载提示文案         | string | -                      | 加载中...          | -        |
-| finished-text | 全部加载完的提示文案 | string | -                      | 没有更多了         | -        |
-| error-text    | 加载失败的提示文案   | string | -                      | 加载失败，点击重试 | -        |
-| loading-props  | loading加载组件属性| `Partial<LoadingProps>` | -         | -       | 1.3.14        |
+| 参数          | 说明                 | 类型                    | 可选值                 | 默认值             | 最低版本 |
+| ------------- | -------------------- | ----------------------- | ---------------------- | ------------------ | -------- |
+| state         | 加载状态             | string                  | loading/finished/error | -                  | -        |
+| loading-text  | 加载提示文案         | string                  | -                      | 加载中...          | -        |
+| finished-text | 全部加载完的提示文案 | string                  | -                      | 没有更多了         | -        |
+| error-text    | 加载失败的提示文案   | string                  | -                      | 加载失败，点击重试 | -        |
+| loading-props | loading加载组件属性  | `Partial<LoadingProps>` | -                      | -                  | 1.3.14   |
 
 #### LoadingProps
 

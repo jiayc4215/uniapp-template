@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/datetime-picker.md'
+url: "https://wot-ui.cn/component/datetime-picker.md"
 ---
 
 # DatetimePicker 日期时间选择器
@@ -30,7 +30,7 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-const value = ref<string>('')
+const value = ref<string>("")
 const defaultValue = ref<number>(Date.now())
 
 function handleConfirm({ value }) {
@@ -47,7 +47,6 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-
 const value = ref<number>(Date.now())
 ```
 
@@ -84,7 +83,7 @@ const value = ref<number>(Date.now())
 ```
 
 ```typescript
-const value4 = ref<string>('09:20')
+const value4 = ref<string>("09:20")
 ```
 
 ## time 类型（带秒）
@@ -96,7 +95,7 @@ const value4 = ref<string>('09:20')
 ```
 
 ```typescript
-const value = ref<string>('09:20:30')
+const value = ref<string>("09:20:30")
 ```
 
 ## datetime 类型（带秒）
@@ -121,7 +120,7 @@ const value = ref<number>(Date.now())
 
 ```typescript
 const value = ref<number>(Date.now())
-const displayFormat = (items) => {
+const displayFormat = items => {
   return `${items[0].label}年${items[1].label}月${items[2].label}日 ${items[3].label}:${items[4].label}`
 }
 ```
@@ -140,16 +139,16 @@ const value = ref<number>(Date.now())
 
 const formatter = (type, value) => {
   switch (type) {
-    case 'year':
-      return value + '年'
-    case 'month':
-      return value + '月'
-    case 'date':
-      return value + '日'
-    case 'hour':
-      return value + '时'
-    case 'minute':
-      return value + '分'
+    case "year":
+      return value + "年"
+    case "month":
+      return value + "月"
+    case "date":
+      return value + "日"
+    case "hour":
+      return value + "时"
+    case "minute":
+      return value + "分"
     default:
       return value
   }
@@ -168,8 +167,8 @@ const formatter = (type, value) => {
 const value = ref<number>(Date.now())
 
 const filter = (type, values) => {
-  if (type === 'minute') {
-    return values.filter((value) => value % 5 === 0)
+  if (type === "minute") {
+    return values.filter(value => value % 5 === 0)
   }
   return values
 }
@@ -188,7 +187,7 @@ const filter = (type, values) => {
 设置 `required` 属性开启表单必填。
 
 ```html
-<wd-datetime-picker label="必填属性" error v-model="value" required/>
+<wd-datetime-picker label="必填属性" error v-model="value" required />
 ```
 
 ## 错误状态
@@ -221,7 +220,7 @@ const filter = (type, values) => {
 ```
 
 ```typescript
-const value = ref<string>('')
+const value = ref<string>("")
 
 const toast = useToast()
 const beforeConfirm = (value, resolve, picker) => {
@@ -230,7 +229,7 @@ const beforeConfirm = (value, resolve, picker) => {
     picker.setLoading(false)
     if (value > Date.now()) {
       resolve(false)
-      toast.error('不能选择大于今天的日期')
+      toast.error("不能选择大于今天的日期")
     } else {
       resolve(true)
     }
@@ -247,7 +246,7 @@ function handleConfirm({ value }) {
 设置默认插槽修改唤起picker组件的形式。
 
 ```html
-<wd-datetime-picker  v-model="value">
+<wd-datetime-picker v-model="value">
   <wd-button>插槽唤起</wd-button>
 </wd-datetime-picker>
 ```
@@ -258,16 +257,14 @@ function handleConfirm({ value }) {
 
 ```html
 <wd-datetime-picker label="日期选择" v-model="value" @confirm="handleConfirm" />
-
 ```
 
 ```typescript
-const value = ref<any[]>(['', Date.now()])
+const value = ref<any[]>(["", Date.now()])
 
 function handleConfirm({ value }) {
   console.log(new Date(value))
 }
-
 ```
 
 ## 范围选择tab标签展示格式
@@ -275,108 +272,111 @@ function handleConfirm({ value }) {
 给 `display-format-tab-label` 属性传入一个函数，接收所有选中项数组，返回展示的文本内容。
 
 ```html
-<wd-datetime-picker v-model="value" label="范围tab展示格式" :display-format-tab-label="displayFormatTabLabel" @confirm="handleConfirm"></wd-datetime-picker>
+<wd-datetime-picker
+  v-model="value"
+  label="范围tab展示格式"
+  :display-format-tab-label="displayFormatTabLabel"
+  @confirm="handleConfirm"
+></wd-datetime-picker>
 ```
 
 ```typescript
-
-const value = ref<any[]>(['', Date.now()])
+const value = ref<any[]>(["", Date.now()])
 
 function handleConfirm({ value }) {
   console.log(new Date(value))
 }
 
-const displayFormatTabLabel = (items) => {
+const displayFormatTabLabel = items => {
   return `${items[0].label}年${items[1].label}月${items[2].label}日 ${items[3].label}:${items[4].label}`
 }
-
 ```
 
 ## Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|---------|
-| v-model | 选中项，当 type 为 time 时，类型为字符串；当 type 为 Array 时，类型为范围选择；否则为 `timestamp` | `string` / `timestamp` / `array` | - | - |
-| default-value | 默认日期，类型保持与 value 一致，打开面板时面板自动选到默认日期 | `string` / `timestamp` / `array` | - | - | - |
-| type | 选择器类型 | string | date / year-month / time / year | datetime | - |
-| loading | 加载中 | boolean | - | false | - |
-| loading-color | 加载的颜色，只能使用十六进制的色值写法，且不能使用缩写 | string | - | #4D80F0 | - |
-| columns-height | picker内部滚筒高 | number | - | 231 | - |
-| item-height | picker item的高度 | number | - | 35 | - |
-| title | 弹出层标题 | string | - | - | - |
-| cancel-button-text | 取消按钮文案 | string | - | 取消 | - |
-| confirm-button-text | 确认按钮文案 | string | - | 完成 | - |
-| label | 选择器左侧文案，label可以不传 | string | - | - | - |
-| placeholder | 选择器占位符 | string | - | 请选择 | - |
-| disabled | 禁用 | boolean | - | false | - |
-| readonly | 只读 | boolean | - | false | - |
-| display-format | 自定义展示文案的格式化函数，返回一个字符串 | function | - | - | - |
-| formatter | 自定义弹出层选项文案的格式化函数，返回一个字符串 | function | - | - | - |
-| filter | 自定义过滤选项的函数，返回列的选项数组 | function | - | - | - |
-| display-format-tab-label | 在区域选择模式下，自定义展示tab标签文案的格式化函数，返回一个字符串 | function | - | - | - |
-| minDate | 最小日期，13 位的时间戳    | `timestamp` | - | 当前日期 - 10年 | - |
-| maxDate | 最大日期，13 位的时间戳    | `timestamp` | - | 当前日期 + 10年 | - |
-| minHour | 最小小时，time类型时生效 | number | - | 0 | - |
-| maxHour | 最大小时，time类型时生效 | number | - | 23 | - |
-| minMinute | 最小分钟，time类型时生效 | number | - | 0 | - |
-| maxMinute | 最大分钟，time类型时生效 | number | - | 59 | - |
-| required | 表单属性，必填 | boolean | - | false | - |
-| marker-side | 必填标记位置 | string | before / after | before | 1.12.0 |
-| size | 设置选择器大小 | string | large | - | - |
-| label-width | 设置左侧标题宽度 | string | - | 33% | - |
-| error | 是否为错误状态，错误状态时右侧内容为红色 | boolean | - | false | - |
-| align-right | 选择器的值靠右展示 | boolean | - | false | - |
-| use-label-slot | label 使用插槽，已废弃，直接使用label插槽即可 | boolean | - | false | - |
-| use-default-slot | 使用默认插槽，已废弃，直接使用默认插槽即可 | boolean | - | false | - |
-| before-confirm | 确定前校验函数，接收 (value, resolve, picker) 参数，通过 resolve 继续执行 picker，resolve 接收1个boolean参数 | function | - | - | - |
-| close-on-click-modal | 点击遮罩是否关闭 | boolean | - | true | - |
-| z-index | 弹窗层级 | number | - | 15 | - |
-| safe-area-inset-bottom | 弹出面板是否设置底部安全距离（iphone X 类型的机型） | boolean | - | true | - |
-| ellipsis | 是否超出隐藏 | boolean | - | false | - |
-| prop | 表单域 `model` 字段名，在使用表单校验功能的情况下，该属性是必填的 | string | - | - | - |
-| rules | 表单验证规则，结合`wd-form`组件使用	 | `FormItemRule []`	 | - | `[]` | - |
-| immediate-change | 是否在手指松开时立即触发picker-view的 change 事件。若不开启则会在滚动动画结束后触发 change 事件，1.2.25版本起提供，仅微信小程序和支付宝小程序支持。 | boolean | - | false | 1.2.25 |
-| use-second | 是否显示秒选择，仅在 time 和 datetime 类型下生效 | boolean | - | false | 1.10.0 |
-| clearable | 显示清空按钮 | boolean | - | false | 1.11.0 |
-| root-portal | 是否从页面中脱离出来，用于解决各种 fixed 失效问题 | boolean | - | false | 1.11.0 |
+| 参数                     | 说明                                                                                                                                                | 类型                             | 可选值                          | 默认值          | 最低版本 |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ------------------------------- | --------------- | -------- |
+| v-model                  | 选中项，当 type 为 time 时，类型为字符串；当 type 为 Array 时，类型为范围选择；否则为 `timestamp`                                                   | `string` / `timestamp` / `array` | -                               | -               |
+| default-value            | 默认日期，类型保持与 value 一致，打开面板时面板自动选到默认日期                                                                                     | `string` / `timestamp` / `array` | -                               | -               | -        |
+| type                     | 选择器类型                                                                                                                                          | string                           | date / year-month / time / year | datetime        | -        |
+| loading                  | 加载中                                                                                                                                              | boolean                          | -                               | false           | -        |
+| loading-color            | 加载的颜色，只能使用十六进制的色值写法，且不能使用缩写                                                                                              | string                           | -                               | #4D80F0         | -        |
+| columns-height           | picker内部滚筒高                                                                                                                                    | number                           | -                               | 231             | -        |
+| item-height              | picker item的高度                                                                                                                                   | number                           | -                               | 35              | -        |
+| title                    | 弹出层标题                                                                                                                                          | string                           | -                               | -               | -        |
+| cancel-button-text       | 取消按钮文案                                                                                                                                        | string                           | -                               | 取消            | -        |
+| confirm-button-text      | 确认按钮文案                                                                                                                                        | string                           | -                               | 完成            | -        |
+| label                    | 选择器左侧文案，label可以不传                                                                                                                       | string                           | -                               | -               | -        |
+| placeholder              | 选择器占位符                                                                                                                                        | string                           | -                               | 请选择          | -        |
+| disabled                 | 禁用                                                                                                                                                | boolean                          | -                               | false           | -        |
+| readonly                 | 只读                                                                                                                                                | boolean                          | -                               | false           | -        |
+| display-format           | 自定义展示文案的格式化函数，返回一个字符串                                                                                                          | function                         | -                               | -               | -        |
+| formatter                | 自定义弹出层选项文案的格式化函数，返回一个字符串                                                                                                    | function                         | -                               | -               | -        |
+| filter                   | 自定义过滤选项的函数，返回列的选项数组                                                                                                              | function                         | -                               | -               | -        |
+| display-format-tab-label | 在区域选择模式下，自定义展示tab标签文案的格式化函数，返回一个字符串                                                                                 | function                         | -                               | -               | -        |
+| minDate                  | 最小日期，13 位的时间戳                                                                                                                             | `timestamp`                      | -                               | 当前日期 - 10年 | -        |
+| maxDate                  | 最大日期，13 位的时间戳                                                                                                                             | `timestamp`                      | -                               | 当前日期 + 10年 | -        |
+| minHour                  | 最小小时，time类型时生效                                                                                                                            | number                           | -                               | 0               | -        |
+| maxHour                  | 最大小时，time类型时生效                                                                                                                            | number                           | -                               | 23              | -        |
+| minMinute                | 最小分钟，time类型时生效                                                                                                                            | number                           | -                               | 0               | -        |
+| maxMinute                | 最大分钟，time类型时生效                                                                                                                            | number                           | -                               | 59              | -        |
+| required                 | 表单属性，必填                                                                                                                                      | boolean                          | -                               | false           | -        |
+| marker-side              | 必填标记位置                                                                                                                                        | string                           | before / after                  | before          | 1.12.0   |
+| size                     | 设置选择器大小                                                                                                                                      | string                           | large                           | -               | -        |
+| label-width              | 设置左侧标题宽度                                                                                                                                    | string                           | -                               | 33%             | -        |
+| error                    | 是否为错误状态，错误状态时右侧内容为红色                                                                                                            | boolean                          | -                               | false           | -        |
+| align-right              | 选择器的值靠右展示                                                                                                                                  | boolean                          | -                               | false           | -        |
+| use-label-slot           | label 使用插槽，已废弃，直接使用label插槽即可                                                                                                       | boolean                          | -                               | false           | -        |
+| use-default-slot         | 使用默认插槽，已废弃，直接使用默认插槽即可                                                                                                          | boolean                          | -                               | false           | -        |
+| before-confirm           | 确定前校验函数，接收 (value, resolve, picker) 参数，通过 resolve 继续执行 picker，resolve 接收1个boolean参数                                        | function                         | -                               | -               | -        |
+| close-on-click-modal     | 点击遮罩是否关闭                                                                                                                                    | boolean                          | -                               | true            | -        |
+| z-index                  | 弹窗层级                                                                                                                                            | number                           | -                               | 15              | -        |
+| safe-area-inset-bottom   | 弹出面板是否设置底部安全距离（iphone X 类型的机型）                                                                                                 | boolean                          | -                               | true            | -        |
+| ellipsis                 | 是否超出隐藏                                                                                                                                        | boolean                          | -                               | false           | -        |
+| prop                     | 表单域 `model` 字段名，在使用表单校验功能的情况下，该属性是必填的                                                                                   | string                           | -                               | -               | -        |
+| rules                    | 表单验证规则，结合`wd-form`组件使用                                                                                                                 | `FormItemRule []`                | -                               | `[]`            | -        |
+| immediate-change         | 是否在手指松开时立即触发picker-view的 change 事件。若不开启则会在滚动动画结束后触发 change 事件，1.2.25版本起提供，仅微信小程序和支付宝小程序支持。 | boolean                          | -                               | false           | 1.2.25   |
+| use-second               | 是否显示秒选择，仅在 time 和 datetime 类型下生效                                                                                                    | boolean                          | -                               | false           | 1.10.0   |
+| clearable                | 显示清空按钮                                                                                                                                        | boolean                          | -                               | false           | 1.11.0   |
+| root-portal              | 是否从页面中脱离出来，用于解决各种 fixed 失效问题                                                                                                   | boolean                          | -                               | false           | 1.11.0   |
 
 ### FormItemRule 数据结构
 
-| 键名 | 说明 | 类型 |
-| --- | --- | --- |
-| required | 是否为必选字段	 | `boolean` |
-| message | 错误提示文案	 | `string` |
+| 键名      | 说明                                                    | 类型                                  |
+| --------- | ------------------------------------------------------- | ------------------------------------- |
+| required  | 是否为必选字段                                          | `boolean`                             |
+| message   | 错误提示文案                                            | `string`                              |
 | validator | 通过函数进行校验，可以返回一个 `Promise` 来进行异步校验 | `(value, rule) => boolean \| Promise` |
-| pattern | 通过正则表达式进行校验，正则无法匹配表示校验不通过 | `RegExp` |
+| pattern   | 通过正则表达式进行校验，正则无法匹配表示校验不通过      | `RegExp`                              |
 
 ## Events
 
-| 事件名称 | 说明 | 参数 | 最低版本 |
-|--------|------|-----|---------|
-| confirm | 点击右侧按钮触发 | `{ value }`, value 为当前选中日期的时间戳，'time' 类型则为字符串 | - |
-| cancel | 点击左侧按钮触发 | - | - |
-| toggle | 在区域选择模式下，tab标签切换时触发 | 切换到当前picker选中的值 | - |
-| clear | 点击清空按钮触发 | - | 1.11.0 |
+| 事件名称 | 说明                                | 参数                                                             | 最低版本 |
+| -------- | ----------------------------------- | ---------------------------------------------------------------- | -------- |
+| confirm  | 点击右侧按钮触发                    | `{ value }`, value 为当前选中日期的时间戳，'time' 类型则为字符串 | -        |
+| cancel   | 点击左侧按钮触发                    | -                                                                | -        |
+| toggle   | 在区域选择模式下，tab标签切换时触发 | 切换到当前picker选中的值                                         | -        |
+| clear    | 点击清空按钮触发                    | -                                                                | 1.11.0   |
 
 ## Methods
 
-| 方法名称 | 说明 | 参数 | 最低版本 |
-|--------|------|-----|---------|
-| open | 打开picker弹框 | - |
-| close | 关闭picker弹框 | - |
+| 方法名称 | 说明           | 参数 | 最低版本 |
+| -------- | -------------- | ---- | -------- |
+| open     | 打开picker弹框 | -    |
+| close    | 关闭picker弹框 | -    |
 
 ## Slot
 
-| name | 说明 | 最低版本 |
-|------|-----|---------|
-| default | 使用默认插槽 | - |
-| label | 左侧标题插槽 | - |
+| name    | 说明         | 最低版本 |
+| ------- | ------------ | -------- |
+| default | 使用默认插槽 | -        |
+| label   | 左侧标题插槽 | -        |
 
 ## 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-view-class | pickerView 外部自定义样式 | - |
-| custom-cell-class | pickerView cell 外部自定义样式 | 1.3.8 |
-| custom-label-class | label 外部自定义样式 | - |
-| custom-value-class | value 外部自定义样式 | - |
+| 类名               | 说明                           | 最低版本 |
+| ------------------ | ------------------------------ | -------- |
+| custom-view-class  | pickerView 外部自定义样式      | -        |
+| custom-cell-class  | pickerView cell 外部自定义样式 | 1.3.8    |
+| custom-label-class | label 外部自定义样式           | -        |
+| custom-value-class | value 外部自定义样式           | -        |

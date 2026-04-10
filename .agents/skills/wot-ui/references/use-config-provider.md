@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/use-config-provider.md'
+url: "https://wot-ui.cn/component/use-config-provider.md"
 ---
 
 # useConfigProvider
@@ -13,20 +13,20 @@ url: 'https://wot-ui.cn/component/use-config-provider.md'
 ## 基础用法
 
 ```ts
-import { useConfigProvider } from '@/uni_modules/wot-design-uni'
-import { reactive, ref } from 'vue'
+import { useConfigProvider } from "@/uni_modules/wot-design-uni"
+import { reactive, ref } from "vue"
 
 // 使用 reactive
 const themeVars = reactive({
-  colorTheme: 'red',
-  buttonPrimaryBgColor: '#07c160'
+  colorTheme: "red",
+  buttonPrimaryBgColor: "#07c160"
 })
 
 useConfigProvider({ themeVars })
 
 // 或者使用 ref
 const themeVarsRef = ref({
-  colorTheme: 'blue'
+  colorTheme: "blue"
 })
 
 useConfigProvider({ themeVars: themeVarsRef })
@@ -36,6 +36,6 @@ useConfigProvider({ themeVars: themeVarsRef })
 
 ### 参数
 
-| 参数 | 说明 | 类型 | 默认值 | 最低版本 |
-|-----|------|------|--------|---------|
-| themeVars | 主题变量对象，支持响应式更新 | `ConfigProviderThemeVars` | `Ref<ConfigProviderThemeVars>` | - | 1.14.0 |
+| 参数      | 说明                         | 类型                      | 默认值                         | 最低版本 |
+| --------- | ---------------------------- | ------------------------- | ------------------------------ | -------- | ------ |
+| themeVars | 主题变量对象，支持响应式更新 | `ConfigProviderThemeVars` | `Ref<ConfigProviderThemeVars>` | -        | 1.14.0 |

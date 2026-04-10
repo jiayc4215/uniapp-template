@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/icon.md'
+url: "https://wot-ui.cn/component/icon.md"
 ---
 
 # Icon 图标
@@ -39,9 +39,10 @@ url: 'https://wot-ui.cn/component/icon.md'
 
 @font-face {
   font-family: "fish";
-  src: url('//at.alicdn.com/t/c/font_4626013_vwpx4thmin.woff2?t=1721314121733') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4626013_vwpx4thmin.woff?t=1721314121733') format('woff'),
-       url('//at.alicdn.com/t/c/font_4626013_vwpx4thmin.ttf?t=1721314121733') format('truetype');
+  src:
+    url("//at.alicdn.com/t/c/font_4626013_vwpx4thmin.woff2?t=1721314121733") format("woff2"),
+    url("//at.alicdn.com/t/c/font_4626013_vwpx4thmin.woff?t=1721314121733") format("woff"),
+    url("//at.alicdn.com/t/c/font_4626013_vwpx4thmin.ttf?t=1721314121733") format("truetype");
 }
 
 .fish {
@@ -55,13 +56,12 @@ url: 'https://wot-ui.cn/component/icon.md'
 .fish-kehuishouwu:before {
   content: "\e627";
 }
-
 ```
 
 ```html
 <!-- app.vue -->
- <style>
-@import '@/iconfont/index.css';
+<style>
+  @import "@/iconfont/index.css";
 </style>
 ```
 
@@ -72,22 +72,22 @@ url: 'https://wot-ui.cn/component/icon.md'
 
 ## Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|---------|
-| name | 图标名称或图片链接 |	string | - | - | - |
-| color	| 图标的颜色 | string |	- |	inherit | - |
-| size | 图标的字体大小 | string | number | - | inherit | - |
-| classPrefix | 类名前缀，用于使用自定义图标 | string | - | 'wd-icon' | 0.1.27 |
-| custom-style | 根节点样式 | string | - | - | - |
+| 参数         | 说明                         | 类型   | 可选值 | 默认值    | 最低版本 |
+| ------------ | ---------------------------- | ------ | ------ | --------- | -------- | --- |
+| name         | 图标名称或图片链接           | string | -      | -         | -        |
+| color        | 图标的颜色                   | string | -      | inherit   | -        |
+| size         | 图标的字体大小               | string | number | -         | inherit  | -   |
+| classPrefix  | 类名前缀，用于使用自定义图标 | string | -      | 'wd-icon' | 0.1.27   |
+| custom-style | 根节点样式                   | string | -      | -         | -        |
 
 ## Events
 
-| 事件名称 | 说明 | 参数 | 最低版本 |
-|---------|------|------|---------|
-| click | 点击图标时触发 | event | - |
+| 事件名称 | 说明           | 参数  | 最低版本 |
+| -------- | -------------- | ----- | -------- |
+| click    | 点击图标时触发 | event | -        |
 
 ## 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | 根节点样式 | - |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | -        |

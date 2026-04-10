@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/notice-bar.md'
+url: "https://wot-ui.cn/component/notice-bar.md"
 ---
 
 # NoticeBar 通知栏
@@ -19,9 +19,22 @@ url: 'https://wot-ui.cn/component/notice-bar.md'
 设置 `type` 可修改通知类型，通知类型共有三种 `info`|`warning`|`danger`，默认值为`warning`。
 
 ```html
-<wd-notice-bar text="这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息" prefix="warn-bold" custom-class="space" />
-<wd-notice-bar text="这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息" prefix="check-outline" type="info" custom-class="space" />
-<wd-notice-bar text="这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息" prefix="wifi-error" type="danger" />
+<wd-notice-bar
+  text="这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息"
+  prefix="warn-bold"
+  custom-class="space"
+/>
+<wd-notice-bar
+  text="这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息"
+  prefix="check-outline"
+  type="info"
+  custom-class="space"
+/>
+<wd-notice-bar
+  text="这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息"
+  prefix="wifi-error"
+  type="danger"
+/>
 ```
 
 ```scss
@@ -134,19 +147,19 @@ const onNext = (index: number) => {
 
 ```ts
 // uni_modules
-import { type NoticeBarInstance } from '@/uni_modules/wot-design-uni/components/wd-notice-bar/types'
+import { type NoticeBarInstance } from "@/uni_modules/wot-design-uni/components/wd-notice-bar/types"
 // npm
 // import { type NoticeBarInstance } from 'wot-design-uni/components/wd-notice-bar/types'
 
 const notice = ref<NoticeBarInstance>()
 
 const textArray = ref([
-  '欢迎使用wot design uni',
-  '该组件库基于uniapp ->Vue3, ts构建',
-  '项目地址：https://github.com/Moonofweisheng/wot-design-uni',
-  '我们的目标是打造最强uniapp组件库',
-  '诚挚邀请大家共同建设',
-  '这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息'
+  "欢迎使用wot design uni",
+  "该组件库基于uniapp ->Vue3, ts构建",
+  "项目地址：https://github.com/Moonofweisheng/wot-design-uni",
+  "我们的目标是打造最强uniapp组件库",
+  "诚挚邀请大家共同建设",
+  "这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息，这是一条消息提示信息"
 ])
 
 function handleReset() {
@@ -180,9 +193,9 @@ function handleReset() {
 
 ## Methods
 
-| 方法名称 | 说明 | 参数 | 最低版本 |
-|---------|-----|-----|---------|
-| reset | 用于重置播放动画| - | 1.3.13 |
+| 方法名称 | 说明             | 参数 | 最低版本 |
+| -------- | ---------------- | ---- | -------- |
+| reset    | 用于重置播放动画 | -    | 1.3.13   |
 
 ## Slot
 

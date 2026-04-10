@@ -1,0 +1,18 @@
+{
+  // 保存文件时是否自动格式化
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit" // 保存时自动修复 ESLint 报错
+  },
+  // twwindcss 提示
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+
+  "tailwindCSS.experimental.configFile": "src/main.css",
+  // iconify 提示
+  "iconify.includes": ["mdi"]
+}

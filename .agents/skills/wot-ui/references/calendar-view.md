@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/calendar-view.md'
+url: "https://wot-ui.cn/component/calendar-view.md"
 ---
 
 # CalendarView 日历面板组件
@@ -97,7 +97,7 @@ function handleChange({ value }) {
 ```
 
 ```typescript
-const value = ref('')
+const value = ref("")
 
 function handleChange({ value }) {
   console.log(value)
@@ -111,12 +111,12 @@ function handleChange({ value }) {
 ```
 
 ```typescript
-const value = ref('')
+const value = ref("")
 
 const timeFilter = ({ type, values }) => {
-  if (type === 'minute') {
+  if (type === "minute") {
     // 只展示 0,10,20,30,40,50 分钟选项
-    return values.filter((item) => {
+    return values.filter(item => {
       return item % 10 === 0
     })
   }
@@ -164,13 +164,19 @@ function handleChange({ value }) {
 | multiple-selected | 多日期范围选择，选中的日期           |
 
 ```html
-<wd-calendar-view type="daterange" v-model="value" allow-same-day :formatter="formatter" @change="handleChange"></wd-calendar-view>
+<wd-calendar-view
+  type="daterange"
+  v-model="value"
+  allow-same-day
+  :formatter="formatter"
+  @change="handleChange"
+></wd-calendar-view>
 ```
 
 ```typescript
 const value = ref([])
 
-const formatter = (day) => {
+const formatter = day => {
   const date = new Date(day.date)
   const now = new Date()
 
@@ -182,27 +188,27 @@ const formatter = (day) => {
   const nowDa = now.getDate()
 
   if (year === nowYear && month === nowMonth && da === nowDa) {
-    day.topInfo = '今天'
+    day.topInfo = "今天"
   }
 
   if (month === 5 && da === 18) {
-    day.topInfo = '618大促'
+    day.topInfo = "618大促"
   }
 
   if (month === 10 && da === 11) {
-    day.topInfo = '京东双11'
+    day.topInfo = "京东双11"
   }
 
-  if (day.type === 'start') {
-    day.bottomInfo = '开始'
+  if (day.type === "start") {
+    day.bottomInfo = "开始"
   }
 
-  if (day.type === 'end') {
-    day.bottomInfo = '结束'
+  if (day.type === "end") {
+    day.bottomInfo = "结束"
   }
 
-  if (day.type === 'same') {
-    day.bottomInfo = '开始/结束'
+  if (day.type === "same") {
+    day.bottomInfo = "开始/结束"
   }
 
   return day

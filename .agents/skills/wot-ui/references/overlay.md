@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/overlay.md'
+url: "https://wot-ui.cn/component/overlay.md"
 ---
 
 # Overlay 遮罩层
@@ -11,8 +11,7 @@ url: 'https://wot-ui.cn/component/overlay.md'
 使用 `show` 控制遮罩层的显示/隐藏。
 
 ```html
-<wd-button type="primary" @click="show = true">显示遮罩层</wd-button>
-<wd-overlay :show="show" @click="show = false" />
+<wd-button type="primary" @click="show = true">显示遮罩层</wd-button> <wd-overlay :show="show" @click="show = false" />
 ```
 
 ## 嵌入内容
@@ -45,10 +44,10 @@ url: 'https://wot-ui.cn/component/overlay.md'
 
 ## Attributes
 
-| 参数        | 说明               | 类型              | 可选值 | 默认值 | 最低版本 |
-| ----------- | ------------------ | ----------------- | ------ | ------ | -------- |
-| show        | 是否展示遮罩层     | `boolean`         | true   | false  | -        |
-| duration    | 动画时长，单位毫秒 | `string / number` | -      | 300    | -        |
+| 参数        | 说明                                             | 类型              | 可选值 | 默认值 | 最低版本 |
+| ----------- | ------------------------------------------------ | ----------------- | ------ | ------ | -------- |
+| show        | 是否展示遮罩层                                   | `boolean`         | true   | false  | -        |
+| duration    | 动画时长，单位毫秒                               | `string / number` | -      | 300    | -        |
 | lockScroll  | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | `boolean`         | false  | true   | -        |
-| zIndex      | 层级               | `number`          | -      | 10     | -        |
-| customStyle | 自定义样式         | `string`          | -      | -      | -        |
+| zIndex      | 层级                                             | `number`          | -      | 10     | -        |
+| customStyle | 自定义样式                                       | `string`          | -      | -      | -        |

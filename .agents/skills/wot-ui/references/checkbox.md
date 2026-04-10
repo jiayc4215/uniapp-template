@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/checkbox.md'
+url: "https://wot-ui.cn/component/checkbox.md"
 ---
 
 # Checkbox 复选框
@@ -90,9 +90,9 @@ const value = ref<number[]>([])
 ```
 
 ```typescript
-const value = ref(['jingmai'])
-const value1 = ref(['jingmai'])
-const value2 = ref(['1'])
+const value = ref(["jingmai"])
+const value1 = ref(["jingmai"])
+const value2 = ref(["1"])
 ```
 
 ## 同行展示
@@ -107,7 +107,7 @@ const value2 = ref(['1'])
 ```
 
 ```typescript
-const value = ref(['jingmai'])
+const value = ref(["jingmai"])
 ```
 
 ## 禁用
@@ -122,7 +122,7 @@ const value = ref(['jingmai'])
 ```
 
 ```typescript
-const value = ref(['jingmai'])
+const value = ref(["jingmai"])
 ```
 
 ## 设置选中数量的上限和下限
@@ -139,7 +139,7 @@ const value = ref(['jingmai'])
 ```
 
 ```typescript
-const value = ref(['jd'])
+const value = ref(["jd"])
 ```
 
 ## 尺寸
@@ -180,7 +180,7 @@ const value = ref(['jd'])
 ```
 
 ```ts
-import { ref } from 'vue'
+import { ref } from "vue"
 const value = ref<string[]>([])
 const checkBox1 = ref<CheckboxInstance>()
 const checkBox2 = ref<CheckboxInstance>()

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/swipe-action.md'
+url: "https://wot-ui.cn/component/swipe-action.md"
 ---
 
 # SwipeAction 滑动操作
@@ -25,7 +25,7 @@ url: 'https://wot-ui.cn/component/swipe-action.md'
 ```html
 <view @click.stop="closeOutside">
   <wd-swipe-action>
-    <wd-cell title="标题文字" value="内容"/>
+    <wd-cell title="标题文字" value="内容" />
     <template #right>
       <view class="action">
         <view class="button" style="background: #C8C7CD;" @click="handleAction('操作1')">操作1</view>
@@ -33,14 +33,12 @@ url: 'https://wot-ui.cn/component/swipe-action.md'
         <view class="button" style="background: #E2231A;" @click="handleAction('操作3')">操作3</view>
       </view>
     </template>
-
   </wd-swipe-action>
 </view>
 ```
 
 ```typescript
-import { useToast, useQueue } from '@/uni_modules/wot-design-uni'
-
+import { useToast, useQueue } from "@/uni_modules/wot-design-uni"
 
 const { closeOutside } = useQueue()
 
@@ -119,7 +117,7 @@ function handleAction(action: string) {
 ```
 
 ```typescript
-const value = ref<string>('close')
+const value = ref<string>("close")
 function changeState(position: string) {
   value.value = position
 }
@@ -162,17 +160,17 @@ function changeState(position: string) {
 ```
 
 ```typescript
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 
 const toast = useToast()
 
-const value = ref<string>('close')
+const value = ref<string>("close")
 function changeState(position: string) {
   value.value = position
 }
 
 const beforeClose = (reason, position) => {
-  if (reason === 'click') {
+  if (reason === "click") {
     toast.show(`${reason} ${position}导致滑动按钮关闭`)
   } else {
     toast.show(`${reason}导致${position}滑动按钮关闭`)
@@ -200,7 +198,7 @@ const beforeClose = (reason, position) => {
 ```
 
 ```typescript
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 
 const toast = useToast()
 
@@ -230,7 +228,7 @@ function handleClick({ value }) {
 
 | 参数         | 说明                     | 类型     | 可选值               | 默认值 | 最低版本 |
 | ------------ | ------------------------ | -------- | -------------------- | ------ | -------- |
-| v-model        | 滑动按钮的状态           | string   | left / close / right | close  | -        |
+| v-model      | 滑动按钮的状态           | string   | left / close / right | close  | -        |
 | disabled     | 是否禁用滑动操作         | boolean  | -                    | false  | -        |
 | before-close | 关闭滑动按钮前的钩子函数 | function | -                    | -      | -        |
 

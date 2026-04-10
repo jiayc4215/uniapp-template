@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/loading.md'
+url: "https://wot-ui.cn/component/loading.md"
 ---
 
 # Loading 加载指示器
@@ -19,8 +19,7 @@ url: 'https://wot-ui.cn/component/loading.md'
 通过 `type` 调整指示器形态，可选值包括 `'ring'`（默认环形）、`'outline'`（轮廓环形）以及 `'spinner'`（风车指示，适合强调动态感）。
 
 ```html
-<wd-loading type="outline" />
-<wd-loading type="spinner" />
+<wd-loading type="outline" /> <wd-loading type="spinner" />
 ```
 
 ## 修改颜色
@@ -60,14 +59,14 @@ url: 'https://wot-ui.cn/component/loading.md'
 
 ## Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|---------|
-| type | 加载指示器类型 | string | ring / outline / spinner | ring | - |
-| color | 设置加载指示器颜色 | string | - | #4D80F0 | - |
-| size | 设置加载指示器大小 | number / string | - | 32px | - |
+| 参数  | 说明               | 类型            | 可选值                   | 默认值  | 最低版本 |
+| ----- | ------------------ | --------------- | ------------------------ | ------- | -------- |
+| type  | 加载指示器类型     | string          | ring / outline / spinner | ring    | -        |
+| color | 设置加载指示器颜色 | string          | -                        | #4D80F0 | -        |
+| size  | 设置加载指示器大小 | number / string | -                        | 32px    | -        |
 
 ## 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | 根节点样式 | - |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | -        |

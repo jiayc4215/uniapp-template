@@ -7,11 +7,7 @@
  * @param {string} [options.erudaUrl="https://cdn.jsdelivr.net/npm/eruda"] - eruda 地址
  */
 export default function vitePluginEruda(options = {}) {
-  const {
-    open = true,
-    erudaOptions = {},
-    erudaUrl = "https://cdn.jsdelivr.net/npm/eruda",
-  } = options;
+  const { open = true, erudaOptions = {}, erudaUrl = "https://cdn.jsdelivr.net/npm/eruda" } = options
 
   return {
     name: "vite-plugin-eruda",
@@ -21,21 +17,21 @@ export default function vitePluginEruda(options = {}) {
         {
           tag: "script",
           attrs: {
-            src: erudaUrl,
+            src: erudaUrl
           },
-          injectTo: "head",
+          injectTo: "head"
         },
         {
           tag: "script",
           children: `eruda.init(${JSON.stringify(erudaOptions)});`,
-          injectTo: "head",
-        },
-      ];
+          injectTo: "head"
+        }
+      ]
 
       if (!open) {
-        return html;
+        return html
       }
-      return { html, tags };
-    },
-  };
+      return { html, tags }
+    }
+  }
 }

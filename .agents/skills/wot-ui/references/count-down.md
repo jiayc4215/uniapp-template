@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/count-down.md'
+url: "https://wot-ui.cn/component/count-down.md"
 ---
 
 # CountDown 倒计时
@@ -27,7 +27,7 @@ const time = ref<number>(30 * 60 * 60 * 1000)
 ```
 
 ```ts
-const format = ref<string>('DD 天 HH 时 mm 分 ss 秒')
+const format = ref<string>("DD 天 HH 时 mm 分 ss 秒")
 const time = ref<number>(30 * 60 * 60 * 1000)
 ```
 
@@ -86,7 +86,14 @@ const time = ref<number>(30 * 60 * 60 * 1000)
 通过 `start` 方法开始倒计时，通过 `pause` 方法暂停倒计时，通过 `reset` 方法重置倒计时。
 
 ```html
-<wd-count-down ref="countDown" :time="3000" millisecond :auto-start="false" format="ss:SSS" @finish="onFinish"></wd-count-down>
+<wd-count-down
+  ref="countDown"
+  :time="3000"
+  millisecond
+  :auto-start="false"
+  format="ss:SSS"
+  @finish="onFinish"
+></wd-count-down>
 <wd-grid clickable border>
   <wd-grid-item text="开始" icon="play-circle-stroke" @itemclick="start" />
   <wd-grid-item text="暂停" icon="pause-circle" @itemclick="pause" />
@@ -108,7 +115,7 @@ const pause = () => {
 const reset = () => {
   countDown.value.reset()
 }
-const onFinish = () => showToast('倒计时结束')
+const onFinish = () => showToast("倒计时结束")
 ```
 
 ## Attributes
@@ -122,18 +129,18 @@ const onFinish = () => showToast('倒计时结束')
 
 ## Events
 
-| 事件名称 | 说明             | 参数                  | 最低版本 |
-| -------- | ---------------- | --------------------- | -------- |
-| finish   | 倒计时结束时触发 | —                     | 0.1.58   |
+| 事件名称 | 说明             | 参数              | 最低版本 |
+| -------- | ---------------- | ----------------- | -------- |
+| finish   | 倒计时结束时触发 | —                 | 0.1.58   |
 | change   | 倒计时变化时触发 | current: TimeData | 0.1.58   |
 
 ## Methods
 
-| 方法名 | 说明           | 参数                  | 最低版本 |
-| -------- | ---------------- | --------------------- | -------- |
-| start    | 开始倒计时       | —                     | 0.1.58   |
-| pause    | 暂停倒计时       | —                     | 0.1.58   |
-| reset     | 重置倒计时，若 `auto-start` 为 `true`，重设后会自动开始倒计时       | —                     | 0.1.58   |
+| 方法名 | 说明                                                          | 参数 | 最低版本 |
+| ------ | ------------------------------------------------------------- | ---- | -------- |
+| start  | 开始倒计时                                                    | —    | 0.1.58   |
+| pause  | 暂停倒计时                                                    | —    | 0.1.58   |
+| reset  | 重置倒计时，若 `auto-start` 为 `true`，重设后会自动开始倒计时 | —    | 0.1.58   |
 
 ## Slots
 

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/popover.md'
+url: "https://wot-ui.cn/component/popover.md"
 ---
 
 # Popover 气泡
@@ -25,7 +25,7 @@ Popover 的属性与 [Tooltip](/component/tooltip.html) 很类似，因此对于
 ```
 
 ```typescript
-import { useQueue } from '@/uni_modules/wot-design-uni'
+import { useQueue } from "@/uni_modules/wot-design-uni"
 
 const { closeOutside } = useQueue()
 function handleChange({ show }) {
@@ -37,13 +37,12 @@ function handleChange({ show }) {
 
 使用 `mode` 属性控制当前文字提示的展示模式。`mode` 可选参数为 `normal` / `menu`：
 
-* **normal**（普通文字模式）:
+- **normal**（普通文字模式）:
+  - 当 `mode` 处于默认状态，`content` 属性传入要显示的 `String` 字符串。
 
-  * 当 `mode` 处于默认状态，`content` 属性传入要显示的 `String` 字符串。
-
-* **menu**（列表模式）:
-  * 文字提示框会展示成列表形式，此时 `content` 属性传入 `Array` 类型，数组内对象数据结构如下方列表所示。
-  * 绑定事件 `menuclick`，在选择结束后，执行操作，列表关闭。
+- **menu**（列表模式）:
+  - 文字提示框会展示成列表形式，此时 `content` 属性传入 `Array` 类型，数组内对象数据结构如下方列表所示。
+  - 绑定事件 `menuclick`，在选择结束后，执行操作，列表关闭。
 
 列表模式下 `content` 数组内对象的数据结构：
 
@@ -61,31 +60,31 @@ function handleChange({ show }) {
 ```
 
 ```typescript
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 
 const toast = useToast()
 
 const menu = ref<Array<Record<string, any>>>([
   {
-    iconClass: 'read',
-    content: '全部标记已读'
+    iconClass: "read",
+    content: "全部标记已读"
   },
   {
-    iconClass: 'delete',
-    content: '清空最近会话'
+    iconClass: "delete",
+    content: "清空最近会话"
   },
   {
-    iconClass: 'detection',
-    content: '消息订阅设置'
+    iconClass: "detection",
+    content: "消息订阅设置"
   },
   {
-    iconClass: 'subscribe',
-    content: '消息异常检测'
+    iconClass: "subscribe",
+    content: "消息异常检测"
   }
 ])
 
 function link(e) {
-  toast.show('选择了' + e.item.content)
+  toast.show("选择了" + e.item.content)
 }
 ```
 
@@ -124,7 +123,7 @@ function link(e) {
 
 | 参数          | 说明                                       | 类型                                                         | 可选值                                                                                                                          | 默认值 | 最低版本 |
 | ------------- | ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| v-model         | 手动状态是否可见                           | boolean                                                      | -                                                                                                                               | false  | -        |
+| v-model       | 手动状态是否可见                           | boolean                                                      | -                                                                                                                               | false  | -        |
 | content       | 显示的内容，也可以通过 `slot#content` 传入 | string/array（当模式为菜单模式时，content 属性格式为 Array） | -                                                                                                                               | -      | -        |
 | mode          | 当前显示的模式，决定内容的展现形式         | string                                                       | normal（普通模式）/ menu（菜单模式）                                                                                            | normal | -        |
 | placement     | popover 的出现位置                         | string                                                       | top / top-start / top-end / bottom / bottom-start / bottom-end / left / left-start / left-end / right / right-start / right-end | bottom | -        |
@@ -140,8 +139,8 @@ function link(e) {
 
 ## Events
 
-| 事件名称       | 说明                        | 回调参数          | 最低版本 |
-| -------------- | --------------------------- | ----------------- | -------- |
+| 事件名称  | 说明                        | 回调参数          | 最低版本 |
+| --------- | --------------------------- | ----------------- | -------- |
 | open      | 显示时触发                  | -                 | -        |
 | close     | 隐藏时触发                  | -                 | -        |
 | change    | pop 显隐值变化时触发        | -                 | -        |

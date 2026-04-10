@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/input.md'
+url: "https://wot-ui.cn/component/input.md"
 ---
 
 # Input 输入框
@@ -15,7 +15,7 @@ url: 'https://wot-ui.cn/component/input.md'
 可以通过 `v-model` 双向绑定输入框的值，通过 `placeholder` 设置占位提示文字。
 
 ```typescript
-const value = ref<string>('')
+const value = ref<string>("")
 function handleChange(event) {
   console.log(event)
 }
@@ -46,7 +46,7 @@ function handleChange(event) {
 设置 `clearable` 属性。
 
 ```html
-<wd-input v-model="value" clearable @change="handleChange"/>
+<wd-input v-model="value" clearable @change="handleChange" />
 ```
 
 ## 有值且聚焦时展示清空按钮
@@ -58,7 +58,7 @@ function handleChange(event) {
 :::
 
 ```html
-<wd-input v-model="value" clear-trigger="focus" clearable @change="handleChange"/>
+<wd-input v-model="value" clear-trigger="focus" clearable @change="handleChange" />
 ```
 
 ## 点击清除按钮时不自动聚焦
@@ -74,7 +74,7 @@ function handleChange(event) {
 设置 `show-password` 属性。
 
 ```html
-<wd-input v-model="value" clearable show-password @change="handleChange"/>
+<wd-input v-model="value" clearable show-password @change="handleChange" />
 ```
 
 ## 前后icon
@@ -82,11 +82,7 @@ function handleChange(event) {
 设置前置icon `prefix-icon`，设置后置icon `suffix-icon`，icon 为 [icon](/component/icon) 章节中的图标，如果没有你需要的图标，则使用 `prefix`、`suffix` 插槽进行自定义插入。
 
 ```html
-<wd-input
-  v-model="value"
-  prefix-icon="dong"
-  suffix-icon="list"
-  @change="handleChange"/>
+<wd-input v-model="value" prefix-icon="dong" suffix-icon="list" @change="handleChange" />
 ```
 
 ## 限制字数输入
@@ -94,7 +90,7 @@ function handleChange(event) {
 设置 `maxlength` 属性，如果要显示字数限制，设置 `show-word-limit` 属性。
 
 ```html
-<wd-input v-model="value" :maxlength="20" show-word-limit @change="handleChange"/>
+<wd-input v-model="value" :maxlength="20" show-word-limit @change="handleChange" />
 ```
 
 ## 设置label标题
@@ -169,14 +165,14 @@ function handleChange(event) {
 | center                 | 当有label属性时，设置标题和输入框垂直居中，默认为顶部居中                                                                                               | boolean             | -                                                               | false                                  | -        |
 | label-width            | 设置左侧标题宽度                                                                                                                                        | string              | -                                                               | 33%                                    | -        |
 | required               | cell 类型下必填样式                                                                                                                                     | boolean             | -                                                               | false                                  | -        |
-| marker-side            | 必填标记的位置                                                                                                                                          | string              | before / after                                                  | before                                 | 1.12.0 |
+| marker-side            | 必填标记的位置                                                                                                                                          | string              | before / after                                                  | before                                 | 1.12.0   |
 | no-border              | 非 cell 类型下是否隐藏下划线                                                                                                                            | boolean             | -                                                               | false                                  | -        |
 | prop                   | 表单域 `model` 字段名，在使用表单校验功能的情况下，该属性是必填的                                                                                       | string              | -                                                               | -                                      | -        |
 | rules                  | 表单验证规则，结合`wd-form`组件使用                                                                                                                     | `FormItemRule []`   | -                                                               | `[]`                                   | -        |
 | clearTrigger           | 显示清除图标的时机，always 表示输入框不为空时展示，focus 表示输入框聚焦且不为空时展示                                                                   | `InputClearTrigger` | `focus` / `always`                                              | `always`                               | 1.3.7    |
 | focusWhenClear         | 是否在点击清除按钮时聚焦输入框                                                                                                                          | boolean             | -                                                               | true                                   | 1.3.7    |
 | ignoreCompositionEvent | 是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合成期间会触发 input 事件。 | boolean             | -                                                               | true                                   | 1.3.11   |
-| enable-native          | 支付宝小程序，可以在 input 组件中加上 enableNative="false"，避免弹出键盘后出现内容上移 | boolean             | -       | true                                   | 1.14.0 |
+| enable-native          | 支付宝小程序，可以在 input 组件中加上 enableNative="false"，避免弹出键盘后出现内容上移                                                                  | boolean             | -                                                               | true                                   | 1.14.0   |
 | inputmode              | 提供用户在编辑元素或其内容时可能输入的数据类型的提示。                                                                                                  | InputMode           | -                                                               | text                                   | 1.5.0    |
 
 ### InputMode 可选值
@@ -185,15 +181,15 @@ function handleChange(event) {
 
 在符合条件的高版本webview里，uni-app的web和app-vue平台中可使用本属性，参见[inputmode](https://uniapp.dcloud.net.cn/component/input.html#inputmode)。
 
-| 值      | 说明                                                                                                                 |
-| ------- | -------------------------------------------------------------------------------------------------------------------- |
-| none    | 无虚拟键盘。在应用程序或者站点需要实现自己的键盘输入控件时很有用。                                                   |
-| text    | 使用用户本地区域设置的标准文本输入键盘。                                                                             |
-| decimal | 小数输入键盘，包含数字和分隔符（通常是“ . ”或者“ , ”），设备可能也可能不显示减号键。                                 |
-| numeric | 数字输入键盘，所需要的就是 0 到 9 的数字，设备可能也可能不显示减号键。                                               |
-| tel     | 电话输入键盘，包含 0 到 9 的数字、星号（\*）和井号（#）键。表单输入里面的电话输入通常应该使用  。   |
-| search  | 为搜索输入优化的虚拟键盘，比如，返回键可能被重新标记为“搜索”，也可能还有其他的优化。                                 |
-| email   | 为邮件地址输入优化的虚拟键盘，通常包含"@"符号和其他优化。表单里面的邮件地址输入应该使用 。       |
+| 值      | 说明                                                                                               |
+| ------- | -------------------------------------------------------------------------------------------------- |
+| none    | 无虚拟键盘。在应用程序或者站点需要实现自己的键盘输入控件时很有用。                                 |
+| text    | 使用用户本地区域设置的标准文本输入键盘。                                                           |
+| decimal | 小数输入键盘，包含数字和分隔符（通常是“ . ”或者“ , ”），设备可能也可能不显示减号键。               |
+| numeric | 数字输入键盘，所需要的就是 0 到 9 的数字，设备可能也可能不显示减号键。                             |
+| tel     | 电话输入键盘，包含 0 到 9 的数字、星号（\*）和井号（#）键。表单输入里面的电话输入通常应该使用 。   |
+| search  | 为搜索输入优化的虚拟键盘，比如，返回键可能被重新标记为“搜索”，也可能还有其他的优化。               |
+| email   | 为邮件地址输入优化的虚拟键盘，通常包含"@"符号和其他优化。表单里面的邮件地址输入应该使用 。         |
 | url     | 为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用 。 |
 
 ## FormItemRule

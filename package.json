@@ -7,9 +7,13 @@
     "clean": "rimraf node_modules pnpm-lock.yaml",
     "upload:mp-weixin": "uni build -p mp-weixin && minici --platform weixin",
     "postinstall": "weapp-tw patch",
+    "lint": "eslint . --ext .js,.mjs,.cjs",
+    "lint:fix": "eslint . --ext .js,.mjs,.cjs --fix",
+    "lint:prettier": "prettier --write \"**/*.{js,ts,mjs,cjs,json,tsx,css,less,scss,vue,html,md}\"",
+    "commit": "git-cz",
     "dev": "unh dev --mode development",
     "build": "unh build --mode production",
-    "prepare": "unh prepare",
+    "prepare": "unh prepare && husky",
     "dev:custom": "uni -p",
     "dev:h5": "uni --mode development",
     "dev:h5:test": "uni --mode test",
@@ -74,6 +78,20 @@
     "wot-design-uni": "^1.14.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.4",
+    "@eslint/js": "^9.39.3",
+    "eslint": "^9.39.3",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.3.0",
+    "prettier": "^3.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "commitizen": "^4.3.1",
+    "cz-git": "^1.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "@dcloudio/types": "^3.4.8",
     "@dcloudio/uni-automator": "3.0.0-4080720251210001",
     "@dcloudio/uni-cli-shared": "3.0.0-4080720251210001",
@@ -102,7 +120,16 @@
       "miniprogram-ci>less": "4.5.1"
     }
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
   "engines": {
     "node": ">=20.19.0"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs}": "eslint --fix",
+    "*.{js,mjs,cjs,json,css,less,scss,vue,html,md}": "prettier --write"
   }
 }

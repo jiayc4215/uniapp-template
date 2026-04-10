@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/select-picker.md'
+url: "https://wot-ui.cn/component/select-picker.md"
 ---
 
 # SelectPicker 单复选选择器
@@ -21,22 +21,22 @@ url: 'https://wot-ui.cn/component/select-picker.md'
 ```typescript
 const columns = ref<Record<string, any>>([
   {
-    value: '101',
-    label: '男装'
+    value: "101",
+    label: "男装"
   },
   {
-    value: '102',
-    label: '奢侈品'
+    value: "102",
+    label: "奢侈品"
   },
   {
-    value: '103',
-    label: '女装'
+    value: "103",
+    label: "女装"
   }
 ])
-const value = ref<string[]>(['101'])
+const value = ref<string[]>(["101"])
 
 function handleChange({ value }) {
-  toast.show('选择了' + value)
+  toast.show("选择了" + value)
 }
 ```
 
@@ -53,19 +53,19 @@ function handleChange({ value }) {
 ```typescript
 const columns = ref<Record<string, any>>([
   {
-    value: '101',
-    label: '男装'
+    value: "101",
+    label: "男装"
   },
   {
-    value: '102',
-    label: '奢侈品'
+    value: "102",
+    label: "奢侈品"
   },
   {
-    value: '103',
-    label: '女装'
+    value: "103",
+    label: "女装"
   }
 ])
-const value = ref<string[]>(['101'])
+const value = ref<string[]>(["101"])
 ```
 
 ## 禁用
@@ -103,20 +103,20 @@ const value = ref<string[]>(['101'])
 ```typescript
 const columns = ref<Record<string, any>>([
   {
-    value: '101',
-    label: '男装',
+    value: "101",
+    label: "男装",
     disabled: true
   },
   {
-    value: '102',
-    label: '奢侈品'
+    value: "102",
+    label: "奢侈品"
   },
   {
-    value: '103',
-    label: '女装'
+    value: "103",
+    label: "女装"
   }
 ])
-const value = ref<string[]>(['101'])
+const value = ref<string[]>(["101"])
 ```
 
 ## 展示格式化
@@ -124,33 +124,38 @@ const value = ref<string[]>(['101'])
 设置 `display-format` 属性，其类型为 `function`，接收当前选中项（当类型`checkbox`时 参数是 数组类型，类型为`radio` 时参数是 `String` `Number` 或 `Boolean` 类型）, 当前的选项数组 `columns`，返回要展示的字符串。
 
 ```html
-<wd-select-picker label="展示格式化" v-model="value" :columns="columns" :display-format="displayFormat"></wd-select-picker>
+<wd-select-picker
+  label="展示格式化"
+  v-model="value"
+  :columns="columns"
+  :display-format="displayFormat"
+></wd-select-picker>
 ```
 
 ```typescript
 const columns = ref<Record<string, any>>([
   {
-    value: '101',
-    label: '男装',
+    value: "101",
+    label: "男装",
     disabled: true
   },
   {
-    value: '102',
-    label: '奢侈品'
+    value: "102",
+    label: "奢侈品"
   },
   {
-    value: '103',
-    label: '女装'
+    value: "103",
+    label: "女装"
   }
 ])
-const value = ref<string[]>(['101'])
+const value = ref<string[]>(["101"])
 
 const displayFormat = (items, columns) => {
-  let showValue = ''
-  columns.forEach((column) => {
+  let showValue = ""
+  columns.forEach(column => {
     items.forEach((item, index) => {
       if (column.value === item) {
-        showValue += `${item}: ${column.label} ${index + 1 < items.length ? '--' : ''} `
+        showValue += `${item}: ${column.label} ${index + 1 < items.length ? "--" : ""} `
       }
     })
   })
@@ -163,29 +168,34 @@ const displayFormat = (items, columns) => {
 设置 `before-confirm` 函数，在用户点击`确定`按钮时，会执行 `before-confirm` 函数，并传入`value`(选中项 也就是当前选择的值） 和 `resolve` 参数，可以对 `value` 进行校验，并通过 `resolve` 函数告知组件是否确定通过，`resolve` 接受 1 个 boolean 值，`resolve(true)` 表示选项通过，`resolve(false)` 表示选项不通过，不通过时不会关闭弹窗。
 
 ```html
-<wd-select-picker label="确定前校验" v-model="value" :columns="columns" :before-confirm="beforeConfirm"></wd-select-picker>
+<wd-select-picker
+  label="确定前校验"
+  v-model="value"
+  :columns="columns"
+  :before-confirm="beforeConfirm"
+></wd-select-picker>
 ```
 
 ```typescript
 const columns = ref<Record<string, any>>([
   {
-    value: '101',
-    label: '男装'
+    value: "101",
+    label: "男装"
   },
   {
-    value: '102',
-    label: '奢侈品'
+    value: "102",
+    label: "奢侈品"
   },
   {
-    value: '103',
-    label: '女装'
+    value: "103",
+    label: "女装"
   }
 ])
-const value = ref<string[]>(['101'])
+const value = ref<string[]>(["101"])
 
 const beforeConfirm = (value, resolve) => {
   if (value.length > 0) {
-    toast.error('暂时无法选择商品')
+    toast.error("暂时无法选择商品")
     resolve(false)
   } else {
     resolve(true)
@@ -261,112 +271,112 @@ const beforeConfirm = (value, resolve) => {
 ```
 
 ```typescript
-const value = ref<string[]>(['102'])
+const value = ref<string[]>(["102"])
 
 const columns = ref<Record<string, any>>([
   {
-    value: '101',
-    label: '男装'
+    value: "101",
+    label: "男装"
   },
   {
-    value: '102',
-    label: '奢侈品'
+    value: "102",
+    label: "奢侈品"
   },
   {
-    value: '103',
-    label: '女装'
+    value: "103",
+    label: "女装"
   },
   {
-    value: '104',
-    label: '鞋靴'
+    value: "104",
+    label: "鞋靴"
   },
   {
-    value: '105',
-    label: '内衣配饰'
+    value: "105",
+    label: "内衣配饰"
   },
   {
-    value: '106',
-    label: '箱包'
+    value: "106",
+    label: "箱包"
   },
   {
-    value: '107',
-    label: '美妆护肤'
+    value: "107",
+    label: "美妆护肤"
   },
   {
-    value: '108',
-    label: '个性清洁'
+    value: "108",
+    label: "个性清洁"
   },
   {
-    value: '109',
-    label: '钟表珠宝'
+    value: "109",
+    label: "钟表珠宝"
   },
   {
-    value: '110',
-    label: '手机'
+    value: "110",
+    label: "手机"
   },
   {
-    value: '111',
-    label: '数码'
+    value: "111",
+    label: "数码"
   },
   {
-    value: '112',
-    label: '电脑办公'
+    value: "112",
+    label: "电脑办公"
   }
 ])
 
 function handleConfirm({ value, selectedItems }) {
   console.log(value)
   customShow.value = selectedItems
-    .map((item) => {
+    .map(item => {
       return item.label
     })
-    .join(', ')
+    .join(", ")
 }
 ```
 
 ## Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|------|------|------|--------|--------|----------|
-| v-model | 选中项，`type`为`checkbox`时类型为array；`type`为`radio`时类型为number/boolean/string | array/number/boolean/string | - | - | - |
-| columns | 选择器数据，一维数组 | array | - | - | - |
-| type | 单复选选择器类型 | string | checkbox/radio | checkbox | - |
-| value-key | 选项对象中value对应的key | string | - | value | - |
-| label-key | 选项对象中展示文本对应的key | string | - | label | - |
-| title | 弹出层标题 | string | - | - | - |
-| label | 选择器左侧文案 | string | - | - | - |
-| placeholder | 选择器占位符 | string | - | 请选择 | - |
-| disabled | 禁用 | boolean | - | false | - |
-| loading | 加载中 | boolean | - | false | - |
-| loading-color | 加载颜色（十六进制，不能缩写） | String | - | #4D80F0 | - |
-| readonly | 只读 | boolean | - | false | - |
-| display-format | 自定义展示文案的格式化函数 | function | - | - | - |
-| confirm-button-text | 确认按钮文案 | string | - | 确认 | - |
-| size | 选择器大小 | string | large | - | - |
-| label-width | 左侧标题宽度 | string | - | 33% | - |
-| error | 错误状态（右侧内容红色） | boolean | - | false | - |
-| required | 必填样式 | boolean | - | false | - |
-| marker-side | 必填标记位置 | string | before / after | before | 1.12.0 |
-| align-right | 值靠右展示 | boolean | - | false | - |
-| before-confirm | 确定前校验函数，接收(value,resolve)参数 | function | - | - | - |
-| select-size | picker内部选项组尺寸 | string | large | - | - |
-| min | 最小选中数量（仅checkbox） | number | - | 0 | - |
-| max | 最大选中数量（0为无限，仅checkbox） | number | - | 0 | - |
-| checked-color | 选中颜色（单/复选框） | string | - | #4D80F0 | - |
-| use-default-slot | 使用默认插槽 | boolean | - | false | - |
-| use-label-slot | 使用label插槽 | boolean | - | false | - |
-| close-on-click-modal | 点击遮罩关闭 | boolean | - | true | - |
-| z-index | 弹窗层级 | number | - | 15 | - |
-| safe-area-inset-bottom | 底部安全距离（iPhone X类机型） | boolean | - | true | - |
-| filterable | 可搜索（仅本地） | boolean | - | false | - |
-| filter-placeholder | 搜索框占位符 | string | - | 搜索 | - |
-| ellipsis | 超出隐藏 | boolean | - | false | - |
-| scroll-into-view | 重新打开时滚动到选中项 | boolean | - | true | 0.1.34 |
-| show-confirm | 是否显示确认按钮（仅radio） | boolean | - | true | 1.2.8 |
-| prop | 表单域model字段名（校验必填） | string | - | - | - |
-| rules | 表单验证规则（配合wd-form） | `FormItemRule[]` | - | `[]` | - |
-| clearable | 显示清空按钮 | boolean | - | false | 1.11.0 |
-| root-portal | 脱离页面解决fixed失效问题 | boolean | - | false | 1.11.0 |
+| 参数                   | 说明                                                                                  | 类型                        | 可选值         | 默认值   | 最低版本 |
+| ---------------------- | ------------------------------------------------------------------------------------- | --------------------------- | -------------- | -------- | -------- |
+| v-model                | 选中项，`type`为`checkbox`时类型为array；`type`为`radio`时类型为number/boolean/string | array/number/boolean/string | -              | -        | -        |
+| columns                | 选择器数据，一维数组                                                                  | array                       | -              | -        | -        |
+| type                   | 单复选选择器类型                                                                      | string                      | checkbox/radio | checkbox | -        |
+| value-key              | 选项对象中value对应的key                                                              | string                      | -              | value    | -        |
+| label-key              | 选项对象中展示文本对应的key                                                           | string                      | -              | label    | -        |
+| title                  | 弹出层标题                                                                            | string                      | -              | -        | -        |
+| label                  | 选择器左侧文案                                                                        | string                      | -              | -        | -        |
+| placeholder            | 选择器占位符                                                                          | string                      | -              | 请选择   | -        |
+| disabled               | 禁用                                                                                  | boolean                     | -              | false    | -        |
+| loading                | 加载中                                                                                | boolean                     | -              | false    | -        |
+| loading-color          | 加载颜色（十六进制，不能缩写）                                                        | String                      | -              | #4D80F0  | -        |
+| readonly               | 只读                                                                                  | boolean                     | -              | false    | -        |
+| display-format         | 自定义展示文案的格式化函数                                                            | function                    | -              | -        | -        |
+| confirm-button-text    | 确认按钮文案                                                                          | string                      | -              | 确认     | -        |
+| size                   | 选择器大小                                                                            | string                      | large          | -        | -        |
+| label-width            | 左侧标题宽度                                                                          | string                      | -              | 33%      | -        |
+| error                  | 错误状态（右侧内容红色）                                                              | boolean                     | -              | false    | -        |
+| required               | 必填样式                                                                              | boolean                     | -              | false    | -        |
+| marker-side            | 必填标记位置                                                                          | string                      | before / after | before   | 1.12.0   |
+| align-right            | 值靠右展示                                                                            | boolean                     | -              | false    | -        |
+| before-confirm         | 确定前校验函数，接收(value,resolve)参数                                               | function                    | -              | -        | -        |
+| select-size            | picker内部选项组尺寸                                                                  | string                      | large          | -        | -        |
+| min                    | 最小选中数量（仅checkbox）                                                            | number                      | -              | 0        | -        |
+| max                    | 最大选中数量（0为无限，仅checkbox）                                                   | number                      | -              | 0        | -        |
+| checked-color          | 选中颜色（单/复选框）                                                                 | string                      | -              | #4D80F0  | -        |
+| use-default-slot       | 使用默认插槽                                                                          | boolean                     | -              | false    | -        |
+| use-label-slot         | 使用label插槽                                                                         | boolean                     | -              | false    | -        |
+| close-on-click-modal   | 点击遮罩关闭                                                                          | boolean                     | -              | true     | -        |
+| z-index                | 弹窗层级                                                                              | number                      | -              | 15       | -        |
+| safe-area-inset-bottom | 底部安全距离（iPhone X类机型）                                                        | boolean                     | -              | true     | -        |
+| filterable             | 可搜索（仅本地）                                                                      | boolean                     | -              | false    | -        |
+| filter-placeholder     | 搜索框占位符                                                                          | string                      | -              | 搜索     | -        |
+| ellipsis               | 超出隐藏                                                                              | boolean                     | -              | false    | -        |
+| scroll-into-view       | 重新打开时滚动到选中项                                                                | boolean                     | -              | true     | 0.1.34   |
+| show-confirm           | 是否显示确认按钮（仅radio）                                                           | boolean                     | -              | true     | 1.2.8    |
+| prop                   | 表单域model字段名（校验必填）                                                         | string                      | -              | -        | -        |
+| rules                  | 表单验证规则（配合wd-form）                                                           | `FormItemRule[]`            | -              | `[]`     | -        |
+| clearable              | 显示清空按钮                                                                          | boolean                     | -              | false    | 1.11.0   |
+| root-portal            | 脱离页面解决fixed失效问题                                                             | boolean                     | -              | false    | 1.11.0   |
 
 ### FormItemRule 数据结构
 
@@ -394,7 +404,7 @@ function handleConfirm({ value, selectedItems }) {
 | cancel   | 点击关闭按钮或者蒙层时触发 | -                                                                                                          | -        |
 | close    | 弹窗关闭时触发             | -                                                                                                          | 1.2.29   |
 | open     | 弹窗打开时触发             | -                                                                                                          | 1.2.29   |
-| clear    | 点击清空按钮时触发     | -                                                                                                    | 1.11.0    |
+| clear    | 点击清空按钮时触发         | -                                                                                                          | 1.11.0   |
 
 ## Methods
 

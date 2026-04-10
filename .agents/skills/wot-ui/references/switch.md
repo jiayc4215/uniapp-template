@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/switch.md'
+url: "https://wot-ui.cn/component/switch.md"
 ---
 
 # Switch 开关
@@ -55,13 +55,13 @@ const checked = ref<boolean>(true)
 ```
 
 ```typescript
-import { useMessage } from '@/uni_modules/wot-design-uni'
+import { useMessage } from "@/uni_modules/wot-design-uni"
 
 const message = useMessage()
 
 const beforeChange = ({ value, resolve }) => {
   message
-    .confirm('是否切换开关')
+    .confirm("是否切换开关")
     .then(() => {
       resolve(true)
     })
@@ -73,25 +73,25 @@ const beforeChange = ({ value, resolve }) => {
 
 ## Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|---------|
-| v-model |	绑定值 |	boolean / string / number | - |	-  | - |
-| disabled | 禁用 | boolean | - | false | - |
-| active-value | 打开时的值 | boolean / string / number | - | true | - |
-| inactive-value | 关闭时的值 | boolean / string / number | - | false | - |
-| active-color | 打开时的背景色 | string | - | #4D80F0 | - |
-| inactive-color | 关闭时的背景色，默认为白色，所以有灰色边框，如果设置了该值，则会自动去除灰色边框 | string | - | #fff | - |
-| size | 开关大小，可以为任何单位的字符串尺寸 | string/number | - | 28px | - |
-| before-change | 修改前钩子 | function | - | - | - |
+| 参数           | 说明                                                                             | 类型                      | 可选值 | 默认值  | 最低版本 |
+| -------------- | -------------------------------------------------------------------------------- | ------------------------- | ------ | ------- | -------- |
+| v-model        | 绑定值                                                                           | boolean / string / number | -      | -       | -        |
+| disabled       | 禁用                                                                             | boolean                   | -      | false   | -        |
+| active-value   | 打开时的值                                                                       | boolean / string / number | -      | true    | -        |
+| inactive-value | 关闭时的值                                                                       | boolean / string / number | -      | false   | -        |
+| active-color   | 打开时的背景色                                                                   | string                    | -      | #4D80F0 | -        |
+| inactive-color | 关闭时的背景色，默认为白色，所以有灰色边框，如果设置了该值，则会自动去除灰色边框 | string                    | -      | #fff    | -        |
+| size           | 开关大小，可以为任何单位的字符串尺寸                                             | string/number             | -      | 28px    | -        |
+| before-change  | 修改前钩子                                                                       | function                  | -      | -       | -        |
 
 ## Events
 
-| 事件名称 | 说明 | 参数 | 最低版本 |
-|--------|------|-----|---------|
-| change | 值修改事件 | `{ value }` | - |
+| 事件名称 | 说明       | 参数        | 最低版本 |
+| -------- | ---------- | ----------- | -------- |
+| change   | 值修改事件 | `{ value }` | -        |
 
 ## 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|-----|---------|
-| custom-class | 根节点样式 | - |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | -        |

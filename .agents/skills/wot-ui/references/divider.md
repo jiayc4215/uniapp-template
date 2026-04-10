@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/divider.md'
+url: "https://wot-ui.cn/component/divider.md"
 ---
 
 # Divider 分割线
@@ -88,18 +88,18 @@ url: 'https://wot-ui.cn/component/divider.md'
 
 ## Attributes
 
-| 参数             | 说明                           | 类型    | 可选值                  | 默认值   | 最低版本         |
-| ---------------- | ------------------------------ | ------- | ----------------------- | -------- | ---------------- |
-| color            | 自定义颜色，支持所有颜色的写法 | string  | -                       | -        | -                |
-| hairline         | 是否显示边框                   | boolean | -                       | true     | 1.5.0 |
-| dashed           | 是否显示为虚线                 | boolean | -                       | false    | 1.5.0 |
-| content-position | 内容位置                       | string  | `left`/`center`/`right` | `center` | 1.5.0 |
-| vertical         | 是否显示为垂直分割线           | boolean | -                       | false    | 1.5.0 |
+| 参数             | 说明                           | 类型    | 可选值                  | 默认值   | 最低版本 |
+| ---------------- | ------------------------------ | ------- | ----------------------- | -------- | -------- |
+| color            | 自定义颜色，支持所有颜色的写法 | string  | -                       | -        | -        |
+| hairline         | 是否显示边框                   | boolean | -                       | true     | 1.5.0    |
+| dashed           | 是否显示为虚线                 | boolean | -                       | false    | 1.5.0    |
+| content-position | 内容位置                       | string  | `left`/`center`/`right` | `center` | 1.5.0    |
+| vertical         | 是否显示为垂直分割线           | boolean | -                       | false    | 1.5.0    |
 
 ## Slot
 
-| name    | 说明 | 最低版本 |
-| ------- | ---- | -------- |
+| name    | 说明                                    | 最低版本 |
+| ------- | --------------------------------------- | -------- |
 | default | 内容，仅在 `vertical` 为 `false` 时生效 | -        |
 
 ## 外部样式类

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/form.md'
+url: "https://wot-ui.cn/component/form.md"
 ---
 
 # Form 表单
@@ -600,9 +600,20 @@ function handleValidate() {
         clearable
         v-model="model.cardId"
       />
-      <wd-input label="玛卡巴卡" label-width="100px" prop="phone" placeholder="请输入玛卡巴卡" clearable v-model="model.phone" />
+      <wd-input
+        label="玛卡巴卡"
+        label-width="100px"
+        prop="phone"
+        placeholder="请输入玛卡巴卡"
+        clearable
+        v-model="model.phone"
+      />
       <wd-cell title="活动图片" title-width="100px" prop="fileList">
-        <wd-upload :file-list="model.fileList" action="https://ftf.jd.com/api/uploadImg" @change="handleFileChange"></wd-upload>
+        <wd-upload
+          :file-list="model.fileList"
+          action="https://ftf.jd.com/api/uploadImg"
+          @change="handleFileChange"
+        ></wd-upload>
       </wd-cell>
     </wd-cell-group>
     <view class="tip">
@@ -942,12 +953,12 @@ function handleIconClick() {
 
 ## Attributes
 
-| 参数          | 说明                                                                                | 类型                  | 可选值 | 默认值    | 最低版本         |
-| ------------- | ----------------------------------------------------------------------------------- | --------------------- | ------ | --------- | ---------------- |
-| model         | 表单数据对象                                                                        | `Record<string, any>` | -      | -         | 0.2.0            |
-| rules         | 表单验证规则                                                                        | `FormRules`           | -      | -         | 0.2.0            |
-| resetOnChange | 表单数据变化时是否重置表单提示信息（设置为 false 时需要开发者单独对变更项进行校验） | `boolean`             | -      | `true`    | 0.2.16           |
-| errorType     | 校验错误提示方式                                                                    | `toast/message/none`  | -      | `message` | 1.3.8 |
+| 参数          | 说明                                                                                | 类型                  | 可选值 | 默认值    | 最低版本 |
+| ------------- | ----------------------------------------------------------------------------------- | --------------------- | ------ | --------- | -------- |
+| model         | 表单数据对象                                                                        | `Record<string, any>` | -      | -         | 0.2.0    |
+| rules         | 表单验证规则                                                                        | `FormRules`           | -      | -         | 0.2.0    |
+| resetOnChange | 表单数据变化时是否重置表单提示信息（设置为 false 时需要开发者单独对变更项进行校验） | `boolean`             | -      | `true`    | 0.2.16   |
+| errorType     | 校验错误提示方式                                                                    | `toast/message/none`  | -      | `message` | 1.3.8    |
 
 ### FormItemRule 数据结构
 
@@ -960,10 +971,10 @@ function handleIconClick() {
 
 ## Events
 
-| 事件名称 | 说明                                                                           | 参数            | 最低版本 |
-| -------- | ------------------------------------------------------------------------------ | --------------- | -------- |
+| 事件名称 | 说明                                                                                                     | 参数                      | 最低版本 |
+| -------- | -------------------------------------------------------------------------------------------------------- | ------------------------- | -------- |
 | validate | 验证表单，支持传入一个 prop 来验证单个表单项，不传入 prop 时，会验证所有表单项，1.6.0 版本起支持传入数组 | `prop?: string\|string[]` | 0.2.0    |
-| reset    | 重置校验结果                                                                   | -               | 0.2.0    |
+| reset    | 重置校验结果                                                                                             | -                         | 0.2.0    |
 
 ## 外部样式类
 

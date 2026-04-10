@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/action-sheet.md'
+url: "https://wot-ui.cn/component/action-sheet.md"
 ---
 
 # ActionSheet 动作面板
@@ -28,14 +28,14 @@ url: 'https://wot-ui.cn/component/action-sheet.md'
 const show = ref<boolean>(false)
 const actions = ref([
   {
-    name: '选项1'
+    name: "选项1"
   },
   {
-    name: '选项2'
+    name: "选项2"
   },
   {
-    name: '选项3',
-    subname: '描述信息'
+    name: "选项3",
+    subname: "描述信息"
   }
 ])
 
@@ -67,11 +67,11 @@ function select({ item, index }) {
 const show = ref<boolean>(false)
 const actions = ref([
   {
-    name: '颜色',
-    color: '#0083ff'
+    name: "颜色",
+    color: "#0083ff"
   },
   {
-    name: '禁用',
+    name: "禁用",
     disabled: true
   },
   {
@@ -113,8 +113,8 @@ function close() {
 const show = ref<boolean>(false)
 const panels = ref([
   {
-    iconUrl: '//img12.360buyimg.com/imagetools/jfs/t1/122016/33/6657/1362/5f0692a1E8708d245/e47299e5945a6956.png',
-    title: '微信好友'
+    iconUrl: "//img12.360buyimg.com/imagetools/jfs/t1/122016/33/6657/1362/5f0692a1E8708d245/e47299e5945a6956.png",
+    title: "微信好友"
   }
 ])
 function showActions() {
@@ -150,14 +150,14 @@ const show = ref<boolean>(false)
 const panels = ref([
   [
     {
-      iconUrl: '//img12.360buyimg.com/imagetools/jfs/t1/122016/33/6657/1362/5f0692a1E8708d245/e47299e5945a6956.png',
-      title: '微信好友'
+      iconUrl: "//img12.360buyimg.com/imagetools/jfs/t1/122016/33/6657/1362/5f0692a1E8708d245/e47299e5945a6956.png",
+      title: "微信好友"
     }
   ],
   [
     {
-      iconUrl: '//img12.360buyimg.com/imagetools/jfs/t1/122016/33/6657/1362/5f0692a1E8708d245/e47299e5945a6956.png',
-      title: '微信好友'
+      iconUrl: "//img12.360buyimg.com/imagetools/jfs/t1/122016/33/6657/1362/5f0692a1E8708d245/e47299e5945a6956.png",
+      title: "微信好友"
     }
   ]
 ])
@@ -191,28 +191,28 @@ function select({ item, index }) {
 | 参数                   | 说明                                                                          | 类型    | 可选值 | 默认值  | 最低版本 |
 | ---------------------- | ----------------------------------------------------------------------------- | ------- | ------ | ------- | -------- |
 | v-model                | 设置菜单显示隐藏                                                              | boolean | -      | -       | -        |
-| actions                | 菜单选项                                                                      | array   | -      | \[]      | -        |
-| panels                 | 自定义面板项,可以为字符串数组，也可以为对象数组，如果为二维数组，则为多行展示 | array   | -      | \[]      | -        |
+| actions                | 菜单选项                                                                      | array   | -      | \[]     | -        |
+| panels                 | 自定义面板项,可以为字符串数组，也可以为对象数组，如果为二维数组，则为多行展示 | array   | -      | \[]     | -        |
 | title                  | 标题                                                                          | string  | -      | -       | -        |
 | cancel-text            | 取消按钮文案                                                                  | string  | -      | -       | -        |
 | close-on-click-action  | 点击选项后是否关闭菜单                                                        | boolean | -      | true    | -        |
 | close-on-click-modal   | 点击遮罩是否关闭                                                              | boolean | -      | true    | -        |
 | duration               | 动画持续时间                                                                  | number  | -      | 200(ms) | -        |
 | z-index                | 菜单层级                                                                      | number  | -      | 10      | -        |
-| lazy-render            | 弹层内容懒渲染，触发展示时才渲染内容                                          | boolean | -      | true    | -    |
-| safe-area-inset-bottom | 弹出面板是否设置底部安全距离（iphone X 类型的机型）                           | boolean | -      | true    | -    |
+| lazy-render            | 弹层内容懒渲染，触发展示时才渲染内容                                          | boolean | -      | true    | -        |
+| safe-area-inset-bottom | 弹出面板是否设置底部安全距离（iphone X 类型的机型）                           | boolean | -      | true    | -        |
 
 ## Events
 
-| 事件名称   | 说明                     | 参数                                                                                                                                              | 最低版本 |
-| ---------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| select     | 点击选项时触发           | 菜单选项或自定义面板一维数组 （item: 选项对象, index: 选项下标），自定义面板二维数组（item: 选项对象, rowIndex: 选项行下标, colIndex 选项列下标） | -        |
-| open       | 弹出层打开时触发         | -                                                                                                                                                 | -        |
-| opened     | 弹出层打开动画结束时触发 | -                                                                                                                                                 | -        |
-| close      | 弹出层关闭时触发         | -                                                                                                                                                 | -        |
-| closed     | 弹出层关闭动画结束时触发 | -                                                                                                                                                 | -        |
+| 事件名称    | 说明                     | 参数                                                                                                                                              | 最低版本 |
+| ----------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| select      | 点击选项时触发           | 菜单选项或自定义面板一维数组 （item: 选项对象, index: 选项下标），自定义面板二维数组（item: 选项对象, rowIndex: 选项行下标, colIndex 选项列下标） | -        |
+| open        | 弹出层打开时触发         | -                                                                                                                                                 | -        |
+| opened      | 弹出层打开动画结束时触发 | -                                                                                                                                                 | -        |
+| close       | 弹出层关闭时触发         | -                                                                                                                                                 | -        |
+| closed      | 弹出层关闭动画结束时触发 | -                                                                                                                                                 | -        |
 | click-modal | 点击遮罩时触发           | -                                                                                                                                                 | -        |
-| cancel     | 点击取消按钮时触发       | -                                                                                                                                                 | -        |
+| cancel      | 点击取消按钮时触发       | -                                                                                                                                                 | -        |
 
 ## Action 数据结构
 

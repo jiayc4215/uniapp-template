@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/img.md'
+url: "https://wot-ui.cn/component/img.md"
 ---
 
 # Img 图片
@@ -24,7 +24,7 @@ url: 'https://wot-ui.cn/component/img.md'
 
 ```typescript
 // import { joy } from '../images/joy'
-const joy = 'data:image/jpeg;base64,...' // 图片文件base64
+const joy = "data:image/jpeg;base64,..." // 图片文件base64
 ```
 
 :::tip 提示
@@ -33,8 +33,8 @@ const joy = 'data:image/jpeg;base64,...' // 图片文件base64
 ```typescript
 // vite.config.(js|ts)
 
-import uni from '@dcloudio/vite-plugin-uni'
-import { defineConfig } from 'vite'
+import uni from "@dcloudio/vite-plugin-uni"
+import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [
@@ -44,7 +44,7 @@ export default defineConfig({
         template: {
           transformAssetUrls: {
             tags: {
-              'wd-img': ['src']
+              "wd-img": ["src"]
             }
           }
         }
@@ -129,17 +129,17 @@ mode 为小程序原生属性，参考[微信小程序 image 官方文档](https
 
 ## Attributes
 
-| 参数                   | 说明                                               | 类型            | 可选值                                                                                                                                                                             | 默认值        | 最低版本         |
-| ---------------------- | -------------------------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
-| src                    | 图片链接                                           | string          | -                                                                                                                                                                                  | -             | -                |
-| width                  | 宽度，默认单位为 px                                | number / string | -                                                                                                                                                                                  | -             | -                |
-| height                 | 高度，默认单位为 px                                | number / string | -                                                                                                                                                                                  | -             | -                |
-| mode                   | 填充模式                                           | ImageMode       | 'top left' / 'top right' / 'bottom left' / 'bottom right' / 'right' / 'left' / 'center' / 'bottom' / 'top' / 'heightFix' / 'widthFix' / 'aspectFill' / 'aspectFit' / 'scaleToFill' | 'scaleToFill' | -                |
-| round                  | 是否显示为圆形                                     | boolean         | -                                                                                                                                                                                  | false         | -                |
-| radius                 | 圆角大小，默认单位为 px                            | number / string | -                                                                                                                                                                                  | -             | -                |
-| enable-preview         | 是否支持点击预览                                   | boolean         | -                                                                                                                                                                                  | false         | 1.2.11           |
-| show-menu-by-longpress | 开启长按图片显示识别小程序码菜单，仅微信小程序支持 | boolean         | -                                                                                                                                                                                  | false         | 1.3.11 |
-| preview-src             | 预览图片链接                                     | string           |  -                                                                                 | -             | 1.8.0 |
+| 参数                   | 说明                                               | 类型            | 可选值                                                                                                                                                                             | 默认值        | 最低版本 |
+| ---------------------- | -------------------------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------- |
+| src                    | 图片链接                                           | string          | -                                                                                                                                                                                  | -             | -        |
+| width                  | 宽度，默认单位为 px                                | number / string | -                                                                                                                                                                                  | -             | -        |
+| height                 | 高度，默认单位为 px                                | number / string | -                                                                                                                                                                                  | -             | -        |
+| mode                   | 填充模式                                           | ImageMode       | 'top left' / 'top right' / 'bottom left' / 'bottom right' / 'right' / 'left' / 'center' / 'bottom' / 'top' / 'heightFix' / 'widthFix' / 'aspectFill' / 'aspectFit' / 'scaleToFill' | 'scaleToFill' | -        |
+| round                  | 是否显示为圆形                                     | boolean         | -                                                                                                                                                                                  | false         | -        |
+| radius                 | 圆角大小，默认单位为 px                            | number / string | -                                                                                                                                                                                  | -             | -        |
+| enable-preview         | 是否支持点击预览                                   | boolean         | -                                                                                                                                                                                  | false         | 1.2.11   |
+| show-menu-by-longpress | 开启长按图片显示识别小程序码菜单，仅微信小程序支持 | boolean         | -                                                                                                                                                                                  | false         | 1.3.11   |
+| preview-src            | 预览图片链接                                       | string          | -                                                                                                                                                                                  | -             | 1.8.0    |
 
 ## Events
 

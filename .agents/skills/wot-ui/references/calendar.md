@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/calendar.md'
+url: "https://wot-ui.cn/component/calendar.md"
 ---
 
 # Calendar 日历选择器
@@ -92,7 +92,7 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-const value = ref<string>('')
+const value = ref<string>("")
 function handleConfirm({ value }) {
   console.log(value)
 }
@@ -105,12 +105,12 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-const value = ref<string>('')
+const value = ref<string>("")
 
 function timeFilter({ type, values }) {
-  if (type === 'minute') {
+  if (type === "minute") {
     // 只展示 0,10,20,30,40,50 分钟选项
-    return values.filter((item) => {
+    return values.filter(item => {
       return item % 10 === 0
     })
   }
@@ -160,16 +160,16 @@ function handleConfirm({ value }) {
 
 ### CalendarDayType
 
-| 类型              | 说明                                 | 最低版本         |
-| ----------------- | ------------------------------------ | ---------------- |
-| selected          | 单日期选中                           | -                |
-| start             | 范围开始日期                         | -                |
-| end               | 范围结束日期                         | -                |
-| middle            | 范围开始与结束之间的日期             | -                |
-| same              | 范围开始与结束日期同一天             | -                |
-| current           | 当前日期                             | -                |
-| multiple-middle   | 多日期范围选择，开始与结束之间的日期 | 1.5.0 |
-| multiple-selected | 多日期范围选择，选中的日期           | 1.5.0 |
+| 类型              | 说明                                 | 最低版本 |
+| ----------------- | ------------------------------------ | -------- |
+| selected          | 单日期选中                           | -        |
+| start             | 范围开始日期                         | -        |
+| end               | 范围结束日期                         | -        |
+| middle            | 范围开始与结束之间的日期             | -        |
+| same              | 范围开始与结束日期同一天             | -        |
+| current           | 当前日期                             | -        |
+| multiple-middle   | 多日期范围选择，开始与结束之间的日期 | 1.5.0    |
+| multiple-selected | 多日期范围选择，选中的日期           | 1.5.0    |
 
 ```html
 <wd-calendar type="daterange" v-model="value" allow-same-day :formatter="formatter" @confirm="handleConfirm" />
@@ -182,7 +182,7 @@ function handleConfirm({ value }) {
   console.log(value)
 }
 
-const formatter = (day) => {
+const formatter = day => {
   const date = new Date(day.date)
   const now = new Date()
   const year = date.getFullYear()
@@ -193,27 +193,27 @@ const formatter = (day) => {
   const nowDa = now.getDate()
 
   if (year === nowYear && month === nowMonth && da === nowDa) {
-    day.topInfo = '今天'
+    day.topInfo = "今天"
   }
 
   if (month === 5 && da === 18) {
-    day.topInfo = '618大促'
+    day.topInfo = "618大促"
   }
 
   if (month === 10 && da === 11) {
-    day.topInfo = '京东双11'
+    day.topInfo = "京东双11"
   }
 
-  if (day.type === 'start') {
-    day.bottomInfo = '开始'
+  if (day.type === "start") {
+    day.bottomInfo = "开始"
   }
 
-  if (day.type === 'end') {
-    day.bottomInfo = '结束'
+  if (day.type === "end") {
+    day.bottomInfo = "结束"
   }
 
-  if (day.type === 'same') {
-    day.bottomInfo = '开始/结束'
+  if (day.type === "same") {
+    day.bottomInfo = "开始/结束"
   }
 
   return day
@@ -238,19 +238,19 @@ const formatter = (day) => {
 ```typescript
 const shortcuts = ref<Record<string, any>[]>([
   {
-    text: '近7天',
+    text: "近7天",
     id: 7
   },
   {
-    text: '近15天',
+    text: "近15天",
     id: 15
   },
   {
-    text: '近30天',
+    text: "近30天",
     id: 30
   }
 ])
-const value = ref<string>('')
+const value = ref<string>("")
 
 const onShortcutsClick = ({ item }) => {
   const dayDiff = item.id
@@ -285,20 +285,20 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-import { dayjs } from '@/uni_modules/wot-design-uni'
+import { dayjs } from "@/uni_modules/wot-design-uni"
 
-const value = ref<string>('')
+const value = ref<string>("")
 
-const displayFormat = (value) => {
-  return dayjs(value[0]).format('YY年MM月DD日') + ' - ' + dayjs(value[1]).format('YY年MM月DD日')
+const displayFormat = value => {
+  return dayjs(value[0]).format("YY年MM月DD日") + " - " + dayjs(value[1]).format("YY年MM月DD日")
 }
 
 const innerDisplayFormat = (value, rangeType) => {
   if (!value) {
-    return rangeType === 'start' ? '活动开始时间' : '活动结束时间'
+    return rangeType === "start" ? "活动开始时间" : "活动结束时间"
   }
 
-  return dayjs(value).format('YY年MM月DD日')
+  return dayjs(value).format("YY年MM月DD日")
 }
 
 function handleConfirm({ value }) {
@@ -317,15 +317,15 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 
 const toast = useToast()
 
-const value = ref<string>('')
+const value = ref<string>("")
 
 const beforeConfirm = ({ value, resolve }) => {
   if (value > Date.now()) {
-    toast.error('该日期暂无数据')
+    toast.error("该日期暂无数据")
     resolve(false)
   } else {
     resolve(true)
@@ -362,7 +362,7 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-import { ref, nextTick } from 'vue'
+import { ref, nextTick } from "vue"
 
 const value = ref<number>(Date.now())
 
@@ -398,8 +398,8 @@ const getToday = <R extends boolean = false>(range?: R): R extends true ? [numbe
 ```
 
 ```typescript
-const value = ref<string>('')
-const formatValue = ref<string>('')
+const value = ref<string>("")
+const formatValue = ref<string>("")
 
 function handleConfirm({ value }) {
   formatValue.value = new Date(value).toString()
@@ -417,8 +417,8 @@ function handleConfirm({ value }) {
 ```
 
 ```typescript
-import { ref } from 'vue'
-import type { CalendarInstance } from '@/uni_modules/wot-design-uni/components/wd-calendar/types'
+import { ref } from "vue"
+import type { CalendarInstance } from "@/uni_modules/wot-design-uni/components/wd-calendar/types"
 
 const calendar = ref<CalendarInstance>()
 const value = ref<number>(Date.now())
@@ -438,50 +438,50 @@ function handleConfirm({ value }) {
 
 ## Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|------|------|------|--------|--------|----------|
-| v-model | 选中值，为 13 位时间戳或时间戳数组 | null / number / array | - | - | - |
-| type | 日期类型 | string | date / dates / datetime / week / month / daterange / datetimerange / weekrange / monthrange | date | - |
-| min-date | 最小日期，为 13 位时间戳 | number | - | 当前日期往前推 6 个月 | - |
-| max-date | 最大日期，为 13 位时间戳 | number | - | 当前日期往后推 6 个月 | - |
-| first-day-of-week | 周起始天 | number | - | 0 | - |
-| formatter | 日期格式化函数 | function | - | - | - |
-| max-range | type 为范围选择时有效，最大日期范围 | number | - | - | - |
-| range-prompt | type 为范围选择时有效，选择超出最大日期范围时的错误提示文案 | string | - | 选择天数不能超过 x 天 | - |
-| allow-same-day | type 为范围选择时有效，是否允许选择同一天 | boolean | - | false | - |
-| default-time | 选中日期所使用的当日内具体时刻 | string / array | - | 00:00:00 | - |
-| time-filter | type 为 'datetime' 或 'datetimerange' 时有效，用于过滤时间选择器的数据 | function | - | - | - |
-| hide-second | type 为 'datetime' 或 'datetimerange' 时有效，是否不展示秒修改 | boolean | - | false | - |
-| show-confirm | 是否显示确定按钮 | boolean | - | true | - |
-| show-type-switch | 是否显示类型切换功能 | boolean | - | false | - |
-| shortcuts | 快捷选项，为对象数组，其中对象的 `text` 必传 | array | - | - | - |
-| title | 弹出层标题 | string | - | 选择日期 | - |
-| label | 选择器左侧文案 | string | - | - | - |
-| placeholder | 选择器占位符 | string | - | 请选择 | - |
-| disabled | 禁用 | boolean | - | false | - |
-| readonly | 只读 | boolean | - | false | - |
-| display-format | 自定义展示文案的格式化函数，返回一个字符串 | function | - | - | - |
-| inner-display-format | 自定义范围选择类型的面板内部回显，返回一个字符串 | function | - | - | - |
-| size | 设置选择器大小 | string | large | - | - |
-| label-width | 设置左侧标题宽度 | string | - | 33% | - |
-| error | 是否为错误状态，错误状态时右侧内容为红色 | boolean | - | false | - |
-| required | 必填样式 | boolean | - | false | - |
-| marker-side | 必填标记位置 | string | before / after | before | 1.12.0 |
-| center | 是否垂直居中 | boolean | - | false | - |
-| ellipsis | 是否超出隐藏 | boolean | - | false | - |
-| align-right | 选择器的值靠右展示 | boolean | - | false | - |
-| before-confirm | 确定前校验函数，接收 { value, resolve } 参数，通过 resolve 继续执行，resolve 接收 1 个 boolean 参数 | function | - | - | - |
-| use-default-slot | 使用默认插槽时设置该选项，已废弃直接使用默认插槽即可。 | boolean | - | false | - |
-| use-label-slot | 使用 label 插槽时设置该选项，已废弃直接使用 label 插槽即可。 | boolean | - | false | - |
-| close-on-click-modal | 点击遮罩是否关闭 | boolean | - | true | - |
-| z-index | 弹窗层级 | number | - | 15 | - |
-| safe-area-inset-bottom | 弹出面板是否设置底部安全距离（iphone X 类型的机型） | boolean | - | true | - |
-| prop | 表单域 `model` 字段名，在使用表单校验功能的情况下，该属性是必填的 | string | - | - | - |
-| rules | 表单验证规则，结合`wd-form`组件使用 | `FormItemRule []` | - | `[]` | - |
-| immediate-change | type 为 'datetime' 或 'datetimerange' 时有，是否在手指松开时立即触发 picker-view 的 change 事件。若不开启则会在滚动动画结束后触发 change 事件，1.2.25 版本起提供，仅微信小程序和支付宝小程序支持。 | boolean | - | false | 1.2.25 |
-| with-cell | 是否使用内置 cell 选择器 | boolean | - | true | 1.5.0 |
-| clearable | 显示清空按钮 | boolean | - | false | 1.11.0 |
-| root-portal | 是否从页面中脱离出来，用于解决各种 fixed 失效问题 | boolean | - | false | 1.11.0 |
+| 参数                   | 说明                                                                                                                                                                                               | 类型                  | 可选值                                                                                      | 默认值                | 最低版本 |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------- | --------------------- | -------- |
+| v-model                | 选中值，为 13 位时间戳或时间戳数组                                                                                                                                                                 | null / number / array | -                                                                                           | -                     | -        |
+| type                   | 日期类型                                                                                                                                                                                           | string                | date / dates / datetime / week / month / daterange / datetimerange / weekrange / monthrange | date                  | -        |
+| min-date               | 最小日期，为 13 位时间戳                                                                                                                                                                           | number                | -                                                                                           | 当前日期往前推 6 个月 | -        |
+| max-date               | 最大日期，为 13 位时间戳                                                                                                                                                                           | number                | -                                                                                           | 当前日期往后推 6 个月 | -        |
+| first-day-of-week      | 周起始天                                                                                                                                                                                           | number                | -                                                                                           | 0                     | -        |
+| formatter              | 日期格式化函数                                                                                                                                                                                     | function              | -                                                                                           | -                     | -        |
+| max-range              | type 为范围选择时有效，最大日期范围                                                                                                                                                                | number                | -                                                                                           | -                     | -        |
+| range-prompt           | type 为范围选择时有效，选择超出最大日期范围时的错误提示文案                                                                                                                                        | string                | -                                                                                           | 选择天数不能超过 x 天 | -        |
+| allow-same-day         | type 为范围选择时有效，是否允许选择同一天                                                                                                                                                          | boolean               | -                                                                                           | false                 | -        |
+| default-time           | 选中日期所使用的当日内具体时刻                                                                                                                                                                     | string / array        | -                                                                                           | 00:00:00              | -        |
+| time-filter            | type 为 'datetime' 或 'datetimerange' 时有效，用于过滤时间选择器的数据                                                                                                                             | function              | -                                                                                           | -                     | -        |
+| hide-second            | type 为 'datetime' 或 'datetimerange' 时有效，是否不展示秒修改                                                                                                                                     | boolean               | -                                                                                           | false                 | -        |
+| show-confirm           | 是否显示确定按钮                                                                                                                                                                                   | boolean               | -                                                                                           | true                  | -        |
+| show-type-switch       | 是否显示类型切换功能                                                                                                                                                                               | boolean               | -                                                                                           | false                 | -        |
+| shortcuts              | 快捷选项，为对象数组，其中对象的 `text` 必传                                                                                                                                                       | array                 | -                                                                                           | -                     | -        |
+| title                  | 弹出层标题                                                                                                                                                                                         | string                | -                                                                                           | 选择日期              | -        |
+| label                  | 选择器左侧文案                                                                                                                                                                                     | string                | -                                                                                           | -                     | -        |
+| placeholder            | 选择器占位符                                                                                                                                                                                       | string                | -                                                                                           | 请选择                | -        |
+| disabled               | 禁用                                                                                                                                                                                               | boolean               | -                                                                                           | false                 | -        |
+| readonly               | 只读                                                                                                                                                                                               | boolean               | -                                                                                           | false                 | -        |
+| display-format         | 自定义展示文案的格式化函数，返回一个字符串                                                                                                                                                         | function              | -                                                                                           | -                     | -        |
+| inner-display-format   | 自定义范围选择类型的面板内部回显，返回一个字符串                                                                                                                                                   | function              | -                                                                                           | -                     | -        |
+| size                   | 设置选择器大小                                                                                                                                                                                     | string                | large                                                                                       | -                     | -        |
+| label-width            | 设置左侧标题宽度                                                                                                                                                                                   | string                | -                                                                                           | 33%                   | -        |
+| error                  | 是否为错误状态，错误状态时右侧内容为红色                                                                                                                                                           | boolean               | -                                                                                           | false                 | -        |
+| required               | 必填样式                                                                                                                                                                                           | boolean               | -                                                                                           | false                 | -        |
+| marker-side            | 必填标记位置                                                                                                                                                                                       | string                | before / after                                                                              | before                | 1.12.0   |
+| center                 | 是否垂直居中                                                                                                                                                                                       | boolean               | -                                                                                           | false                 | -        |
+| ellipsis               | 是否超出隐藏                                                                                                                                                                                       | boolean               | -                                                                                           | false                 | -        |
+| align-right            | 选择器的值靠右展示                                                                                                                                                                                 | boolean               | -                                                                                           | false                 | -        |
+| before-confirm         | 确定前校验函数，接收 { value, resolve } 参数，通过 resolve 继续执行，resolve 接收 1 个 boolean 参数                                                                                                | function              | -                                                                                           | -                     | -        |
+| use-default-slot       | 使用默认插槽时设置该选项，已废弃直接使用默认插槽即可。                                                                                                                                             | boolean               | -                                                                                           | false                 | -        |
+| use-label-slot         | 使用 label 插槽时设置该选项，已废弃直接使用 label 插槽即可。                                                                                                                                       | boolean               | -                                                                                           | false                 | -        |
+| close-on-click-modal   | 点击遮罩是否关闭                                                                                                                                                                                   | boolean               | -                                                                                           | true                  | -        |
+| z-index                | 弹窗层级                                                                                                                                                                                           | number                | -                                                                                           | 15                    | -        |
+| safe-area-inset-bottom | 弹出面板是否设置底部安全距离（iphone X 类型的机型）                                                                                                                                                | boolean               | -                                                                                           | true                  | -        |
+| prop                   | 表单域 `model` 字段名，在使用表单校验功能的情况下，该属性是必填的                                                                                                                                  | string                | -                                                                                           | -                     | -        |
+| rules                  | 表单验证规则，结合`wd-form`组件使用                                                                                                                                                                | `FormItemRule []`     | -                                                                                           | `[]`                  | -        |
+| immediate-change       | type 为 'datetime' 或 'datetimerange' 时有，是否在手指松开时立即触发 picker-view 的 change 事件。若不开启则会在滚动动画结束后触发 change 事件，1.2.25 版本起提供，仅微信小程序和支付宝小程序支持。 | boolean               | -                                                                                           | false                 | 1.2.25   |
+| with-cell              | 是否使用内置 cell 选择器                                                                                                                                                                           | boolean               | -                                                                                           | true                  | 1.5.0    |
+| clearable              | 显示清空按钮                                                                                                                                                                                       | boolean               | -                                                                                           | false                 | 1.11.0   |
+| root-portal            | 是否从页面中脱离出来，用于解决各种 fixed 失效问题                                                                                                                                                  | boolean               | -                                                                                           | false                 | 1.11.0   |
 
 ### FormItemRule 数据结构
 
@@ -494,13 +494,13 @@ function handleConfirm({ value }) {
 
 ## Events
 
-| 事件名称 | 说明                                 | 参数                     | 最低版本 |
-| -------- | ------------------------------------ | ------------------------ | -------- |
-| confirm  | 绑定值变化时触发                     | `{ value, type }`               | -        |
-| change   | 点击面板日期时触发                   | `{ value }`               | -        |
-| cancel   | 点击关闭按钮或者蒙层时触发           | -           | -        |
-| open     | 日历打开时触发             | -           | -        |
-| clear    | 点击清空按钮时触发             | -           | 1.11.0        |
+| 事件名称 | 说明                       | 参数              | 最低版本 |
+| -------- | -------------------------- | ----------------- | -------- |
+| confirm  | 绑定值变化时触发           | `{ value, type }` | -        |
+| change   | 点击面板日期时触发         | `{ value }`       | -        |
+| cancel   | 点击关闭按钮或者蒙层时触发 | -                 | -        |
+| open     | 日历打开时触发             | -                 | -        |
+| clear    | 点击清空按钮时触发         | -                 | 1.11.0   |
 
 ## Methods
 
@@ -511,12 +511,12 @@ function handleConfirm({ value }) {
 
 ## Slots
 
-| name          | 说明       | 最低版本             |
-|---------------|----------|------------------|
-| default       | 自定义展示    | -                |
-| label         | 左侧插槽     | -                |
-| confirm-left  | 确定区域左侧插槽 | 1.14.0 |
-| confirm-right | 确定区域右侧插槽 | 1.14.0 |
+| name          | 说明             | 最低版本 |
+| ------------- | ---------------- | -------- |
+| default       | 自定义展示       | -        |
+| label         | 左侧插槽         | -        |
+| confirm-left  | 确定区域左侧插槽 | 1.14.0   |
+| confirm-right | 确定区域右侧插槽 | 1.14.0   |
 
 ## 外部样式类
 

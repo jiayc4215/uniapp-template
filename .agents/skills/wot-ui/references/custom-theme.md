@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/guide/custom-theme.md'
+url: "https://wot-ui.cn/guide/custom-theme.md"
 ---
 
 # 自定义主题

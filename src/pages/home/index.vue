@@ -4,17 +4,17 @@
 </template>
 
 <script setup>
-import Chart from "@/subEcharts/components/chart/chart.vue";
+import Chart from "@/subEcharts/components/chart/chart.vue"
 defineOptions({
   componentPlaceholder: {
-    Chart: "view",
-  },
-});
+    Chart: "view"
+  }
+})
 const jumpSubEcharts = () => {
   uni.navigateTo({
-    url: "/subEcharts/index",
-  });
-};
+    url: "/subEcharts/index"
+  })
+}
 </script>
 
 <style lang="scss" scoped></style>

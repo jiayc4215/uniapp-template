@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/progress.md'
+url: "https://wot-ui.cn/component/progress.md"
 ---
 
 # Progress 进度条
@@ -27,8 +27,7 @@ url: 'https://wot-ui.cn/component/progress.md'
 设置 `status`，告知用户当前状态和预期。
 
 ```html
-<wd-progress :percentage="100" hide-text status="success" />
-<wd-progress :percentage="70" hide-text status="danger" />
+<wd-progress :percentage="100" hide-text status="success" /> <wd-progress :percentage="70" hide-text status="danger" />
 ```
 
 ## 修改颜色
@@ -52,23 +51,23 @@ url: 'https://wot-ui.cn/component/progress.md'
 ```
 
 ```typescript
-import type { ProgressColor } from '@/uni_modules/wot-design-uni/components/wd-progress/types'
+import type { ProgressColor } from "@/uni_modules/wot-design-uni/components/wd-progress/types"
 
 const colorObject = ref<ProgressColor>([
   {
-    color: 'yellow',
+    color: "yellow",
     percentage: 30
   },
   {
-    color: 'red',
+    color: "red",
     percentage: 60
   },
   {
-    color: 'blue',
+    color: "blue",
     percentage: 80
   },
   {
-    color: 'black',
+    color: "black",
     percentage: 90
   }
 ])
@@ -77,13 +76,13 @@ const percentage = ref<number>(100)
 
 ## Attributes
 
-| 参数       | 说明                  | 类型                                    | 可选值           | 默认值 | 最低版本 |
-| ---------- | --------------------- | --------------------------------------- | ---------------- | ------ | -------- |
-| percentage | 进度数值，最大值 100  | `number`                                | -                | 0      | -        |
-| hide-text  | 隐藏进度文字          | `boolean`                               | -                | false  | -        |
-| color      | 进度条颜色            | `string / ProgressColor[] / string[]` | -                | -      | -        |
-| status     | 进度条状态            | `string`                                | success / danger / warning | -      | -        |
-| duration   | 进度增加 1%所需毫秒数 | `number`                                | -                | 30     | -        |
+| 参数       | 说明                  | 类型                                  | 可选值                     | 默认值 | 最低版本 |
+| ---------- | --------------------- | ------------------------------------- | -------------------------- | ------ | -------- |
+| percentage | 进度数值，最大值 100  | `number`                              | -                          | 0      | -        |
+| hide-text  | 隐藏进度文字          | `boolean`                             | -                          | false  | -        |
+| color      | 进度条颜色            | `string / ProgressColor[] / string[]` | -                          | -      | -        |
+| status     | 进度条状态            | `string`                              | success / danger / warning | -      | -        |
+| duration   | 进度增加 1%所需毫秒数 | `number`                              | -                          | 30     | -        |
 
 ### ProgressColor
 

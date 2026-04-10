@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/navbar.md'
+url: "https://wot-ui.cn/component/navbar.md"
 ---
 
 # Navbar 导航栏
@@ -54,17 +54,23 @@ function handleClickLeft() {
 ```html
 <wd-toast></wd-toast>
 
-<wd-navbar title="标题" left-text="返回" left-arrow right-text="按钮" @click-left="handleClickLeft" @click-right="handleClickRight"></wd-navbar>
+<wd-navbar
+  title="标题"
+  left-text="返回"
+  left-arrow
+  right-text="按钮"
+  @click-left="handleClickLeft"
+  @click-right="handleClickRight"
+></wd-navbar>
 ```
 
 ```ts
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 
 const { show: showToast } = useToast()
 
-
 function handleClickRight() {
-  showToast('按钮')
+  showToast("按钮")
 }
 ```
 
@@ -86,7 +92,6 @@ function handleClickRight() {
 
 ```html
 <wd-navbar fixed placeholder title="Navbar 导航条" left-arrow safeAreaInsetTop></wd-navbar>
-
 ```
 
 ## 禁用按钮
@@ -115,7 +120,7 @@ function handleBack() {
 }
 
 function handleBackHome() {
-  uni.reLaunch({ url: '/pages/index/Index' })
+  uni.reLaunch({ url: "/pages/index/Index" })
 }
 ```
 
@@ -150,46 +155,46 @@ function handleBackHome() {
 
 ## Navbar Attributes
 
-| 参数          | 说明     | 类型    | 可选值 | 默认值 | 最低版本 |
-| ------------- | -------- | ------- | ------ | ------ | -------- |
-| title         | 卡片标题 | string  | -      | ''     | 0.1.33   |
-| leftText      | 左侧文案 | string  | -      | ''     | 0.1.33   |
-| rightText     | 右侧文案 | string  | -      | ''     | 0.1.33   |
-| leftArrow     | 显示左侧箭头 | boolean | true, false | false | 0.1.33   |
-| bordered      | 显示下边框 | boolean | true, false | true  | 0.1.33   |
-| fixed         | 固定到顶部 | boolean | true, false | false | 0.1.33   |
-| placeholder   | 固定在顶部时，在标签位置生成一个等高的占位元素 | boolean | true, false | false | 0.1.33   |
-| zIndex        | 导航栏 z-index | number | -      | 1      | 0.1.33   |
-| safeAreaInsetTop | 开启顶部安全区适配 | boolean | true, false | false | 0.1.33   |
-| leftDisabled  | 禁用左侧按钮，禁用时透明度降低，且无法点击 | boolean | true, false | false | 0.1.33   |
-| rightDisabled | 禁用右侧按钮，禁用时透明度降低，且无法点击 | boolean | true, false | false | 0.1.33   |
+| 参数             | 说明                                           | 类型    | 可选值      | 默认值 | 最低版本 |
+| ---------------- | ---------------------------------------------- | ------- | ----------- | ------ | -------- |
+| title            | 卡片标题                                       | string  | -           | ''     | 0.1.33   |
+| leftText         | 左侧文案                                       | string  | -           | ''     | 0.1.33   |
+| rightText        | 右侧文案                                       | string  | -           | ''     | 0.1.33   |
+| leftArrow        | 显示左侧箭头                                   | boolean | true, false | false  | 0.1.33   |
+| bordered         | 显示下边框                                     | boolean | true, false | true   | 0.1.33   |
+| fixed            | 固定到顶部                                     | boolean | true, false | false  | 0.1.33   |
+| placeholder      | 固定在顶部时，在标签位置生成一个等高的占位元素 | boolean | true, false | false  | 0.1.33   |
+| zIndex           | 导航栏 z-index                                 | number  | -           | 1      | 0.1.33   |
+| safeAreaInsetTop | 开启顶部安全区适配                             | boolean | true, false | false  | 0.1.33   |
+| leftDisabled     | 禁用左侧按钮，禁用时透明度降低，且无法点击     | boolean | true, false | false  | 0.1.33   |
+| rightDisabled    | 禁用右侧按钮，禁用时透明度降低，且无法点击     | boolean | true, false | false  | 0.1.33   |
 
 ## Navbar Events
 
-| 事件名称     | 说明                          | 参数                                           | 最低版本 |
-| ------------ | ----------------------------- | ---------------------------------------------- | --------- |
-| click-left   | 点击左侧按钮时触发            | -                                              | 0.1.33    |
-| click-right  | 点击右侧按钮时触发            | -                                              | 0.1.33    |
+| 事件名称    | 说明               | 参数 | 最低版本 |
+| ----------- | ------------------ | ---- | -------- |
+| click-left  | 点击左侧按钮时触发 | -    | 0.1.33   |
+| click-right | 点击右侧按钮时触发 | -    | 0.1.33   |
 
 ## NavbarCapsule Events
 
-| 事件名称     | 说明                          | 参数                                           | 最低版本 |
-| ------------ | ----------------------------- | ---------------------------------------------- | --------- |
-| back         | 点击返回按钮时触发             | -                                              | 0.1.33    |
-| back-home    | 点击返回首页按钮时触发          | -                                              | 0.1.33    |
+| 事件名称  | 说明                   | 参数 | 最低版本 |
+| --------- | ---------------------- | ---- | -------- |
+| back      | 点击返回按钮时触发     | -    | 0.1.33   |
+| back-home | 点击返回首页按钮时触发 | -    | 0.1.33   |
 
 ## Navbar Slot
 
-| 名称    | 说明     | 最低版本 |
-| ------- | -------- | -------- |
-| capsule | 自定义胶囊（当存在胶囊时，left不生效）   | 0.1.33         |
-| left    | 左侧内容                                | 0.1.33         |
-| title   | 标题内容                                | 0.1.33         |
-| right   | 右侧内容                                | 0.1.33         |
+| 名称    | 说明                                   | 最低版本 |
+| ------- | -------------------------------------- | -------- |
+| capsule | 自定义胶囊（当存在胶囊时，left不生效） | 0.1.33   |
+| left    | 左侧内容                               | 0.1.33   |
+| title   | 标题内容                               | 0.1.33   |
+| right   | 右侧内容                               | 0.1.33   |
 
 ## 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | 根节点样式类 | 0.1.33 |
-| custom-style | 根节点样式 | 0.1.33 |
+| 类名         | 说明         | 最低版本 |
+| ------------ | ------------ | -------- |
+| custom-class | 根节点样式类 | 0.1.33   |
+| custom-style | 根节点样式   | 0.1.33   |

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/upload.md'
+url: "https://wot-ui.cn/component/upload.md"
 ---
 
 # Upload 上传
@@ -29,11 +29,11 @@ url: 'https://wot-ui.cn/component/upload.md'
 ```typescript
 const fileList = ref<any[]>([
   {
-    url: 'https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg'
+    url: "https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg"
   }
 ])
 
-const action: string = 'https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload'
+const action: string = "https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload"
 
 function handleChange({ fileList: files }) {
   fileList.value = files
@@ -53,11 +53,11 @@ function handleChange({ fileList: files }) {
 ```typescript
 const fileList = ref<any[]>([
   {
-    url: 'https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg'
+    url: "https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg"
   }
 ])
 
-const action: string = 'https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload'
+const action: string = "https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload"
 ```
 
 ## 禁用
@@ -126,27 +126,27 @@ const action: string = 'https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86e
 ```
 
 ```typescript
-import { useToast, useMessage } from '@/uni_modules/wot-design-uni'
+import { useToast, useMessage } from "@/uni_modules/wot-design-uni"
 
 const messageBox = useMessage()
 const toast = useToast()
 const fileList = ref<any[]>([
   {
-    url: 'https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg'
+    url: "https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg"
   }
 ])
 
 const beforePreview = ({ file, resolve }) => {
   messageBox
     .confirm({
-      msg: '是否预览图片',
-      title: '提示'
+      msg: "是否预览图片",
+      title: "提示"
     })
     .then(() => {
       resolve(true)
     })
     .catch(() => {
-      toast.show('取消预览操作')
+      toast.show("取消预览操作")
     })
 }
 
@@ -169,27 +169,27 @@ function handleChange({ fileList }) {
 ```
 
 ```typescript
-import { useToast, useMessage } from '@/uni_modules/wot-design-uni'
+import { useToast, useMessage } from "@/uni_modules/wot-design-uni"
 
 const messageBox = useMessage()
 const toast = useToast()
 const fileList = ref<any[]>([
   {
-    url: 'https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg'
+    url: "https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg"
   }
 ])
 
 const beforeUpload = ({ files, resolve }) => {
   messageBox
     .confirm({
-      msg: '是否上传',
-      title: '提示'
+      msg: "是否上传",
+      title: "提示"
     })
     .then(() => {
       resolve(true)
     })
     .catch(() => {
-      toast.show('取消上传操作')
+      toast.show("取消上传操作")
     })
 }
 
@@ -212,28 +212,28 @@ function handleChange({ fileList }) {
 ```
 
 ```typescript
-import { useToast, useMessage } from '@/uni_modules/wot-design-uni'
+import { useToast, useMessage } from "@/uni_modules/wot-design-uni"
 
 const messageBox = useMessage()
 const toast = useToast()
 const fileList = ref<any[]>([
   {
-    url: 'https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg'
+    url: "https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg"
   }
 ])
 
 const beforeRemove = ({ file, fileList, resolve }) => {
   messageBox
     .confirm({
-      msg: '是否删除',
-      title: '提示'
+      msg: "是否删除",
+      title: "提示"
     })
     .then(() => {
-      toast.success('删除成功')
+      toast.success("删除成功")
       resolve(true)
     })
     .catch(() => {
-      toast.show('取消删除操作')
+      toast.show("取消删除操作")
     })
 }
 
@@ -256,27 +256,27 @@ function handleChange({ fileList }) {
 ```
 
 ```typescript
-import { useToast, useMessage } from '@/uni_modules/wot-design-uni'
+import { useToast, useMessage } from "@/uni_modules/wot-design-uni"
 
 const messageBox = useMessage()
 const toast = useToast()
 const fileList = ref<any[]>([
   {
-    url: 'https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg'
+    url: "https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg"
   }
 ])
 
-const beforeChoose = ({fileList, resolve}) => {
+const beforeChoose = ({ fileList, resolve }) => {
   messageBox
     .confirm({
-      msg: '是否选择',
-      title: '提示'
+      msg: "是否选择",
+      title: "提示"
     })
     .then(() => {
       resolve(true)
     })
     .catch(() => {
-      toast.show('取消选择操作')
+      toast.show("取消选择操作")
     })
 }
 
@@ -289,9 +289,9 @@ function handleChange({ fileList }) {
 
 设置 `buildFormData` 函数，在用户点击上传时，会执行 `buildFormData` 函数，接收 `{ file, formData, resolve }`
 
-* `file` 当前上传的文件
-* `formData` 待处理的`formData`
-* `resolve` 函数，用于告知组件是否组装`formData`成功，`resolve(formData)` 表示组装成功。
+- `file` 当前上传的文件
+- `formData` 待处理的`formData`
+- `resolve` 函数，用于告知组件是否组装`formData`成功，`resolve(formData)` 表示组装成功。
 
 ```html
 <wd-upload :file-list="files" :action="host" :build-form-data="buildFormData" @change="handleChange"></wd-upload>
@@ -299,15 +299,15 @@ function handleChange({ fileList }) {
 
 :::tip 参考
 
-* 上传至阿里云 OSS 的示例，参考[地址](https://help.aliyun.com/zh/oss/use-cases/use-wechat-mini-programs-to-upload-objects)
-* 上传至腾讯云 COS 的示例，参考[地址](https://cloud.tencent.com/document/product/436/34929)
-* 上传至华为云 OBS 的示例，参考[地址](https://support.huaweicloud.com/bestpractice-obs/obs_05_2000.html)
+- 上传至阿里云 OSS 的示例，参考[地址](https://help.aliyun.com/zh/oss/use-cases/use-wechat-mini-programs-to-upload-objects)
+- 上传至腾讯云 COS 的示例，参考[地址](https://cloud.tencent.com/document/product/436/34929)
+- 上传至华为云 OBS 的示例，参考[地址](https://support.huaweicloud.com/bestpractice-obs/obs_05_2000.html)
   :::
 
 ::: code-group
 
 ```ts [阿里云OSS]
-const host = ref<string>('Bucket访问域名，例如https://examplebucket.oss-cn-zhangjiakou.aliyuncs.com')
+const host = ref<string>("Bucket访问域名，例如https://examplebucket.oss-cn-zhangjiakou.aliyuncs.com")
 
 const files = ref<Record<string, any>[]>([])
 
@@ -321,16 +321,16 @@ function handleChange({ fileList }) {
  * @return {Object} formData
  * */
 const buildFormData = ({ file, formData, resolve }) => {
-  let imageName = file.url.substring(file.url.lastIndexOf('/') + 1) // 从图片路径中截取图片名称
+  let imageName = file.url.substring(file.url.lastIndexOf("/") + 1) // 从图片路径中截取图片名称
   // #ifdef H5
   // h5端url中不包含扩展名，可以拼接一下name
   imageName = imageName + file.name
   // #endif
-  const signature = 'your <signatureString>' // 签名信息
-  const ossAccessKeyId = 'your <accessKey>' // 你的AccessKey ID
-  const policy = 'your <policyBase64Str>' // policy信息
+  const signature = "your <signatureString>" // 签名信息
+  const ossAccessKeyId = "your <accessKey>" // 你的AccessKey ID
+  const policy = "your <policyBase64Str>" // policy信息
   const key = `20231120/${imageName}` // 图片上传到oss的路径(拼接你的文件夹和文件名)
-  const success_action_status = '200' // 将上传成功状态码设置为200，默认状态码为204
+  const success_action_status = "200" // 将上传成功状态码设置为200，默认状态码为204
 
   formData = {
     ...formData,
@@ -386,7 +386,7 @@ const buildFormData = ({ file, formData, resolve }) => {
 ```
 
 ```ts [华为云OBS]
-const host = ref<string>('Bucket访问域名，例如https://examplebucket.oss-cn-zhangjiakou.aliyuncs.com')
+const host = ref<string>("Bucket访问域名，例如https://examplebucket.oss-cn-zhangjiakou.aliyuncs.com")
 
 const files = ref<Record<string, any>[]>([])
 
@@ -400,16 +400,16 @@ function handleChange({ fileList }) {
  * @return {Object} formData
  * */
 const buildFormData = ({ file, formData, resolve }) => {
-  let imageName = file.url.substring(file.url.lastIndexOf('/') + 1) // 从图片路径中截取图片名称
+  let imageName = file.url.substring(file.url.lastIndexOf("/") + 1) // 从图片路径中截取图片名称
   // #ifdef H5
   // h5端url中不包含扩展名，可以拼接一下name
   imageName = imageName + file.name
   // #endif
-  const signature = 'your <signature>' // 签名信息
-  const accessKeyId = 'your <accessKeyId>' // 你的AccessKey ID
-  const policy = 'your <policyBase64Str>' // policy信息
+  const signature = "your <signature>" // 签名信息
+  const accessKeyId = "your <accessKeyId>" // 你的AccessKey ID
+  const policy = "your <policyBase64Str>" // policy信息
   const key = `20231120/${imageName}` // 图片上传到oss的路径(拼接你的文件夹和文件名)
-  const success_action_status = '200' // 将上传成功状态码设置为200，默认状态码为204
+  const success_action_status = "200" // 将上传成功状态码设置为200，默认状态码为204
 
   formData = {
     ...formData,
@@ -430,15 +430,19 @@ const buildFormData = ({ file, formData, resolve }) => {
 使用默认插槽可以修改唤起上传的样式。
 
 ```html
-<wd-upload :file-list="fileList" action="https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload" @change="handleChange">
-    <wd-button>上传</wd-button>
+<wd-upload
+  :file-list="fileList"
+  action="https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload"
+  @change="handleChange"
+>
+  <wd-button>上传</wd-button>
 </wd-upload>
 ```
 
 ```typescript
 const fileList = ref<any[]>([
   {
-    url: 'https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg'
+    url: "https://img12.360buyimg.com//n0/jfs/t1/29118/6/4823/55969/5c35c16bE7c262192/c9fdecec4b419355.jpg"
   }
 ])
 ```
@@ -452,7 +456,7 @@ const fileList = ref<any[]>([
 ```
 
 ```typescript
-const action = ref<string>('https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload')
+const action = ref<string>("https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload")
 
 const fileList = ref([])
 
@@ -470,7 +474,7 @@ function handleChange({ fileList }) {
 ```
 
 ```typescript
-const action = ref<string>('https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload')
+const action = ref<string>("https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload")
 
 const fileList = ref([])
 
@@ -488,7 +492,7 @@ function handleChange({ fileList }) {
 ```
 
 ```typescript
-const action = ref<string>('https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload')
+const action = ref<string>("https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload")
 
 const fileList = ref([])
 
@@ -506,7 +510,7 @@ function handleChange({ fileList }) {
 ```
 
 ```typescript
-const action = ref<string>('https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload')
+const action = ref<string>("https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload")
 
 const fileList = ref([])
 
@@ -547,7 +551,7 @@ const onUploadClick = () => {
 ```
 
 ```typescript
-import type { UploadMethod, UploadFile } from '@/uni_modules/wot-design-uni/components/wd-upload/types'
+import type { UploadMethod, UploadFile } from "@/uni_modules/wot-design-uni/components/wd-upload/types"
 
 const fileList = ref<UploadFile[]>([])
 const customUpload: UploadMethod = (file, formData, options) => {
@@ -565,7 +569,7 @@ const customUpload: UploadMethod = (file, formData, options) => {
         options.onSuccess(res, file, formData)
       } else {
         // 设置上传失败
-        options.onError({ ...res, errMsg: res.errMsg || '' }, file, formData)
+        options.onError({ ...res, errMsg: res.errMsg || "" }, file, formData)
       }
     },
     fail(err) {
@@ -574,7 +578,7 @@ const customUpload: UploadMethod = (file, formData, options) => {
     }
   })
   // 设置当前文件加载的百分比
-  uploadTask.onProgressUpdate((res) => {
+  uploadTask.onProgressUpdate(res => {
     options.onProgress(res, file)
   })
 }
@@ -587,21 +591,21 @@ const customUpload: UploadMethod = (file, formData, options) => {
 ```html
 <wd-upload v-model:file-list="fileList" accept="image" image-mode="aspectFill" :action="action">
   <template #preview-cover="{ file,index }">
-            <!-- 小程序拿不到文件 -->
+    <!-- 小程序拿不到文件 -->
     <view class="preview-cover">{{ file?.name||`文件${index+1}` }}</view>
   </template>
 </wd-upload>
 <style>
   .preview-cover {
-  margin-top: 10rpx;
-  text-align: center;
-}
+    margin-top: 10rpx;
+    text-align: center;
+  }
 </style>
 ```
 
 ```typescript
 const fileList = ref<UploadFile[]>([])
-const action: string = 'https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload'
+const action: string = "https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86eb04dc1e8fd64865cb5/upload"
 ```
 
 ## 根据文件拓展名过滤
@@ -618,48 +622,48 @@ const action: string = 'https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86e
 
 ## Attributes
 
-| 参数                          | 说明                                                                                                                                                                           | 类型                                   | 可选值                                         | 默认值                     | 最低版本         |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------- | ---------------------------------------------- | -------------------------- | ---------------- |
-| file-list / v-model:file-list | 上传的文件列表, 例如: \[{ name: 'food.jpg', url: 'https://xxx.cdn.com/xxx.jpg' }]                                                                                               | array                                  | -                                              | \[]                         | -                |
-| action                        | 必选参数，上传的地址                                                                                                                                                           | string                                 | -                                              | -                          | -                |
-| header                        | 设置上传的请求头部                                                                                                                                                             | object                                 | -                                              | -                          | -                |
-| multiple                      | 是否支持多选文件                                                                                                                                                               | boolean                                | -                                              | -                          | -                |
-| disabled                      | 是否禁用                                                                                                                                                                       | boolean                                | -                                              | false                      | -                |
-| reupload    | 是否开启覆盖上传，开启后会关闭图片预览   | boolean          | -                                              | false                       | 1.5.0 |
-| limit                         | 最大允许上传个数                                                                                                                                                               | number                                 | -                                              | -                          | -                |
-| show-limit-num                | 限制上传个数的情况下，是否展示当前上传的个数                                                                                                                                   | boolean                                | -                                              | false                      | -                |
-| max-size                      | 文件大小限制，单位为`byte`                                                                                                                                                     | number                                 | -                                              | -                          | -                |
-| source-type                   | 选择图片的来源，chooseImage 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/media/image.html#chooseimage)                                                        | array / string                         | -                                              | \['album', 'camera']        | -                |
-| size-type                     | 所选的图片的尺寸，chooseImage 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/media/image.html#chooseimage)                                                      | array / string                         | -                                              | \['original', 'compressed'] | -                |
-| name                          | 文件对应的 key，开发者在服务端可以通过这个 key 获取文件的二进制内容，uploadFile 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/request/network-file#uploadfile) | string                                 | -                                              | file                       | -                |
-| formData                      | HTTP 请求中其他额外的 form data，uploadFile 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/request/network-file#uploadfile)                                     | object                                 | -                                              | -                          | -                |
-| header                        | HTTP 请求 Header，Header 中不能设置 Referer，uploadFile 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/request/network-file#uploadfile)                         | object                                 | -                                              | -                          | -                |
-| on-preview-fail               | 预览失败执行操作                                                                                                                                                               | function({ index, imgList })           | -                                              | -                          | -                |
-| before-upload                 | 上传文件之前的钩子，参数为上传的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                        | function({ files, fileList, resolve }) | -                                              | -                          | -                |
-| before-choose                 | 选择图片之前的钩子，参数为文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                                    | function({ fileList, resolve })        | -                                              | -                          | -                |
-| before-remove                 | 删除文件之前的钩子，参数为要删除的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                      | function({ file, fileList, resolve })  | -                                              | -                          | -                |
-| before-preview                | 图片预览前的钩子，参数为预览的图片下标和图片列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                      | function({file, index, imgList, resolve })  | -                                              | -                          | -                |
-| build-form-data               | 构建上传`formData`的钩子，参数为上传的文件、待处理的`formData`，返回值为处理后的`formData`，若返回 false 或者返回 Promise 且被 reject，则停止上传。                            | function({ file, formData, resolve })  | -                                              | -                          | 0.1.61           |
-| loading-type                  | [加载中图标类型](/component/loading)                                                                                                                                           | string                                 | -                                              | circular-ring              | -                |
-| loading-color                 | [加载中图标颜色](/component/loading)                                                                                                                                           | string                                 | -                                              | #ffffff                    | -                |
-| loading-size                  | [加载中图标尺寸](/component/loading)                                                                                                                                           | string                                 | -                                              | 24px                       | -                |
-| status-key                    | file 数据结构中，status 对应的 key                                                                                                                                             | string                                 | -                                              | status                     | -                |
-| image-mode                    | 预览图片的 mode 属性                                                                                                                                                           | ImageMode                              | -                                              | aspectFit                  | -                |
-| accept                        | 接受的文件类型                                                                                                                                                                 | UploadFileType                         | **image** **video** **media** **file** **all** | **image**                  | 1.3.0            |
-| compressed                    | 是否压缩视频，当 accept 为 video | media 时生效                                                                                                                               | boolean                                | -                                              | true                       | 1.3.0            |
-| maxDuration                   | 拍摄视频最长拍摄时间，当 accept 为 video | media 时生效，单位秒                                                                                                               | Number                                 | -                                              | 60                         | 1.3.0            |
-| camera                        | 使用前置或者后置相机，当 accept 为 video | media 时生效                                                                                                                       | UploadCameraType                       | **front**                                      | **back**                   | 1.3.0            |
-| successStatus                 | 接口响应的成功状态（statusCode）值                                                                                                                                             | number                                 | -                                              | 200                        | 1.3.4            |
-| auto-upload                   | 是否选择文件后自动上传。为 false 时应手动调用 submit() 方法开始上传                                                                                                            | boolean                                | -                                              | true                       | 1.3.8 |
-| upload-method                 | 自定义上传方法                                                                                                                                                     | UploadMethod                                | -                                              | -                       | 1.3.8 |
-| extension | 根据文件拓展名过滤(H5支持全部类型过滤,微信小程序支持all和file时过滤,其余平台不支持) | string\[] | - | - | 1.9.0 |
+| 参数                          | 说明                                                                                                                                                                           | 类型                                       | 可选值                                         | 默认值                      | 最低版本 |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ | ---------------------------------------------- | --------------------------- | -------- | ----- |
+| file-list / v-model:file-list | 上传的文件列表, 例如: \[{ name: 'food.jpg', url: 'https://xxx.cdn.com/xxx.jpg' }]                                                                                              | array                                      | -                                              | \[]                         | -        |
+| action                        | 必选参数，上传的地址                                                                                                                                                           | string                                     | -                                              | -                           | -        |
+| header                        | 设置上传的请求头部                                                                                                                                                             | object                                     | -                                              | -                           | -        |
+| multiple                      | 是否支持多选文件                                                                                                                                                               | boolean                                    | -                                              | -                           | -        |
+| disabled                      | 是否禁用                                                                                                                                                                       | boolean                                    | -                                              | false                       | -        |
+| reupload                      | 是否开启覆盖上传，开启后会关闭图片预览                                                                                                                                         | boolean                                    | -                                              | false                       | 1.5.0    |
+| limit                         | 最大允许上传个数                                                                                                                                                               | number                                     | -                                              | -                           | -        |
+| show-limit-num                | 限制上传个数的情况下，是否展示当前上传的个数                                                                                                                                   | boolean                                    | -                                              | false                       | -        |
+| max-size                      | 文件大小限制，单位为`byte`                                                                                                                                                     | number                                     | -                                              | -                           | -        |
+| source-type                   | 选择图片的来源，chooseImage 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/media/image.html#chooseimage)                                                        | array / string                             | -                                              | \['album', 'camera']        | -        |
+| size-type                     | 所选的图片的尺寸，chooseImage 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/media/image.html#chooseimage)                                                      | array / string                             | -                                              | \['original', 'compressed'] | -        |
+| name                          | 文件对应的 key，开发者在服务端可以通过这个 key 获取文件的二进制内容，uploadFile 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/request/network-file#uploadfile) | string                                     | -                                              | file                        | -        |
+| formData                      | HTTP 请求中其他额外的 form data，uploadFile 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/request/network-file#uploadfile)                                     | object                                     | -                                              | -                           | -        |
+| header                        | HTTP 请求 Header，Header 中不能设置 Referer，uploadFile 接口详细参数，查看[官方手册](https://uniapp.dcloud.net.cn/api/request/network-file#uploadfile)                         | object                                     | -                                              | -                           | -        |
+| on-preview-fail               | 预览失败执行操作                                                                                                                                                               | function({ index, imgList })               | -                                              | -                           | -        |
+| before-upload                 | 上传文件之前的钩子，参数为上传的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                        | function({ files, fileList, resolve })     | -                                              | -                           | -        |
+| before-choose                 | 选择图片之前的钩子，参数为文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                                    | function({ fileList, resolve })            | -                                              | -                           | -        |
+| before-remove                 | 删除文件之前的钩子，参数为要删除的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                      | function({ file, fileList, resolve })      | -                                              | -                           | -        |
+| before-preview                | 图片预览前的钩子，参数为预览的图片下标和图片列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。                                                                      | function({file, index, imgList, resolve }) | -                                              | -                           | -        |
+| build-form-data               | 构建上传`formData`的钩子，参数为上传的文件、待处理的`formData`，返回值为处理后的`formData`，若返回 false 或者返回 Promise 且被 reject，则停止上传。                            | function({ file, formData, resolve })      | -                                              | -                           | 0.1.61   |
+| loading-type                  | [加载中图标类型](/component/loading)                                                                                                                                           | string                                     | -                                              | circular-ring               | -        |
+| loading-color                 | [加载中图标颜色](/component/loading)                                                                                                                                           | string                                     | -                                              | #ffffff                     | -        |
+| loading-size                  | [加载中图标尺寸](/component/loading)                                                                                                                                           | string                                     | -                                              | 24px                        | -        |
+| status-key                    | file 数据结构中，status 对应的 key                                                                                                                                             | string                                     | -                                              | status                      | -        |
+| image-mode                    | 预览图片的 mode 属性                                                                                                                                                           | ImageMode                                  | -                                              | aspectFit                   | -        |
+| accept                        | 接受的文件类型                                                                                                                                                                 | UploadFileType                             | **image** **video** **media** **file** **all** | **image**                   | 1.3.0    |
+| compressed                    | 是否压缩视频，当 accept 为 video                                                                                                                                               | media 时生效                               | boolean                                        | -                           | true     | 1.3.0 |
+| maxDuration                   | 拍摄视频最长拍摄时间，当 accept 为 video                                                                                                                                       | media 时生效，单位秒                       | Number                                         | -                           | 60       | 1.3.0 |
+| camera                        | 使用前置或者后置相机，当 accept 为 video                                                                                                                                       | media 时生效                               | UploadCameraType                               | **front**                   | **back** | 1.3.0 |
+| successStatus                 | 接口响应的成功状态（statusCode）值                                                                                                                                             | number                                     | -                                              | 200                         | 1.3.4    |
+| auto-upload                   | 是否选择文件后自动上传。为 false 时应手动调用 submit() 方法开始上传                                                                                                            | boolean                                    | -                                              | true                        | 1.3.8    |
+| upload-method                 | 自定义上传方法                                                                                                                                                                 | UploadMethod                               | -                                              | -                           | 1.3.8    |
+| extension                     | 根据文件拓展名过滤(H5支持全部类型过滤,微信小程序支持all和file时过滤,其余平台不支持)                                                                                            | string\[]                                  | -                                              | -                           | 1.9.0    |
 
 ## accept 的合法值
 
 | name  | 说明                                                                                   | 最低版本 |
 | ----- | -------------------------------------------------------------------------------------- | -------- |
-| image | 图片，全平台支持，微信支持平台使用`chooseMedia`实现                                              | -        |
-| video | 视频，全平台支持，微信支持平台使用`chooseMedia`实现                                          | 1.3.0    |
+| image | 图片，全平台支持，微信支持平台使用`chooseMedia`实现                                    | -        |
+| video | 视频，全平台支持，微信支持平台使用`chooseMedia`实现                                    | 1.3.0    |
 | media | 图片和视频，仅微信支持，使用`chooseMedia`实现                                          | 1.3.0    |
 | file  | 从客户端会话选择图片和视频以外的文件，仅微信支持，使用`chooseMessageFile`实现          | 1.3.0    |
 | all   | 全部类型的文件，仅微信和 H5 支持，微信使用`chooseMessageFile`，H5 使用`chooseFile`实现 | 1.3.0    |
@@ -672,20 +676,20 @@ const action: string = 'https://mockapi.eolink.com/zhTuw2P8c29bc981a741931bdd86e
 
 微信小程序平台具有更丰富的文件选择能力和更高的数量上限：
 
-| 选择方法 | 最大选择数量 | 说明 | 适用文件类型 |
-| -------- | ------------ | ---- | ------------ |
-| `chooseMedia` | 20 | 选择图片和视频时的最大数量限制 | accept 为 `image`、`video` 或 `media` 时使用 |
-| `chooseMessageFile` | 100 | 从客户端会话选择文件时的最大数量限制 | accept 为 `file` 或 `all` 时使用 |
+| 选择方法            | 最大选择数量 | 说明                                 | 适用文件类型                                 |
+| ------------------- | ------------ | ------------------------------------ | -------------------------------------------- |
+| `chooseMedia`       | 20           | 选择图片和视频时的最大数量限制       | accept 为 `image`、`video` 或 `media` 时使用 |
+| `chooseMessageFile` | 100          | 从客户端会话选择文件时的最大数量限制 | accept 为 `file` 或 `all` 时使用             |
 
 ### H5平台
 
 H5 平台支持多种文件选择方式：
 
-| 选择方法 | 最大选择数量 | 说明 | 适用文件类型 |
-| -------- | ------------ | ---- | ------------ |
-| `chooseImage` | 9 | 选择图片时的最大数量限制 | accept 为 `image` 时使用 |
-| `chooseVideo` | 1 | 不支持多选，只能选择单个视频文件 | accept 为 `video` 时使用 |
-| `chooseFile` | 100 | 选择文件时的最大数量限制 | accept 为 `all` 时使用 |
+| 选择方法      | 最大选择数量 | 说明                             | 适用文件类型             |
+| ------------- | ------------ | -------------------------------- | ------------------------ |
+| `chooseImage` | 9            | 选择图片时的最大数量限制         | accept 为 `image` 时使用 |
+| `chooseVideo` | 1            | 不支持多选，只能选择单个视频文件 | accept 为 `video` 时使用 |
+| `chooseFile`  | 100          | 选择文件时的最大数量限制         | accept 为 `all` 时使用   |
 
 ::: warning H5平台特别说明
 count 值在 H5 平台的表现基于浏览器本身的规范。目前测试结果来看，只能限制单选/多选，并不能限制具体数量。并且，在实际的手机浏览器中很少有能够支持多选的。
@@ -695,17 +699,17 @@ count 值在 H5 平台的表现基于浏览器本身的规范。目前测试结�
 
 其他平台（如支付宝小程序、钉钉小程序、App等）的文件选择能力相对有限：
 
-| 选择方法 | 最大选择数量 | 说明 | 适用文件类型 |
-| -------- | ------------ | ---- | ------------ |
-| `chooseImage` | 9 | 选择图片时的最大数量限制 | accept 为 `image` 时使用 |
-| `chooseVideo` | 1 | 不支持多选，只能选择单个视频文件 | accept 为 `video` 时使用 |
+| 选择方法      | 最大选择数量 | 说明                             | 适用文件类型             |
+| ------------- | ------------ | -------------------------------- | ------------------------ |
+| `chooseImage` | 9            | 选择图片时的最大数量限制         | accept 为 `image` 时使用 |
+| `chooseVideo` | 1            | 不支持多选，只能选择单个视频文件 | accept 为 `video` 时使用 |
 
 ::: tip 提示
 
-* 当设置的 `limit` 或 `maxCount` 超过上述平台限制时，实际选择数量将以平台限制为准
-* 微信小程序平台优先使用 `chooseMedia` 来选择图片和视频，具有更高的选择数量上限
-* 视频选择在非微信平台受限于 `chooseVideo` API，仅支持单选
-* 平台能力的优先级：微信平台 > H5平台 > 其他平台
+- 当设置的 `limit` 或 `maxCount` 超过上述平台限制时，实际选择数量将以平台限制为准
+- 微信小程序平台优先使用 `chooseMedia` 来选择图片和视频，具有更高的选择数量上限
+- 视频选择在非微信平台受限于 `chooseVideo` API，仅支持单选
+- 平台能力的优先级：微信平台 > H5平台 > 其他平台
   :::
 
 ## file 数据结构
@@ -722,10 +726,10 @@ count 值在 H5 平台的表现基于浏览器本身的规范。目前测试结�
 
 ## Slot
 
-| name    | 说明             | 最低版本 |
-| ------- | ---------------- | -------- |
-| default | 上传唤起插槽样式 | -        |
-| preview-cover | 自定义覆盖在预览区域上方的内容 |   1.3.12   |
+| name          | 说明                           | 最低版本 |
+| ------------- | ------------------------------ | -------- |
+| default       | 上传唤起插槽样式               | -        |
+| preview-cover | 自定义覆盖在预览区域上方的内容 | 1.3.12   |
 
 ## Events
 
@@ -741,9 +745,9 @@ count 值在 H5 平台的表现基于浏览器本身的规范。目前测试结�
 
 ## Methods
 
-| 方法名称 | 说明         | 参数 | 最低版本         |
-| -------- | ------------ | ---- | ---------------- |
-| submit   | 手动开始上传 | -    | 1.3.8 |
+| 方法名称 | 说明         | 参数 | 最低版本 |
+| -------- | ------------ | ---- | -------- |
+| submit   | 手动开始上传 | -    | 1.3.8    |
 
 ## Upload 外部样式类
 

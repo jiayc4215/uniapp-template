@@ -1,4 +1,4 @@
-import { defineUniPages } from "@uni-helper/vite-plugin-uni-pages";
+import { defineUniPages } from "@uni-helper/vite-plugin-uni-pages"
 
 export default defineUniPages({
   globalStyle: {
@@ -10,13 +10,13 @@ export default defineUniPages({
     backgroundColor: "@bgColor",
     backgroundTextStyle: "@bgTxtStyle",
     backgroundColorTop: "@bgColorTop",
-    backgroundColorBottom: "@bgColorBottom",
+    backgroundColorBottom: "@bgColorBottom"
   },
   easycom: {
     autoscan: true,
     custom: {
-      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue",
-    },
+      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
+    }
   },
   tabBar: {
     color: "@tabColor",
@@ -26,12 +26,12 @@ export default defineUniPages({
     list: [
       {
         pagePath: "pages/index/index",
-        text: "首页",
+        text: "首页"
       },
       {
         pagePath: "pages/home/index",
-        text: "home",
-      },
-    ],
-  },
-});
+        text: "home"
+      }
+    ]
+  }
+})

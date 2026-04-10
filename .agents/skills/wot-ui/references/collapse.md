@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/collapse.md'
+url: "https://wot-ui.cn/component/collapse.md"
 ---
 
 # Collapse 折叠面板
@@ -11,7 +11,7 @@ url: 'https://wot-ui.cn/component/collapse.md'
 `v-model` 为绑定值，可以为 array 类型（普通折叠）、 string 类型（手风琴）和 boolean 类型（收起展开查看更多）。CollapseItem 的 `name` 为必填, `title` 选填且可通过 `slot` 自定义。`name` 用于标识该折叠栏。
 
 ```typescript
-const value = ref<string[]>(['item1'])
+const value = ref<string[]>(["item1"])
 ```
 
 ```html
@@ -68,42 +68,48 @@ const value = ref<string[]>(['item1'])
 
 ```html
 <wd-collapse v-model="value">
-  <wd-collapse-item v-for="(item, index) in itemList" :before-expend="beforeExpend" :key="index" :title="item.title" :name="item.name">
+  <wd-collapse-item
+    v-for="(item, index) in itemList"
+    :before-expend="beforeExpend"
+    :key="index"
+    :title="item.title"
+    :name="item.name"
+  >
     {{ item.body }}
   </wd-collapse-item>
 </wd-collapse>
 ```
 
 ```ts
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 const toast = useToast()
-const value = ref<string[]>(['item1'])
+const value = ref<string[]>(["item1"])
 
 const itemList = ref<Record<string, any>[]>([
   {
-    title: '标签1',
-    name: 'item1',
-    body: '如订单处于暂停状态，进入“我的订单”页面，找到要取消的订单，点击“取消订单”按钮；选择订单取消原因后，点击“下一步”提交申请即可。'
+    title: "标签1",
+    name: "item1",
+    body: "如订单处于暂停状态，进入“我的订单”页面，找到要取消的订单，点击“取消订单”按钮；选择订单取消原因后，点击“下一步”提交申请即可。"
   },
   {
-    title: '标签1',
-    name: 'item2',
-    body: '一般情况下，买家只能向商户申请退款，商户确认可以退款后，可以通过接口或者商户平台向微信支付发起退款申请。'
+    title: "标签1",
+    name: "item2",
+    body: "一般情况下，买家只能向商户申请退款，商户确认可以退款后，可以通过接口或者商户平台向微信支付发起退款申请。"
   },
   {
-    title: '标签1',
-    name: 'item3',
-    body: '将收到的有质量问题的商品照片或者订单截图上传到微信公众账号（微信关注联华华商公众号），我们的工作人员会尽快帮您处理。'
+    title: "标签1",
+    name: "item3",
+    body: "将收到的有质量问题的商品照片或者订单截图上传到微信公众账号（微信关注联华华商公众号），我们的工作人员会尽快帮您处理。"
   },
   {
-    title: '标签1',
-    name: 'item4',
-    body: '七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。'
+    title: "标签1",
+    name: "item4",
+    body: "七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。"
   },
   {
-    title: '标签1',
-    name: 'item5',
-    body: 'Q1:优惠券使用详情？详情页面【我的】-【我的优惠】-【优惠券规则说明】。'
+    title: "标签1",
+    name: "item5",
+    body: "Q1:优惠券使用详情？详情页面【我的】-【我的优惠】-【优惠券规则说明】。"
   }
 ])
 
@@ -112,16 +118,16 @@ const itemList = ref<Record<string, any>[]>([
  * @param e
  */
 function beforeExpend(name) {
-  const index = itemList.value.findIndex((item) => {
+  const index = itemList.value.findIndex(item => {
     return item.name === name
   })
   if (index > -1) {
     itemList.value[index].body =
-      'Q1:七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。'
+      "Q1:七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。七天无理由退换货制度，所有商品在不影响二次销售的情况下7天内（以快递单签收为准）均接受客户退换货。"
   }
 
   return new Promise((reslove, reject) => {
-    toast.loading('加载中')
+    toast.loading("加载中")
     setTimeout(() => {
       toast.close()
       reslove(true)
@@ -163,7 +169,7 @@ Collapse 查看更多的模式下，可以使用插槽定义自己想要的折�
 
 `collapse`可以嵌套使用，同时由于`collapse-item`的内容容器存在默认的`padding`，所以嵌套的`collapse`需要设置`custom-body-style`或者`custom-body-class`来覆盖默认样式。
 
-***以下为示例，也可以自行调整样式。***
+**_以下为示例，也可以自行调整样式。_**
 
 :::tip 注意
 `custom-body-style`和`custom-body-class`在`1.4.0`及以上版本支持。
@@ -172,7 +178,13 @@ Collapse 查看更多的模式下，可以使用插槽定义自己想要的折�
 ```html
 <view class="collapse">
   <wd-collapse v-model="collapseRoot">
-    <wd-collapse-item custom-body-style="padding:0 0 0 14px" v-for="item in 5" :key="item" :title="`标签${item}`" :name="`${item}`">
+    <wd-collapse-item
+      custom-body-style="padding:0 0 0 14px"
+      v-for="item in 5"
+      :key="item"
+      :title="`标签${item}`"
+      :name="`${item}`"
+    >
       <wd-collapse v-model="collapseList[item - 1]">
         <wd-collapse-item
           v-for="(item, index) in itemList"
@@ -202,8 +214,8 @@ Collapse 查看更多的模式下，可以使用插槽定义自己想要的折�
 ```
 
 ```ts
-const collapseRoot = ref<string[]>(['0'])
-const collapseList = ref<Array<string[]>>([['item1'], ['item2'], ['item3'], ['item4'], ['item5']])
+const collapseRoot = ref<string[]>(["0"])
+const collapseList = ref<Array<string[]>>([["item1"], ["item2"], ["item3"], ["item4"], ["item5"]])
 ```
 
 ## CollapseItem Attributes
@@ -257,8 +269,8 @@ const collapseList = ref<Array<string[]>>([['item1'], ['item2'], ['item3'], ['it
 ```
 
 ```ts
-import { ref } from 'vue'
-import type { CollapseInstance } from '@/uni_modules/wot-design-uni/components/wd-collapse/types'
+import { ref } from "vue"
+import type { CollapseInstance } from "@/uni_modules/wot-design-uni/components/wd-collapse/types"
 
 const collapseRef = ref<CollapseInstance>()
 
@@ -289,11 +301,11 @@ collapseRef.value?.toggleAll({
 
 ## CollapseItem 外部样式类
 
-| 类名              | 说明                           | 最低版本         |
-| ----------------- | ------------------------------ | ---------------- |
-| custom-class      | collapseItem 根节点样式        | -                |
-| custom-body-style | 自定义折叠面板内容容器的样式   | 1.4.0 |
-| custom-body-class | 自定义折叠面板内容容器的样式类 | 1.4.0 |
+| 类名              | 说明                           | 最低版本 |
+| ----------------- | ------------------------------ | -------- |
+| custom-class      | collapseItem 根节点样式        | -        |
+| custom-body-style | 自定义折叠面板内容容器的样式   | 1.4.0    |
+| custom-body-class | 自定义折叠面板内容容器的样式类 | 1.4.0    |
 
 ## Collapse 外部样式类
 

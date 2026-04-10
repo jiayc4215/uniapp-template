@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/number-keyboard.md'
+url: "https://wot-ui.cn/component/number-keyboard.md"
 ---
 
 # NumberKeyboard 数字键盘
@@ -28,8 +28,8 @@ function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 带右侧栏的键盘
@@ -39,7 +39,14 @@ const onDelete = () => showToast('删除')
 ```html
 <wd-cell title="带右侧栏的键盘" is-link @click="showKeyBoard" />
 
-<wd-number-keyboard v-model:visible="visible" mode="custom" extra-key="." close-text="完成" @input="onInput" @delete="onDelete"></wd-number-keyboard>
+<wd-number-keyboard
+  v-model:visible="visible"
+  mode="custom"
+  extra-key="."
+  close-text="完成"
+  @input="onInput"
+  @delete="onDelete"
+></wd-number-keyboard>
 ```
 
 ```ts
@@ -50,8 +57,8 @@ function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 身份证键盘
@@ -72,8 +79,8 @@ function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 带标题的键盘
@@ -83,7 +90,14 @@ const onDelete = () => showToast('删除')
 ```html
 <wd-cell title="带标题的键盘" is-link @click="showKeyBoard" />
 
-<wd-number-keyboard v-model:visible="visible" title="输入密码" extra-key="." close-text="完成" @input="onInput" @delete="onDelete" />
+<wd-number-keyboard
+  v-model:visible="visible"
+  title="输入密码"
+  extra-key="."
+  close-text="完成"
+  @input="onInput"
+  @delete="onDelete"
+/>
 ```
 
 ```ts
@@ -94,8 +108,8 @@ function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 使用 slot 自定义标题
@@ -118,8 +132,8 @@ function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 多个额外按键
@@ -129,7 +143,14 @@ const onDelete = () => showToast('删除')
 ```html
 <wd-cell title="多个额外按键" is-link @click="showKeyBoard" />
 
-<wd-number-keyboard v-model:visible="visible" mode="custom" :extra-key="['00', '.']" close-text="完成" @input="onInput" @delete="onDelete" />
+<wd-number-keyboard
+  v-model:visible="visible"
+  mode="custom"
+  :extra-key="['00', '.']"
+  close-text="完成"
+  @input="onInput"
+  @delete="onDelete"
+/>
 ```
 
 ```ts
@@ -140,8 +161,8 @@ function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 随机数字键盘
@@ -162,8 +183,8 @@ function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 双向绑定
@@ -187,14 +208,14 @@ const onDelete = () => showToast('删除')
 ```ts
 const { show: showToast } = useToast()
 const visible = ref<boolean>(false)
-const value1 = ref<string>('')
+const value1 = ref<string>("")
 
 function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## 展示蒙层遮罩
@@ -207,43 +228,49 @@ const onDelete = () => showToast('删除')
 
 ```html
 <wd-cell title="双向绑定" :value="value1" is-link @click="showKeyBoard" />
-<wd-number-keyboard :modal="true" :hide-on-click-outside="true" v-model:visible="visible" @input="onInput" @delete="onDelete" />
+<wd-number-keyboard
+  :modal="true"
+  :hide-on-click-outside="true"
+  v-model:visible="visible"
+  @input="onInput"
+  @delete="onDelete"
+/>
 ```
 
 ```ts
 const { show: showToast } = useToast()
 const visible = ref<boolean>(false)
-const value1 = ref<string>('')
+const value1 = ref<string>("")
 
 function showKeyBoard() {
   visible.value = true
 }
 
-const onInput = (value) => showToast(`${value}`)
-const onDelete = () => showToast('删除')
+const onInput = value => showToast(`${value}`)
+const onDelete = () => showToast("删除")
 ```
 
 ## Attributes
 
-| 参数                | 说明                     | 类型                  | 可选值              | 默认值     | 最低版本 |
-| ------------------- | ------------------------ | --------------------- | ------------------- | ---------- | -------- |
-| v-model:visible     | 是否展开                 | `boolean`             | -                   | `false`    | 0.1.65   |
-| v-model             | 绑定的值                 | `string`              | -                   | -          | 0.1.65   |
-| title               | 标题                     | `string`              | -                   | -          | 0.1.65   |
-| mode                | 键盘模式                 | `string`              | `default`, `custom` | `default`  | 0.1.65   |
-| zIndex              | 层级                     | `number`              | -                   | `100`      | 0.1.65   |
-| maxlength           | 最大长度                 | `number`              | -                   | `Infinity` | 0.1.65   |
-| showDeleteKey       | 是否显示删除键           | `boolean`             | -                   | `true`     | 0.1.65   |
-| randomKeyOrder      | 是否随机键盘按键顺序     | `boolean`             | -                   | `false`    | 0.1.65   |
-| closeText           | 确认按钮文本             | `string`              | -                   | -          | 0.1.65   |
-| deleteText          | 删除按钮文本             | `string`              | -                   | -          | 0.1.65   |
-| closeButtonLoading  | 关闭按钮是否显示加载状态 | `boolean`             | -                   | `false`    | 0.1.65   |
-| modal               | 是否显示蒙层遮罩         | `boolean`             | -                   | `false`    | 0.1.65   |
-| hideOnClickOutside  | 是否在点击外部时收起键盘 | `boolean`             | -                   | `true`     | 0.1.65   |
-| lockScroll          | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | `boolean`             | -                   | `true`     | 0.1.65   |
-| safeAreaInsetBottom | 是否在底部安全区域内     | `boolean`             | -                   | `true`     | 0.1.65   |
-| extraKey            | 额外按键                 | `string` / `string[]` | -                   | -          | 0.1.65   |
-| root-portal         | 是否从页面中脱离出来，用于解决各种 fixed 失效问题 | `boolean`             | -                   | `false`    | 1.11.0 |
+| 参数                | 说明                                              | 类型                  | 可选值              | 默认值     | 最低版本 |
+| ------------------- | ------------------------------------------------- | --------------------- | ------------------- | ---------- | -------- |
+| v-model:visible     | 是否展开                                          | `boolean`             | -                   | `false`    | 0.1.65   |
+| v-model             | 绑定的值                                          | `string`              | -                   | -          | 0.1.65   |
+| title               | 标题                                              | `string`              | -                   | -          | 0.1.65   |
+| mode                | 键盘模式                                          | `string`              | `default`, `custom` | `default`  | 0.1.65   |
+| zIndex              | 层级                                              | `number`              | -                   | `100`      | 0.1.65   |
+| maxlength           | 最大长度                                          | `number`              | -                   | `Infinity` | 0.1.65   |
+| showDeleteKey       | 是否显示删除键                                    | `boolean`             | -                   | `true`     | 0.1.65   |
+| randomKeyOrder      | 是否随机键盘按键顺序                              | `boolean`             | -                   | `false`    | 0.1.65   |
+| closeText           | 确认按钮文本                                      | `string`              | -                   | -          | 0.1.65   |
+| deleteText          | 删除按钮文本                                      | `string`              | -                   | -          | 0.1.65   |
+| closeButtonLoading  | 关闭按钮是否显示加载状态                          | `boolean`             | -                   | `false`    | 0.1.65   |
+| modal               | 是否显示蒙层遮罩                                  | `boolean`             | -                   | `false`    | 0.1.65   |
+| hideOnClickOutside  | 是否在点击外部时收起键盘                          | `boolean`             | -                   | `true`     | 0.1.65   |
+| lockScroll          | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动  | `boolean`             | -                   | `true`     | 0.1.65   |
+| safeAreaInsetBottom | 是否在底部安全区域内                              | `boolean`             | -                   | `true`     | 0.1.65   |
+| extraKey            | 额外按键                                          | `string` / `string[]` | -                   | -          | 0.1.65   |
+| root-portal         | 是否从页面中脱离出来，用于解决各种 fixed 失效问题 | `boolean`             | -                   | `false`    | 1.11.0   |
 
 ## Slot
 

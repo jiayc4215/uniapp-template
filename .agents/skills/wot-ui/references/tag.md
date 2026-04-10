@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/tag.md'
+url: "https://wot-ui.cn/component/tag.md"
 ---
 
 # Tag 标签
@@ -91,8 +91,7 @@ url: 'https://wot-ui.cn/component/tag.md'
 设置 `color` 修改文字颜色，设置 `bg-color` 修改背景色和边框颜色。
 
 ```html
-<wd-tag color="#0083ff" bg-color="#d0e8ff">标签</wd-tag>
-<wd-tag color="#FAA21E" bg-color="#FAA21E" plain>标签</wd-tag>
+<wd-tag color="#0083ff" bg-color="#d0e8ff">标签</wd-tag> <wd-tag color="#FAA21E" bg-color="#FAA21E" plain>标签</wd-tag>
 ```
 
 ## 可关闭
@@ -108,7 +107,9 @@ url: 'https://wot-ui.cn/component/tag.md'
 设置 `dynamic` 属性，该标签为新增样式，输入内容确定后触发 `confirm` 事件。
 
 ```html
-<wd-tag v-for="(tag, index) in tags" :key="index" custom-class="space" round closable @close="handleClose(index)">{{item}}</wd-tag>
+<wd-tag v-for="(tag, index) in tags" :key="index" custom-class="space" round closable @close="handleClose(index)"
+  >{{item}}</wd-tag
+>
 <wd-tag custom-class="space" round dynamic @confirm="handleConfirm"></wd-tag>
 ```
 
@@ -124,11 +125,11 @@ url: 'https://wot-ui.cn/component/tag.md'
 ```
 
 ```typescript
-const tags = ref(['标签一', '标签二'])
+const tags = ref(["标签一", "标签二"])
 
 function handleClose(order) {
   tags.value = tags.value.filter((value, index) => index !== order)
-  console.log('close:index' + order)
+  console.log("close:index" + order)
 }
 
 function handleConfirm({ value }) {
@@ -140,7 +141,9 @@ function handleConfirm({ value }) {
 ## 事件
 
 ```html
-<wd-tag v-for="(tag, index) in tags" :key="index" round closable @click="handleClick(index)" @close="handleClose(index)">{{tag.value}}</wd-tag>
+<wd-tag v-for="(tag, index) in tags" :key="index" round closable @click="handleClick(index)" @close="handleClose(index)"
+  >{{tag.value}}</wd-tag
+>
 ```
 
 ```typescript
@@ -148,34 +151,34 @@ const tags = ref([
   {
     plain: true,
     closable: true,
-    type: 'primary',
-    value: '标签一'
+    type: "primary",
+    value: "标签一"
   }
 ])
 
 function handleClick(index) {
-  console.log('click:index' + index)
+  console.log("click:index" + index)
 }
 function handleClose(order) {
   tags.value = tags.value.filter((value, index) => index !== order)
-  console.log('close:index' + order)
+  console.log("close:index" + order)
 }
 ```
 
 ## Attributes
 
-| 参数          | 说明                     | 类型    | 可选值                                       | 默认值 | 最低版本 |
-| ------------- | ------------------------ | ------- | -------------------------------------------- | ------ | -------- |
-| type          | 标签类型                 | string  | `default` / `primary` / `danger` / `warning` / `success` | default      | -        |
-| plain         | 幽灵类型                 | boolean | -                                            | false  | -        |
-| mark          | 标记类型                 | boolean | -                                            | false  | -        |
-| round         | 圆角类型                 | boolean | -                                            | false  | -        |
-| icon          | 左侧图标                 | string  | -                                            | -      | -        |
-| color         | 文字颜色                 | string  | -                                            | -      | -        |
-| bg-color      | 背景色和边框色           | string  | -                                            | -      | -        |
-| closable      | 可关闭(只对圆角类型支持) | boolean | -                                            | false  | -        |
-| use-icon-slot | 开启图标插槽             | boolean | -                                            | false  | -        |
-| dynamic       | 是否为新增标签           | boolean | -                                            | false  | -        |
+| 参数          | 说明                     | 类型    | 可选值                                                   | 默认值  | 最低版本 |
+| ------------- | ------------------------ | ------- | -------------------------------------------------------- | ------- | -------- |
+| type          | 标签类型                 | string  | `default` / `primary` / `danger` / `warning` / `success` | default | -        |
+| plain         | 幽灵类型                 | boolean | -                                                        | false   | -        |
+| mark          | 标记类型                 | boolean | -                                                        | false   | -        |
+| round         | 圆角类型                 | boolean | -                                                        | false   | -        |
+| icon          | 左侧图标                 | string  | -                                                        | -       | -        |
+| color         | 文字颜色                 | string  | -                                                        | -       | -        |
+| bg-color      | 背景色和边框色           | string  | -                                                        | -       | -        |
+| closable      | 可关闭(只对圆角类型支持) | boolean | -                                                        | false   | -        |
+| use-icon-slot | 开启图标插槽             | boolean | -                                                        | false   | -        |
+| dynamic       | 是否为新增标签           | boolean | -                                                        | false   | -        |
 
 ## Events
 

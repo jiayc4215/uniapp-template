@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+import { defineStore } from "pinia"
 
 /**
  * 简化版系统主题状态管理
@@ -19,12 +19,12 @@ export const useThemeStore = defineStore("theme", {
       darkColor: "#ffffff",
       darkColor2: "#e0e0e0",
       darkColor3: "#a0a0a0",
-      colorTheme: "#0165FF",
-    },
+      colorTheme: "#0165FF"
+    }
   }),
 
   getters: {
-    isDark: (state) => state.theme === "dark",
+    isDark: state => state.theme === "dark"
   },
 
   actions: {
@@ -35,21 +35,21 @@ export const useThemeStore = defineStore("theme", {
     getSystemTheme() {
       // #ifdef MP-WEIXIN
       // 微信小程序使用 getAppBaseInfo
-      const appBaseInfo = uni.getAppBaseInfo();
+      const appBaseInfo = uni.getAppBaseInfo()
       if (appBaseInfo && appBaseInfo.theme) {
-        return appBaseInfo.theme;
+        return appBaseInfo.theme
       }
       // #endif
 
       // #ifndef MP-WEIXIN
       // 其他平台使用 getSystemInfoSync
-      const systemInfo = uni.getSystemInfoSync();
+      const systemInfo = uni.getSystemInfoSync()
       if (systemInfo && systemInfo.theme) {
-        return systemInfo.theme;
+        return systemInfo.theme
       }
       // #endif
 
-      return "light"; // 默认返回 light
+      return "light" // 默认返回 light
     },
 
     /**
@@ -57,16 +57,16 @@ export const useThemeStore = defineStore("theme", {
      * @param theme 主题模式
      */
     setTheme(theme) {
-      this.theme = theme;
+      this.theme = theme
     },
 
     /**
      * 初始化系统主题
      */
     initSystemTheme() {
-      const systemTheme = this.getSystemTheme();
-      this.theme = systemTheme;
-      console.log("初始化系统主题:", this.theme);
-    },
-  },
-});
+      const systemTheme = this.getSystemTheme()
+      this.theme = systemTheme
+      console.log("初始化系统主题:", this.theme)
+    }
+  }
+})

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/text.md'
+url: "https://wot-ui.cn/component/text.md"
 ---
 
 # Text 文本

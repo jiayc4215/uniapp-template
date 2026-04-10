@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/avatar.md'
+url: "https://wot-ui.cn/component/avatar.md"
 ---
 
 # Avatar 头像
@@ -11,7 +11,7 @@ url: 'https://wot-ui.cn/component/avatar.md'
 头像支持三种类型：图片、文本、图标。
 
 ```typescript
-const avatarURL = 'https://wot-ui.cn/assets/panda.jpg'
+const avatarURL = "https://wot-ui.cn/assets/panda.jpg"
 ```
 
 ```html
@@ -25,8 +25,7 @@ const avatarURL = 'https://wot-ui.cn/assets/panda.jpg'
 使用 `shape` 属性设置头像形状，支持 `round`（圆形）和 `square`（方形），默认为 `round`。
 
 ```html
-<wd-avatar :src="avatarURL" shape="square" />
-<wd-avatar :src="avatarURL" shape="round" />
+<wd-avatar :src="avatarURL" shape="square" /> <wd-avatar :src="avatarURL" shape="round" />
 ```
 
 ## 头像尺寸
@@ -94,17 +93,16 @@ const avatarURL = 'https://wot-ui.cn/assets/panda.jpg'
 通过监听 `click` 事件实现点击功能。
 
 ```html
-<wd-avatar :src="avatarURL" @click="handleClick" />
-<wd-avatar text="点我" bg-color="#1E90FF" @click="handleClick" />
+<wd-avatar :src="avatarURL" @click="handleClick" /> <wd-avatar text="点我" bg-color="#1E90FF" @click="handleClick" />
 ```
 
 ```typescript
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 
 const toast = useToast()
 
 const handleClick = () => {
-  toast.show('点击头像')
+  toast.show("点击头像")
 }
 ```
 
@@ -183,57 +181,57 @@ const handleClick = () => {
 
 ## Avatar Attributes
 
-| 参数     | 说明                                       | 类型             | 可选值                          | 默认值     | 最低版本         |
-| -------- | ------------------------------------------ | ---------------- | ------------------------------- | ---------- | ---------------- |
-| src      | 图片地址                                   | string           | -                               | -          | 1.14.0 |
-| text     | 文本内容                                   | string           | -                               | -          | 1.14.0 |
-| icon     | 图标名称，使用 wd-icon 组件                | string           | -                               | -          | 1.14.0 |
-| size     | 头像尺寸，支持预设尺寸或带单位的字符串     | string | number | large / medium / normal / small | normal     | 1.14.0 |
-| shape    | 头像形状                                   | string           | round / square                  | round      | 1.14.0 |
-| bg-color | 背景颜色                                   | string           | -                               | -          | 1.14.0 |
-| color    | 文字颜色                                   | string           | -                               | -          | 1.14.0 |
-| alt      | 图片加载失败时的占位文本                   | string           | -                               | -          | 1.14.0 |
-| mode     | 图片填充模式，同 uni-app image 组件的 mode | string           | -                               | aspectFill | 1.14.0 |
+| 参数     | 说明                                       | 类型   | 可选值         | 默认值                          | 最低版本 |
+| -------- | ------------------------------------------ | ------ | -------------- | ------------------------------- | -------- | ------ |
+| src      | 图片地址                                   | string | -              | -                               | 1.14.0   |
+| text     | 文本内容                                   | string | -              | -                               | 1.14.0   |
+| icon     | 图标名称，使用 wd-icon 组件                | string | -              | -                               | 1.14.0   |
+| size     | 头像尺寸，支持预设尺寸或带单位的字符串     | string | number         | large / medium / normal / small | normal   | 1.14.0 |
+| shape    | 头像形状                                   | string | round / square | round                           | 1.14.0   |
+| bg-color | 背景颜色                                   | string | -              | -                               | 1.14.0   |
+| color    | 文字颜色                                   | string | -              | -                               | 1.14.0   |
+| alt      | 图片加载失败时的占位文本                   | string | -              | -                               | 1.14.0   |
+| mode     | 图片填充模式，同 uni-app image 组件的 mode | string | -              | aspectFill                      | 1.14.0   |
 
 ## Avatar Events
 
-| 事件名称 | 说明               | 参数  | 最低版本         |
-| -------- | ------------------ | ----- | ---------------- |
-| click    | 点击头像时触发     | -     | 1.14.0 |
-| error    | 图片加载失败时触发 | event | 1.14.0 |
+| 事件名称 | 说明               | 参数  | 最低版本 |
+| -------- | ------------------ | ----- | -------- |
+| click    | 点击头像时触发     | -     | 1.14.0   |
+| error    | 图片加载失败时触发 | event | 1.14.0   |
 
 ## Avatar Slots
 
-| 名称    | 说明           | 最低版本         |
-| ------- | -------------- | ---------------- |
-| default | 自定义头像内容 | 1.14.0 |
+| 名称    | 说明           | 最低版本 |
+| ------- | -------------- | -------- |
+| default | 自定义头像内容 | 1.14.0   |
 
 ## Avatar 外部样式类
 
-| 类名         | 说明       | 最低版本         |
-| ------------ | ---------- | ---------------- |
-| custom-class | 根节点样式 | 1.14.0 |
-| custom-style | 根节点样式 | 1.14.0 |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | 1.14.0   |
+| custom-style | 根节点样式 | 1.14.0   |
 
 ## AvatarGroup Attributes
 
-| 参数            | 说明                             | 类型             | 可选值                          | 默认值 | 最低版本         |
-| --------------- | -------------------------------- | ---------------- | ------------------------------- | ------ | ---------------- |
-| max-count       | 最大显示数量                     | number           | -                               | -      | 1.14.0 |
-| cascading       | 叠层方向                         | string           | left-up / right-up              | -      | 1.14.0 |
-| shape           | 统一设置头像形状                 | string           | round / square                  | round  | 1.14.0 |
-| size            | 统一设置头像尺寸                 | string | number | large / medium / normal / small | normal | 1.14.0 |
-| collapse-avatar | 超出最大数量时折叠头像显示的内容 | string           | -                               | -      | 1.14.0 |
+| 参数            | 说明                             | 类型   | 可选值             | 默认值                          | 最低版本 |
+| --------------- | -------------------------------- | ------ | ------------------ | ------------------------------- | -------- | ------ |
+| max-count       | 最大显示数量                     | number | -                  | -                               | 1.14.0   |
+| cascading       | 叠层方向                         | string | left-up / right-up | -                               | 1.14.0   |
+| shape           | 统一设置头像形状                 | string | round / square     | round                           | 1.14.0   |
+| size            | 统一设置头像尺寸                 | string | number             | large / medium / normal / small | normal   | 1.14.0 |
+| collapse-avatar | 超出最大数量时折叠头像显示的内容 | string | -                  | -                               | 1.14.0   |
 
 ## AvatarGroup Slots
 
-| 名称    | 说明                          | 最低版本         |
-| ------- | ----------------------------- | ---------------- |
-| default | 头像列表，放置 wd-avatar 组件 | 1.14.0 |
+| 名称    | 说明                          | 最低版本 |
+| ------- | ----------------------------- | -------- |
+| default | 头像列表，放置 wd-avatar 组件 | 1.14.0   |
 
 ## AvatarGroup 外部样式类
 
-| 类名         | 说明       | 最低版本         |
-| ------------ | ---------- | ---------------- |
-| custom-class | 根节点样式 | 1.14.0 |
-| custom-style | 根节点样式 | 1.14.0 |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | 1.14.0   |
+| custom-style | 根节点样式 | 1.14.0   |

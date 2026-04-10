@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/guide/quick-use.md'
+url: "https://wot-ui.cn/guide/quick-use.md"
 ---
 
 # 快速上手
@@ -16,8 +16,8 @@ url: 'https://wot-ui.cn/guide/quick-use.md'
 
 `Wot UI` 提供了 `uni_modules` 和 `npm` 两种安装方式，按需选择。
 
-* 使用`uni_modules`安装无需额外配置，即插即用，但是每次更新组件库需要处理代码差异（一般直接覆盖就可以）。
-* 使用`npm`安装需要额外配置，更新组件库时无需处理代码差异。
+- 使用`uni_modules`安装无需额外配置，即插即用，但是每次更新组件库需要处理代码差异（一般直接覆盖就可以）。
+- 使用`npm`安装需要额外配置，更新组件库时无需处理代码差异。
 
 :::
 
@@ -39,15 +39,15 @@ pnpm add wot-design-uni
 
 :::
 
-### uni\_modules 安装
+### uni_modules 安装
 
-`Wot UI` 支持 [uni\_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#uni-modules) 规范，已经上架到 uni-app 的插件市场。
+`Wot UI` 支持 [uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#uni-modules) 规范，已经上架到 uni-app 的插件市场。
 
-在 `uni-app 插件市场` 选择使用 `HBuildX` 导入，或者选择手动在 src 目录下创建 uni\_modules 文件夹并将 `Wot UI` 解压到 uni\_modules 中，结构如下：
+在 `uni-app 插件市场` 选择使用 `HBuildX` 导入，或者选择手动在 src 目录下创建 uni_modules 文件夹并将 `Wot UI` 解压到 uni_modules 中，结构如下：
 
 ```bash
 - uni_modules
-- - - wot-design-uni 
+- - - wot-design-uni
 ```
 
 下载地址：wot-design-uni
@@ -91,8 +91,8 @@ pnpm add sass -D
 
 :::tip 提醒
 
-* uni-app 考虑到编译速度，直接在 `pages.json` 内修改 `easycom` 不会触发重新编译，需要改动页面内容触发。
-* 请确保您的 `pages.json` 中只有一个 `easycom` 字段，否则请自行合并多个引入规则。
+- uni-app 考虑到编译速度，直接在 `pages.json` 内修改 `easycom` 不会触发重新编译，需要改动页面内容触发。
+- 请确保您的 `pages.json` 中只有一个 `easycom` 字段，否则请自行合并多个引入规则。
 
 :::
 
@@ -105,7 +105,7 @@ pnpm add sass -D
     "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
   }
  },
- 
+
  // 此为本身已有的内容
  "pages": [
   // ......
@@ -119,8 +119,8 @@ pnpm add sass -D
 
 :::tip 提醒
 
-* 推荐使用 `@uni-helper/vite-plugin-uni-components@0.0.9` 及以上版本，因为在 0.0.9 版本开始其内置了 `wot-design-uni` 的`resolver`。
-* 如果使用此方案时控制台打印很多 `Sourcemap for  points to missing source files​` ，可以尝试将 `Vite` 版本升级至 `4.5.x` 以上版本。
+- 推荐使用 `@uni-helper/vite-plugin-uni-components@0.0.9` 及以上版本，因为在 0.0.9 版本开始其内置了 `wot-design-uni` 的`resolver`。
+- 如果使用此方案时控制台打印很多 `Sourcemap for  points to missing source files​` ，可以尝试将 `Vite` 版本升级至 `4.5.x` 以上版本。
 
 :::
 
@@ -142,20 +142,21 @@ pnpm add @uni-helper/vite-plugin-uni-components -D
 
 ```ts
 // vite.config.ts
-import { defineConfig } from "vite";
-import uni from "@dcloudio/vite-plugin-uni";
+import { defineConfig } from "vite"
+import uni from "@dcloudio/vite-plugin-uni"
 
-import Components from '@uni-helper/vite-plugin-uni-components'
-import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers'
-
+import Components from "@uni-helper/vite-plugin-uni-components"
+import { WotResolver } from "@uni-helper/vite-plugin-uni-components/resolvers"
 
 export default defineConfig({
   plugins: [
     // make sure put it before `Uni()`
     Components({
-    resolvers: [WotResolver()]
-  }), uni()],
-});
+      resolvers: [WotResolver()]
+    }),
+    uni()
+  ]
+})
 ```
 
 如果你使用 `pnpm` ，请在根目录下创建一个 `.npmrc` 文件，参见 [Issue](https://github.com/antfu/unplugin-vue-components/issues/389)。

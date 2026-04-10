@@ -12,20 +12,20 @@
 </template>
 
 <script setup>
-import { isMpWeixin } from "@uni-helper/uni-env";
+import { isMpWeixin } from "@uni-helper/uni-env"
 definePage({
   style: {
-    navigationBarTitleText: "首页",
-  },
-});
+    navigationBarTitleText: "首页"
+  }
+})
 
-const title = ref("Hello");
+const title = ref("Hello")
 
 const goToLogin = () => {
   uni.navigateTo({
-    url: "/pages/login/index",
-  });
-};
+    url: "/pages/login/index"
+  })
+}
 </script>
 
 <style>

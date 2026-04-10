@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/guide/locale.md'
+url: "https://wot-ui.cn/guide/locale.md"
 ---
 
 # 国际化
@@ -32,11 +32,11 @@ export default defineConfig({
 我们通过 **Locale** 组件实现多语言支持，使用 **Locale.use** 方法可以切换当前使用的语言。
 
 ```typescript
-import { Locale } from 'wot-design-uni'
+import { Locale } from "wot-design-uni"
 // 引入英文语言包
-import enUS from 'wot-design-uni/locale/lang/en-US'
+import enUS from "wot-design-uni/locale/lang/en-US"
 
-Locale.use('en-US', enUS)
+Locale.use("en-US", enUS)
 ```
 
 ## 覆盖语言包
@@ -44,12 +44,12 @@ Locale.use('en-US', enUS)
 通过 **Locale.add** 方法可以实现文案的修改和扩展，示例如下：
 
 ```typescript
-import { Locale } from 'wot-design-uni'
+import { Locale } from "wot-design-uni"
 
 const messages = {
-  'zh-CN': {
+  "zh-CN": {
     calendar: {
-      title: '请选择日期' // 将'选择日期'修改为'请选择日期'
+      title: "请选择日期" // 将'选择日期'修改为'请选择日期'
     }
   }
 }
@@ -59,22 +59,22 @@ Locale.add(messages)
 
 ## 支持的语言
 
-| 语言             | 文件名    | 版本      |
-| ---------------- | --------- | --------- |
-| 简体中文         | zh-CN     | `v0.2.20` |
-| 繁体中文（台湾） | zh-TW     | `v0.2.20` |
-| 繁体中文（香港） | zh-HK     | `v0.2.20` |
-| 英语             | en-US     | `v0.2.20` |
-| 泰语             | th-TH     | `v0.2.20` |
-| 越南语             | vi-VN    | `v0.2.20` |
-| 阿拉伯语             | ar-SA    | `v1.3.12` |
-| 德语             | de-DE    | `v1.3.12` |
-| 西班牙语             | es-ES    | `v1.3.12` |
-| 葡萄牙语             | pt-PT    | `v1.3.12` |
-| 法语             | fr-FR    | `v1.3.12` |
-| 日语             | ja-JP    | `v1.3.12` |
-| 韩语             | ko-KR    | `v1.3.12` |
-| 土耳其语             | tr-TR    | `v1.3.12` |
-| 俄语             | ru-RU    | `v1.3.12` |
+| 语言             | 文件名 | 版本      |
+| ---------------- | ------ | --------- |
+| 简体中文         | zh-CN  | `v0.2.20` |
+| 繁体中文（台湾） | zh-TW  | `v0.2.20` |
+| 繁体中文（香港） | zh-HK  | `v0.2.20` |
+| 英语             | en-US  | `v0.2.20` |
+| 泰语             | th-TH  | `v0.2.20` |
+| 越南语           | vi-VN  | `v0.2.20` |
+| 阿拉伯语         | ar-SA  | `v1.3.12` |
+| 德语             | de-DE  | `v1.3.12` |
+| 西班牙语         | es-ES  | `v1.3.12` |
+| 葡萄牙语         | pt-PT  | `v1.3.12` |
+| 法语             | fr-FR  | `v1.3.12` |
+| 日语             | ja-JP  | `v1.3.12` |
+| 韩语             | ko-KR  | `v1.3.12` |
+| 土耳其语         | tr-TR  | `v1.3.12` |
+| 俄语             | ru-RU  | `v1.3.12` |
 
 如果你需要使用其他的语言，欢迎贡献 [PR](https://github.com/Moonofweisheng/wot-design-uni/pulls)，只需在[这里](https://github.com/Moonofweisheng/wot-design-uni/tree/master/src/uni_modules/wot-design-uni/locale/lang)添加一个语言配置文件即可。

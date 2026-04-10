@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/card.md'
+url: "https://wot-ui.cn/component/card.md"
 ---
 
 # Card 卡片

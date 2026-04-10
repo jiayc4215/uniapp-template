@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/tabs.md'
+url: "https://wot-ui.cn/component/tabs.md"
 ---
 
 # Tab 标签页
@@ -50,8 +50,8 @@ const tab = ref<number>(0)
 ```
 
 ```typescript
-const tabs = ref(['这', '是', '一', '个', '例子'])
-const tab = ref('例子')
+const tabs = ref(["这", "是", "一", "个", "例子"])
+const tab = ref("例子")
 ```
 
 ```scss
@@ -77,25 +77,25 @@ const tab = ref('例子')
 const tabWithBadge = ref(0)
 const tabsWithBadge = ref([
   {
-    title: '普通数值',
+    title: "普通数值",
     badgeProps: {
       modelValue: 10,
-      right: '-8px'
+      right: "-8px"
     }
   },
   {
-    title: '最大值',
+    title: "最大值",
     badgeProps: {
       modelValue: 100,
       max: 99,
-      right: '-8px'
+      right: "-8px"
     }
   },
   {
-    title: '点状',
+    title: "点状",
     badgeProps: {
       isDot: true,
-      right: '-8px',
+      right: "-8px",
       showZero: true
     }
   }
@@ -117,8 +117,8 @@ const tabsWithBadge = ref([
 ```
 
 ```typescript
-const tabs = ref(['Wot', 'Design', 'Uni'])
-const tab = ref('Design')
+const tabs = ref(["Wot", "Design", "Uni"])
+const tab = ref("Design")
 ```
 
 ## 粘性布局
@@ -205,7 +205,7 @@ const tab = ref('Design')
 </wd-tabs>
 ```
 
-***
+---
 
 标签页在标签数大于等于 6 个时，可以滑动；当标签数大于等于 10 个时，将会显示导航地图，便于快速定位到某个标签。可以通过设置 `slidable-num` 修改可滑动的数量阈值；设置 `map-num` 修改显示导航地图的阈值。`slidable`设置为`always`时，所有的标签会向左侧收缩对齐，超出即可滑动。
 
@@ -215,7 +215,13 @@ const tab = ref('Design')
 
 ```html
 <wd-button @click="handleClick">打开弹窗</wd-button>
-<wd-popup v-model="showPopup" position="bottom" @after-enter="handlePopupShow" closable custom-style="height: 200px;padding: 0 24rpx;">
+<wd-popup
+  v-model="showPopup"
+  position="bottom"
+  @after-enter="handlePopupShow"
+  closable
+  custom-style="height: 200px;padding: 0 24rpx;"
+>
   <view class="title">在弹出框中使用</view>
   <wd-tabs v-model="tab" ref="tabsRef">
     <wd-tab v-for="item in tabs" :key="item" :title="`${item}`" :name="item">
@@ -227,7 +233,7 @@ const tab = ref('Design')
 
 ```ts
 const tab = ref<number>(3)
-const tabs = ref(['这', '是', '一', '个', '例子'])
+const tabs = ref(["这", "是", "一", "个", "例子"])
 
 const showPopup = ref(false) // 控制popup显示
 const tabsRef = ref<TabsInstance>() // 获取分段器实例
@@ -274,7 +280,7 @@ function handlePopupShow() {
 | animated      | 是否开启切换标签内容时的转场动画                                                         | boolean         | -        | false  | -        |
 | duration      | 切换动画过渡时间，单位毫秒                                                               | number          | -        | 300    | -        |
 | slidable      | 是否开启滚动导航                                                                         | TabsSlidable    | `always` | `auto` | 1.4.0    |
-| showScrollbar | 标签可滑动时是否显示滚动条                                                               | boolean         | -        | false  | 1.14.0 |
+| showScrollbar | 标签可滑动时是否显示滚动条                                                               | boolean         | -        | false  | 1.14.0   |
 | badge-props   | 自定义徽标的属性，传入的对象会被透传给 [Badge 组件的 props](/component/badge#attributes) | BadgeProps      | -        | -      | 1.4.0    |
 
 ## Tab Attributes

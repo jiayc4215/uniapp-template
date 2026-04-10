@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/count-to.md'
+url: "https://wot-ui.cn/component/count-to.md"
 ---
 
 # CountTo 数字滚动
@@ -21,9 +21,34 @@ url: 'https://wot-ui.cn/component/count-to.md'
 
 ```vue
 <wd-count-to :endVal="2024" suffix="年" color="#16baaa"></wd-count-to>
-<wd-count-to prefix="￥" :startVal="0" :decimals="2" :endVal="186.321" :fontSize="32" suffix="%" color="#1e9fff"></wd-count-to>
-<wd-count-to prefix="￥" :startVal="0" :decimals="2" :endVal="21286.321" :fontSize="32" suffix="%" color="#ff5722"></wd-count-to>
-<wd-count-to prefix="￥" :startVal="0" :decimals="2" :endVal="21286.321" :fontSize="32" suffix="%" color="#ffb800" :duration="2000"></wd-count-to>
+<wd-count-to
+  prefix="￥"
+  :startVal="0"
+  :decimals="2"
+  :endVal="186.321"
+  :fontSize="32"
+  suffix="%"
+  color="#1e9fff"
+></wd-count-to>
+<wd-count-to
+  prefix="￥"
+  :startVal="0"
+  :decimals="2"
+  :endVal="21286.321"
+  :fontSize="32"
+  suffix="%"
+  color="#ff5722"
+></wd-count-to>
+<wd-count-to
+  prefix="￥"
+  :startVal="0"
+  :decimals="2"
+  :endVal="21286.321"
+  :fontSize="32"
+  suffix="%"
+  color="#ffb800"
+  :duration="2000"
+></wd-count-to>
 ```
 
 ## 设置主题
@@ -62,7 +87,7 @@ url: 'https://wot-ui.cn/component/count-to.md'
 ```
 
 ```ts
-import type { CountToInstance } from '@/uni_modules/wot-design-uni/components/wd-count-to/types'
+import type { CountToInstance } from "@/uni_modules/wot-design-uni/components/wd-count-to/types"
 
 const countTo = ref<CountToInstance>()
 

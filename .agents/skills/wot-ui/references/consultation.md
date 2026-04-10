@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/guide/consultation.md'
+url: "https://wot-ui.cn/guide/consultation.md"
 ---
 
 # 付费咨询
@@ -10,11 +10,11 @@ url: 'https://wot-ui.cn/guide/consultation.md'
 
 我们计划在知识星球中提供付费咨询服务，选择加入即可获得：
 
-* 1、WotUI组件库和模板技术咨询服务
-* 2、Wot模板的深度定制服务
-* 3、uni-app开发和外包评估服务
-* 4、组件定制开发服务
-* 5、AI编程经验分享
+- 1、WotUI组件库和模板技术咨询服务
+- 2、Wot模板的深度定制服务
+- 3、uni-app开发和外包评估服务
+- 4、组件定制开发服务
+- 5、AI编程经验分享
 
 ## 外包服务
 

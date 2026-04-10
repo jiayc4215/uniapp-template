@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/input-number.md'
+url: "https://wot-ui.cn/component/input-number.md"
 ---
 
 # InputNumber 计数器
@@ -106,7 +106,7 @@ function handleChange({ value }) {
 ```
 
 ```typescript
-const value = ref<number|string>('')
+const value = ref<number | string>("")
 function handleChange({ value }) {
   console.log(value)
 }
@@ -136,15 +136,31 @@ function handleChange({ value }) {
 
 设置 `update-on-init` 属性控制是否在初始化时更新 `v-model` 为修正后的值。
 
-* 当 `update-on-init="true"`（默认）时，会将初始值修正到符合 `min`、`max`、`step`、`precision` 等规则的有效值，并同步更新 `v-model`
-* 当 `update-on-init="false"` 时，保持初始值不修正（不改变 `v-model`），但仍会进行显示格式化（如精度处理）
+- 当 `update-on-init="true"`（默认）时，会将初始值修正到符合 `min`、`max`、`step`、`precision` 等规则的有效值，并同步更新 `v-model`
+- 当 `update-on-init="false"` 时，保持初始值不修正（不改变 `v-model`），但仍会进行显示格式化（如精度处理）
 
 ```html
 <!-- 自动更新初始值（默认） -->
-<wd-input-number v-model="value1" @change="handleChange" :update-on-init="true" :min="3" :max="15" :step="2" step-strictly />
+<wd-input-number
+  v-model="value1"
+  @change="handleChange"
+  :update-on-init="true"
+  :min="3"
+  :max="15"
+  :step="2"
+  step-strictly
+/>
 
 <!-- 不更新初始值，保持原始值 -->
-<wd-input-number v-model="value2" @change="handleChange" :update-on-init="false" :min="3" :max="15" :step="2" step-strictly />
+<wd-input-number
+  v-model="value2"
+  @change="handleChange"
+  :update-on-init="false"
+  :min="3"
+  :max="15"
+  :step="2"
+  step-strictly
+/>
 ```
 
 ```typescript
@@ -164,16 +180,16 @@ function handleChange({ value }) {
 ```
 
 ```typescript
-import { ref } from 'vue'
-import { useToast } from '@/uni_modules/wot-design-uni'
-import type { InputNumberBeforeChange } from '@/uni_modules/wot-design-uni/components/wd-input-number/types'
+import { ref } from "vue"
+import { useToast } from "@/uni_modules/wot-design-uni"
+import type { InputNumberBeforeChange } from "@/uni_modules/wot-design-uni/components/wd-input-number/types"
 const { loading, close } = useToast()
 
 const value = ref<number>(1)
- 
-const beforeChange: InputNumberBeforeChange = (value) => {
+
+const beforeChange: InputNumberBeforeChange = value => {
   loading({ msg: `正在更新到${value}...` })
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(() => {
       close()
       resolve(true)
@@ -192,39 +208,39 @@ const beforeChange: InputNumberBeforeChange = (value) => {
 
 ## Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|--------|
-| v-model | 绑定值 | number / string | - | - | - |
-| min | 最小值 | number | - | 1 | - |
-| max | 最大值 | number | - | Infinity | - |
-| step | 步数 | number | - | 1 | - |
-| step-strictly | 严格值为步数的倍数 | boolean | - | false | - |
-| precision | 小数精度 | number | - | 0 | - |
-| disabled | 禁用 | boolean | - | false | - |
-| without-input | 不显示输入框 | boolean | - | false | - |
-| input-width | 输入框宽度 | string | - | 36px | - |
-| allow-null | 是否允许输入的值为空，设置为 `true` 后允许传入空字符串 | boolean | - | false | - |
-| placeholder | 占位文本 | string | - | - | - |
-| disable-input | 禁用输入框 | boolean | - | false | 0.2.14 |
-| disable-plus | 禁用增加按钮 | boolean | - | false | 0.2.14 |
-| disable-minus | 禁用减少按钮 | boolean | - | false | 0.2.14 |
-| adjustPosition | 原生属性，键盘弹起时，是否自动上推页面 | boolean | - | true | 1.3.11 |
-| before-change | 输入框值改变前触发，返回 false 会阻止输入框值改变，支持返回 `Promise` | `(value: number \| string) => boolean \| Promise<boolean>` | - | - | 1.6.0 |
-| long-press | 是否允许长按进行加减 | boolean | - | false | 1.8.0 |
-| immediate-change | 是否立即响应输入变化，false 时仅在失焦和按钮点击时更新 | boolean | - | true | 1.10.0 |
-| update-on-init | 是否在初始化时更新 v-model 为修正后的值 | boolean | - | true | 1.10.0 |
-| input-type | 输入框类型 | string | number / digit | digit | 1.10.0 |
+| 参数             | 说明                                                                  | 类型                                                       | 可选值         | 默认值   | 最低版本 |
+| ---------------- | --------------------------------------------------------------------- | ---------------------------------------------------------- | -------------- | -------- | -------- |
+| v-model          | 绑定值                                                                | number / string                                            | -              | -        | -        |
+| min              | 最小值                                                                | number                                                     | -              | 1        | -        |
+| max              | 最大值                                                                | number                                                     | -              | Infinity | -        |
+| step             | 步数                                                                  | number                                                     | -              | 1        | -        |
+| step-strictly    | 严格值为步数的倍数                                                    | boolean                                                    | -              | false    | -        |
+| precision        | 小数精度                                                              | number                                                     | -              | 0        | -        |
+| disabled         | 禁用                                                                  | boolean                                                    | -              | false    | -        |
+| without-input    | 不显示输入框                                                          | boolean                                                    | -              | false    | -        |
+| input-width      | 输入框宽度                                                            | string                                                     | -              | 36px     | -        |
+| allow-null       | 是否允许输入的值为空，设置为 `true` 后允许传入空字符串                | boolean                                                    | -              | false    | -        |
+| placeholder      | 占位文本                                                              | string                                                     | -              | -        | -        |
+| disable-input    | 禁用输入框                                                            | boolean                                                    | -              | false    | 0.2.14   |
+| disable-plus     | 禁用增加按钮                                                          | boolean                                                    | -              | false    | 0.2.14   |
+| disable-minus    | 禁用减少按钮                                                          | boolean                                                    | -              | false    | 0.2.14   |
+| adjustPosition   | 原生属性，键盘弹起时，是否自动上推页面                                | boolean                                                    | -              | true     | 1.3.11   |
+| before-change    | 输入框值改变前触发，返回 false 会阻止输入框值改变，支持返回 `Promise` | `(value: number \| string) => boolean \| Promise<boolean>` | -              | -        | 1.6.0    |
+| long-press       | 是否允许长按进行加减                                                  | boolean                                                    | -              | false    | 1.8.0    |
+| immediate-change | 是否立即响应输入变化，false 时仅在失焦和按钮点击时更新                | boolean                                                    | -              | true     | 1.10.0   |
+| update-on-init   | 是否在初始化时更新 v-model 为修正后的值                               | boolean                                                    | -              | true     | 1.10.0   |
+| input-type       | 输入框类型                                                            | string                                                     | number / digit | digit    | 1.10.0   |
 
 ## Events
 
-| 事件名称 | 说明 | 参数 | 最低版本 |
-|---------|-----|-----|---------|
-| change | 值修改事件 | ` { value }` | - |
-| focus | 输入框获取焦点事件 | ` { value, height }` | - |
-| blur | 输入框失去焦点事件 | ` { value }` | - |
+| 事件名称 | 说明               | 参数                 | 最低版本 |
+| -------- | ------------------ | -------------------- | -------- |
+| change   | 值修改事件         | ` { value }`         | -        |
+| focus    | 输入框获取焦点事件 | ` { value, height }` | -        |
+| blur     | 输入框失去焦点事件 | ` { value }`         | -        |
 
 ## 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | 根节点样式 | - |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | -        |

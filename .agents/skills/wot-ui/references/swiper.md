@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/swiper.md'
+url: "https://wot-ui.cn/component/swiper.md"
 ---
 
 # Swiper 轮播
@@ -22,11 +22,11 @@ url: 'https://wot-ui.cn/component/swiper.md'
 const current = ref<number>(0)
 
 const swiperList = ref([
-  'https://wot-ui.cn/assets/redpanda.jpg',
-  'https://wot-ui.cn/assets/capybara.jpg',
-  'https://wot-ui.cn/assets/panda.jpg',
-  'https://wot-ui.cn/assets/moon.jpg',
-  'https://wot-ui.cn/assets/meng.jpg'
+  "https://wot-ui.cn/assets/redpanda.jpg",
+  "https://wot-ui.cn/assets/capybara.jpg",
+  "https://wot-ui.cn/assets/panda.jpg",
+  "https://wot-ui.cn/assets/moon.jpg",
+  "https://wot-ui.cn/assets/meng.jpg"
 ])
 function handleClick(e) {
   console.log(e)
@@ -39,7 +39,14 @@ function onChange(e) {
 ## 点条状指示器
 
 ```html
-<wd-swiper :list="swiperList" autoplay v-model:current="current" :indicator="{ type: 'dots-bar' }" @click="handleClick" @change="onChange"></wd-swiper>
+<wd-swiper
+  :list="swiperList"
+  autoplay
+  v-model:current="current"
+  :indicator="{ type: 'dots-bar' }"
+  @click="handleClick"
+  @change="onChange"
+></wd-swiper>
 ```
 
 ## 数字指示器
@@ -68,24 +75,30 @@ function onChange(e) {
 
 ```ts
 const videoList = ref([
-  'https://unpkg.com/wot-design-uni-assets@1.0.3/VID_115503.mp4',
-  'https://unpkg.com/wot-design-uni-assets@1.0.3/VID_150752.mp4',
-  'https://unpkg.com/wot-design-uni-assets@1.0.3/VID_155516.mp4',
-  'https://wot-ui.cn/assets/moon.jpg'
+  "https://unpkg.com/wot-design-uni-assets@1.0.3/VID_115503.mp4",
+  "https://unpkg.com/wot-design-uni-assets@1.0.3/VID_150752.mp4",
+  "https://unpkg.com/wot-design-uni-assets@1.0.3/VID_155516.mp4",
+  "https://wot-ui.cn/assets/moon.jpg"
 ])
 ```
 
 ## 手动播放视频
 
 ```html
-<wd-swiper :list="videoList" autoplay :autoplayVideo="false" :indicator="{ type: 'fraction' }" indicator-position="top-right"></wd-swiper>
+<wd-swiper
+  :list="videoList"
+  autoplay
+  :autoplayVideo="false"
+  :indicator="{ type: 'fraction' }"
+  indicator-position="top-right"
+></wd-swiper>
 ```
 
 ```ts
 const videoList = ref([
-  'https://unpkg.com/wot-design-uni-assets/VID_115503.mp4',
-  'https://unpkg.com/wot-design-uni-assets/VID_150752.mp4',
-  'https://unpkg.com/wot-design-uni-assets/VID_155516.mp4'
+  "https://unpkg.com/wot-design-uni-assets/VID_115503.mp4",
+  "https://unpkg.com/wot-design-uni-assets/VID_150752.mp4",
+  "https://unpkg.com/wot-design-uni-assets/VID_155516.mp4"
 ])
 ```
 
@@ -104,9 +117,9 @@ const videoList = ref([
 
 ```ts
 const videoList = ref([
-  'https://unpkg.com/wot-design-uni-assets/VID_115503.mp4',
-  'https://unpkg.com/wot-design-uni-assets/VID_150752.mp4',
-  'https://unpkg.com/wot-design-uni-assets/VID_155516.mp4'
+  "https://unpkg.com/wot-design-uni-assets/VID_115503.mp4",
+  "https://unpkg.com/wot-design-uni-assets/VID_150752.mp4",
+  "https://unpkg.com/wot-design-uni-assets/VID_155516.mp4"
 ])
 ```
 
@@ -227,9 +240,19 @@ const videoList = ref([
 通过 `indicator` 插槽可以自定义指示器的样式。
 
 ```html
-<wd-swiper :list="swiperList" direction="vertical" indicatorPosition="right" autoplay v-model:current="current" @click="handleClick" @change="onChange">
+<wd-swiper
+  :list="swiperList"
+  direction="vertical"
+  indicatorPosition="right"
+  autoplay
+  v-model:current="current"
+  @click="handleClick"
+  @change="onChange"
+>
   <template #indicator="{ current, total }">
-    <view class="custom-indicator" style="position: absolute; bottom: 24rpx; right: 24rpx">{{ current + 1 }}/{{ total }}</view>
+    <view class="custom-indicator" style="position: absolute; bottom: 24rpx; right: 24rpx"
+      >{{ current + 1 }}/{{ total }}</view
+    >
   </template>
 </wd-swiper>
 ```
@@ -256,17 +279,26 @@ const videoList = ref([
 :::
 
 ```html
-<wd-swiper value-key="url" text-key="title" :custom-text-style="color:#fff" :list="customSwiperList" autoplay v-model:current="current" @click="handleClick" @change="onChange"></wd-swiper>
+<wd-swiper
+  value-key="url"
+  text-key="title"
+  :custom-text-style="color:#fff"
+  :list="customSwiperList"
+  autoplay
+  v-model:current="current"
+  @click="handleClick"
+  @change="onChange"
+></wd-swiper>
 ```
 
 ```ts
 const current = ref<number>(0)
 
 const customSwiperList = ref([
-  { url: 'https://wot-ui.cn/assets/redpanda.jpg', title: '小熊猫！' },
-  { url: 'https://wot-ui.cn/assets/capybara.jpg', title: '卡！皮！巴！拉！' },
-  { url: 'https://wot-ui.cn/assets/panda.jpg', title: '大熊猫！' },
-  { url: 'https://wot-ui.cn/assets/moon.jpg', title: '诗画中国！' }
+  { url: "https://wot-ui.cn/assets/redpanda.jpg", title: "小熊猫！" },
+  { url: "https://wot-ui.cn/assets/capybara.jpg", title: "卡！皮！巴！拉！" },
+  { url: "https://wot-ui.cn/assets/panda.jpg", title: "大熊猫！" },
+  { url: "https://wot-ui.cn/assets/moon.jpg", title: "诗画中国！" }
 ])
 ```
 
@@ -299,7 +331,7 @@ const customSwiperList = ref([
 ```
 
 ```javascript
-const current = ref <number>(0)
+const current = ref < number > 0
 const isLoop = ref(false)
 ```
 
@@ -324,34 +356,34 @@ const isLoop = ref(false)
 
 ## Attributes
 
-| 参数                      | 说明                                                               | 类型                              | 可选值                                                                                                 | 默认值       | 最低版本         |
-| ------------------------- | ------------------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------ | ---------------- |
-| autoplay                  | 是否自动播放                                                       | `boolean`                         | -                                                                                                      | true         | 0.1.22           |
-| v-model:current           | 控制当前轮播在哪一项（下标）                                       | `number`                          | -                                                                                                      | 0            | 0.1.22           |
-| direction                 | 轮播滑动方向                                                       | `DirectionType`                   | `horizontal, vertical`                                                                                 | horizontal   | 0.1.22           |
-| displayMultipleItems      | 同时显示的滑块数量                                                 | `number`                          | -                                                                                                      | 1            | 0.1.22           |
-| duration                  | 滑动动画时长                                                       | `number`                          | -                                                                                                      | 300          | 0.1.22           |
-| easingFunction            | 切换缓动动画类型（微信小程序、快手小程序、京东小程序）             | `EasingType`                      | -                                                                                                      | default      | 0.1.22           |
-| height                    | 轮播的高度                                                         | `string / number`                | -                                                                                                      | 192          | 0.1.22           |
-| interval                  | 轮播间隔时间                                                       | `number`                          | -                                                                                                      | 5000         | 0.1.22           |
-| list                      | 图片列表                                                           | `string[] / SwiperList[]`        | -                                                                                                      | -            | 0.1.22           |
-| loop                      | 是否循环播放                                                       | `boolean`                         | -                                                                                                      | true         | 0.1.22           |
-| nextMargin                | 后边距                                                             | `string / number`                | -                                                                                                      | 0            | 0.1.22           |
-| indicatorPosition         | 指示器展示位置                                                     | `IndicatorPositionType`           | `left, top-left, top, top-right, bottom-left, bottom, bottom-right, right`                             | bottom       | 0.1.22           |
-| previousMargin            | 前边距                                                             | `string / number`                | -                                                                                                      | 0            | 0.1.22           |
-| snapToEdge                | 边距是否应用到第一个、最后一个元素                                 | `boolean`                         | -                                                                                                      | false        | 0.1.22           |
-| indicator                 | 指示器全部配置                                                     | `SwiperIndicatorProps / boolean` | -                                                                                                      | true         | 0.1.22           |
-| imageMode                 | 图片裁剪、缩放的模式                                               | `string`                          | 参考官方文档[mode](https://uniapp.dcloud.net.cn/component/image.html#mode-%E6%9C%89%E6%95%88%E5%80%BC) | `aspectFill` | 0.1.55           |
-| autoplayVideo             | 视频是否自动播放，默认自动播放                                     | `boolean`                         | -                                                                                                      | true         | 1.3.13 |
-| stopPreviousVideo         | 切换轮播项时是否停止上一个视频的播放，默认切换时停止播放上一个视频 | `boolean`                         | -                                                                                                      | true         | 1.3.13 |
-| stopAutoplayWhenVideoPlay | 视频播放时是否停止自动轮播                                         | `boolean`                         | -                                                                                                      | false        | 1.3.13 |
-| customStyle               | 外部自定义样式                                                     | `string`                          | -                                                                                                      | ''           | 0.1.22           |
-| value-key          | 选项对象中，value 对应的 key        | `string`       | -       | `value`           | 1.3.7   |
-| text-key          | 选项对象中，标题 text 对应的 key        | `string`       | -       | `text`           | 1.3.13   |
-| adjust-height      | 自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整，仅支付宝小程序支持。| `string`       | `'first' / 'current' / 'highest' / 'none'`       |   `highest`  | 1.3.13   |
-| adjust-vertical-height | vertical 为 true 时强制使 adjust-height 生效。仅支付宝小程序支持。 | `boolean`       | -       | `false`           | 1.3.13   |
-｜ muted | 视频是否静音播放 | `boolean` | - | `true` | 1.6.0 |
-| videoLoop | 视频是否循环播放 | `boolean` | - | `true` | 1.6.0 |
+| 参数                      | 说明                                                                                           | 类型                             | 可选值                                                                                                 | 默认值       | 最低版本 |
+| ------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------ | -------- |
+| autoplay                  | 是否自动播放                                                                                   | `boolean`                        | -                                                                                                      | true         | 0.1.22   |
+| v-model:current           | 控制当前轮播在哪一项（下标）                                                                   | `number`                         | -                                                                                                      | 0            | 0.1.22   |
+| direction                 | 轮播滑动方向                                                                                   | `DirectionType`                  | `horizontal, vertical`                                                                                 | horizontal   | 0.1.22   |
+| displayMultipleItems      | 同时显示的滑块数量                                                                             | `number`                         | -                                                                                                      | 1            | 0.1.22   |
+| duration                  | 滑动动画时长                                                                                   | `number`                         | -                                                                                                      | 300          | 0.1.22   |
+| easingFunction            | 切换缓动动画类型（微信小程序、快手小程序、京东小程序）                                         | `EasingType`                     | -                                                                                                      | default      | 0.1.22   |
+| height                    | 轮播的高度                                                                                     | `string / number`                | -                                                                                                      | 192          | 0.1.22   |
+| interval                  | 轮播间隔时间                                                                                   | `number`                         | -                                                                                                      | 5000         | 0.1.22   |
+| list                      | 图片列表                                                                                       | `string[] / SwiperList[]`        | -                                                                                                      | -            | 0.1.22   |
+| loop                      | 是否循环播放                                                                                   | `boolean`                        | -                                                                                                      | true         | 0.1.22   |
+| nextMargin                | 后边距                                                                                         | `string / number`                | -                                                                                                      | 0            | 0.1.22   |
+| indicatorPosition         | 指示器展示位置                                                                                 | `IndicatorPositionType`          | `left, top-left, top, top-right, bottom-left, bottom, bottom-right, right`                             | bottom       | 0.1.22   |
+| previousMargin            | 前边距                                                                                         | `string / number`                | -                                                                                                      | 0            | 0.1.22   |
+| snapToEdge                | 边距是否应用到第一个、最后一个元素                                                             | `boolean`                        | -                                                                                                      | false        | 0.1.22   |
+| indicator                 | 指示器全部配置                                                                                 | `SwiperIndicatorProps / boolean` | -                                                                                                      | true         | 0.1.22   |
+| imageMode                 | 图片裁剪、缩放的模式                                                                           | `string`                         | 参考官方文档[mode](https://uniapp.dcloud.net.cn/component/image.html#mode-%E6%9C%89%E6%95%88%E5%80%BC) | `aspectFill` | 0.1.55   |
+| autoplayVideo             | 视频是否自动播放，默认自动播放                                                                 | `boolean`                        | -                                                                                                      | true         | 1.3.13   |
+| stopPreviousVideo         | 切换轮播项时是否停止上一个视频的播放，默认切换时停止播放上一个视频                             | `boolean`                        | -                                                                                                      | true         | 1.3.13   |
+| stopAutoplayWhenVideoPlay | 视频播放时是否停止自动轮播                                                                     | `boolean`                        | -                                                                                                      | false        | 1.3.13   |
+| customStyle               | 外部自定义样式                                                                                 | `string`                         | -                                                                                                      | ''           | 0.1.22   |
+| value-key                 | 选项对象中，value 对应的 key                                                                   | `string`                         | -                                                                                                      | `value`      | 1.3.7    |
+| text-key                  | 选项对象中，标题 text 对应的 key                                                               | `string`                         | -                                                                                                      | `text`       | 1.3.13   |
+| adjust-height             | 自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整，仅支付宝小程序支持。 | `string`                         | `'first' / 'current' / 'highest' / 'none'`                                                             | `highest`    | 1.3.13   |
+| adjust-vertical-height    | vertical 为 true 时强制使 adjust-height 生效。仅支付宝小程序支持。                             | `boolean`                        | -                                                                                                      | `false`      | 1.3.13   |
+| ｜ muted                  | 视频是否静音播放                                                                               | `boolean`                        | -                                                                                                      | `true`       | 1.6.0    |
+| videoLoop                 | 视频是否循环播放                                                                               | `boolean`                        | -                                                                                                      | `true`       | 1.6.0    |
 
 ### DirectionType
 
@@ -368,10 +400,10 @@ const isLoop = ref(false)
 ### SwiperList
 
 轮播图项的列表配置，包括 图片或视频地址`value`、视频封面`poster` 、文件资源的类型`type`等属性，支持扩展属性。指定`type`后组件将不在内部判断文件类型，以`type`为准。
-| name      | 说明          | 最低版本 |
+| name | 说明 | 最低版本 |
 | --------- | ------------ | -------- |
-| value | 图片或视频地址 |-   |
-| poster | 视频封面 |-   |
+| value | 图片或视频地址 |- |
+| poster | 视频封面 |- |
 | type | 用于指定文件资源的类型，可选值`image`、`video` | 1.4.0 |
 
 ### SwiperIndicatorProps
@@ -396,27 +428,27 @@ const isLoop = ref(false)
 
 | 事件名称 | 说明             | 参数                                                        | 最低版本 |
 | -------- | ---------------- | ----------------------------------------------------------- | -------- |
-| click    | 点击轮播项时触发 | `(index: number, item: SwiperList \| string)`                                           | 0.1.22   |
+| click    | 点击轮播项时触发 | `(index: number, item: SwiperList \| string)`               | 0.1.22   |
 | change   | 轮播切换时触发   | `(current: number, source: 'autoplay' \| 'touch' \| 'nav')	` | 0.1.22   |
 
 ## Slot
 
-| name      | 说明         | 参数                                 | 最低版本 |
-| --------- | ------------ | ------------------------------------ | -------- |
-| indicator | 自定义指示器 | `{ current: number, total: number }` | 1.13.0   |
-| default   | item展示内容 | `{ item: string \| SwiperList, index: number }`       | 1.13.0   |
+| name      | 说明         | 参数                                            | 最低版本 |
+| --------- | ------------ | ----------------------------------------------- | -------- |
+| indicator | 自定义指示器 | `{ current: number, total: number }`            | 1.13.0   |
+| default   | item展示内容 | `{ item: string \| SwiperList, index: number }` | 1.13.0   |
 
 ## 外部样式类
 
-| 类名                 | 说明                 | 最低版本 |
-| -------------------- | -------------------- | -------- |
-| customClass          | 外部自定义类名       | 0.1.22   |
-| customIndicatorClass       | 自定义指示器类名     | 0.1.22   |
-| customImageClass     | 自定义图片类名，1.3版本将废弃，请使用`customItemClass`代替 | 0.1.22   |
+| 类名                 | 说明                                                             | 最低版本 |
+| -------------------- | ---------------------------------------------------------------- | -------- |
+| customClass          | 外部自定义类名                                                   | 0.1.22   |
+| customIndicatorClass | 自定义指示器类名                                                 | 0.1.22   |
+| customImageClass     | 自定义图片类名，1.3版本将废弃，请使用`customItemClass`代替       | 0.1.22   |
 | customPrevImageClass | 自定义上一个图片类名，1.3版本将废弃，请使用`customPrevClass`代替 | 0.1.22   |
 | customNextImageClass | 自定义下一个图片类名，1.3版本将废弃，请使用`customNextClass`代替 | 0.1.22   |
-| customItemClass     | 自定义子项类名       | 1.3.13   |
-| customPrevClass | 自定义上一个子项类名 | 1.3.13   |
-| customNextClass | 自定义下一个子项类名 | 1.3.13   |
-| customTextClass | 自定义文字标题类名 | 1.3.13   |
-| customTextStyle | 自定义文字标题样式 | 1.3.13   |
+| customItemClass      | 自定义子项类名                                                   | 1.3.13   |
+| customPrevClass      | 自定义上一个子项类名                                             | 1.3.13   |
+| customNextClass      | 自定义下一个子项类名                                             | 1.3.13   |
+| customTextClass      | 自定义文字标题类名                                               | 1.3.13   |
+| customTextStyle      | 自定义文字标题样式                                               | 1.3.13   |

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/toast.md'
+url: "https://wot-ui.cn/component/toast.md"
 ---
 
 # Toast 轻提示
@@ -17,28 +17,27 @@ url: 'https://wot-ui.cn/component/toast.md'
 需要在页面中引入该组件，作为挂载点。
 
 ```html
-<wd-toast />
-<wd-button @click="showToast">toast</wd-button>
+<wd-toast /> <wd-button @click="showToast">toast</wd-button>
 ```
 
 ```typescript
-import { useToast } from '@/uni_modules/wot-design-uni'
+import { useToast } from "@/uni_modules/wot-design-uni"
 
 const toast = useToast()
 
 function showToast() {
-  toast.show('提示信息')
+  toast.show("提示信息")
 }
 ```
 
 ## 成功、异常、警告、常规
 
 ```typescript
-toast.show('提示信息')
-toast.success('操作成功')
-toast.error('手机验证码输入错误，请重新输入')
-toast.warning('提示信息')
-toast.info('常规提示信息')
+toast.show("提示信息")
+toast.success("操作成功")
+toast.error("手机验证码输入错误，请重新输入")
+toast.warning("提示信息")
+toast.info("常规提示信息")
 ```
 
 ## 使用图标
@@ -48,17 +47,17 @@ toast.info('常规提示信息')
 ```ts
 // 使用组件库内部图标
 toast.show({
-  iconClass: 'star',
-  msg: '使用组件库内部图标'
+  iconClass: "star",
+  msg: "使用组件库内部图标"
 })
 ```
 
 ```ts
 // 使用自定义图标
 toast.show({
-  iconClass: 'kehuishouwu',
-  classPrefix: 'fish',
-  msg: '使用自定义图标'
+  iconClass: "kehuishouwu",
+  classPrefix: "fish",
+  msg: "使用自定义图标"
 })
 ```
 
@@ -69,20 +68,20 @@ toast.show({
 ```typescript
 // 顶部提示
 toast.show({
-  position: 'top',
-  msg: '提示信息'
+  position: "top",
+  msg: "提示信息"
 })
 
 // 局中提示
 toast.show({
-  position: 'middle',
-  msg: '提示信息'
+  position: "middle",
+  msg: "提示信息"
 })
 
 // 底部提示
 toast.show({
-  position: 'bottom',
-  msg: '提示信息'
+  position: "bottom",
+  msg: "提示信息"
 })
 ```
 
@@ -93,8 +92,8 @@ toast.show({
 ```typescript
 // 纵向排版
 toast.success({
-  msg: '纵向排版',
-  direction: 'vertical'
+  msg: "纵向排版",
+  direction: "vertical"
 })
 ```
 
@@ -109,15 +108,15 @@ toast.close()
 `loading` 开启后需要用户手动关闭，关闭可以调用 `close`，或者再调用一次 toast 提示，因为 toast 只会存在一个，新的 toast 会自动顶掉旧的 toast。
 
 ```typescript
-toast.loading('加载中...')
+toast.loading("加载中...")
 ```
 
 修改 loading 指示器类型：
 
 ```typescript
 toast.loading({
-  loadingType: 'ring',
-  msg: '加载中...'
+  loadingType: "ring",
+  msg: "加载中..."
 })
 ```
 
@@ -129,32 +128,32 @@ toast.close()
 
 ## Attributes
 
-| 参数         | 说明                                     | 类型     | 可选值                                     | 默认值     | 最低版本         |
-|--------------|------------------------------------------|----------|--------------------------------------------|------------|------------------|
-| selector     | 选择器                                   | string   | -                                          | ''         | -                |
-| msg          | 提示信息                                 | string   | -                                          | ''         | 1.7.0 |
-| direction    | 排列方向                                 | string   | vertical / horizontal                      | horizontal | 1.7.0 |
-| iconName     | 图标类型                                 | string   | success / error / warning / loading / info | ''         | 1.7.0 |
-| iconSize     | 图标大小                                 | number   | -                                          | -          | 1.7.0 |
-| loadingType  | 加载类型                                 | string   | outline / ring                             | outline    | 1.7.0 |
-| loadingColor | 加载颜色                                 | string   | -                                          | #4D80F0    | 1.7.0 |
-| loadingSize  | 加载大小                                 | number   | -                                          | -          | 1.7.0 |
-| iconColor    | 图标颜色                                 | string   | -                                          | -          | 1.7.0 |
-| position     | 提示信息框的位置                         | string   | top / middle-top / middle / bottom         | middle-top | 1.7.0 |
-| zIndex       | 层级                                     | number   | -                                          | 100        | 1.7.0 |
-| cover        | 是否存在遮罩层                           | boolean  | -                                          | false      | 1.7.0 |
-| iconClass    | 图标类名                                 | string   | -                                          | ''         | 1.7.0 |
-| classPrefix  | 类名前缀，用于使用自定义图标             | string   | -                                          | wd-icon    | 1.7.0 |
-| opened       | 完全展示后的回调函数                     | Function | -                                          | -          | 1.7.0 |
-| closed       | 完全关闭时的回调函数                     | Function | -                                          | -          | 1.7.0 |
+| 参数         | 说明                         | 类型     | 可选值                                     | 默认值     | 最低版本 |
+| ------------ | ---------------------------- | -------- | ------------------------------------------ | ---------- | -------- |
+| selector     | 选择器                       | string   | -                                          | ''         | -        |
+| msg          | 提示信息                     | string   | -                                          | ''         | 1.7.0    |
+| direction    | 排列方向                     | string   | vertical / horizontal                      | horizontal | 1.7.0    |
+| iconName     | 图标类型                     | string   | success / error / warning / loading / info | ''         | 1.7.0    |
+| iconSize     | 图标大小                     | number   | -                                          | -          | 1.7.0    |
+| loadingType  | 加载类型                     | string   | outline / ring                             | outline    | 1.7.0    |
+| loadingColor | 加载颜色                     | string   | -                                          | #4D80F0    | 1.7.0    |
+| loadingSize  | 加载大小                     | number   | -                                          | -          | 1.7.0    |
+| iconColor    | 图标颜色                     | string   | -                                          | -          | 1.7.0    |
+| position     | 提示信息框的位置             | string   | top / middle-top / middle / bottom         | middle-top | 1.7.0    |
+| zIndex       | 层级                         | number   | -                                          | 100        | 1.7.0    |
+| cover        | 是否存在遮罩层               | boolean  | -                                          | false      | 1.7.0    |
+| iconClass    | 图标类名                     | string   | -                                          | ''         | 1.7.0    |
+| classPrefix  | 类名前缀，用于使用自定义图标 | string   | -                                          | wd-icon    | 1.7.0    |
+| opened       | 完全展示后的回调函数         | Function | -                                          | -          | 1.7.0    |
+| closed       | 完全关闭时的回调函数         | Function | -                                          | -          | 1.7.0    |
 
 ## Options
 
 | 参数         | 说明                                                                        | 类型     | 可选值                    | 默认值     | 最低版本 |
-|--------------|-----------------------------------------------------------------------------|----------|---------------------------|------------|----------|
+| ------------ | --------------------------------------------------------------------------- | -------- | ------------------------- | ---------- | -------- |
 | msg          | 消息内容                                                                    | string   | -                         | ''         | -        |
 | duration     | 持续时间，单位 ms，为 0 时表示不自动关闭                                    | number   | -                         | 2000       | -        |
-| direction    | 排版方向                                                                    | string   | vertical / horizontal     | horizontal | 1.7.0        |
+| direction    | 排版方向                                                                    | string   | vertical / horizontal     | horizontal | 1.7.0    |
 | iconName     | 图标类型                                                                    | string   | success / error / warning | ''         | -        |
 | iconSize     | 左侧图标尺寸                                                                | number   | -                         | -          | -        |
 | iconClass    | 图标类目，自定义图标，可以使用 Icon 章节的那些图标类名，iconName 优先级更高 | string   | -                         | ''         | -        |
@@ -181,6 +180,6 @@ toast.close()
 
 ## 外部样式类
 
-| 类名              | 说明           | 最低版本 |
-| ----------------- | -------------- | -------- |
-| custom-class      | 根节点样式     | -        |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | -        |

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/root-portal.md'
+url: "https://wot-ui.cn/component/root-portal.md"
 ---
 
 # Root Portal 根节点传送
@@ -9,10 +9,10 @@ url: 'https://wot-ui.cn/component/root-portal.md'
 :::tip 提示
 根节点传送组件仅支持`微信小程序`、`支付宝小程序`、`APP`和`H5`平台，组件会自动根据平台选择合适的实现方式：
 
-* **H5 端**：使用 `teleport` 特性
-* **微信小程序和支付宝小程序**：使用 `root-portal` 组件
-* **App 端**：使用 renderjs 实现
-* **其他平台**：不支持此功能
+- **H5 端**：使用 `teleport` 特性
+- **微信小程序和支付宝小程序**：使用 `root-portal` 组件
+- **App 端**：使用 renderjs 实现
+- **其他平台**：不支持此功能
 
 该功能主要用于解决复杂布局中弹窗的层级和定位问题，在需要时才建议使用。
 :::
@@ -65,6 +65,6 @@ url: 'https://wot-ui.cn/component/root-portal.md'
 
 ## Slots
 
-| 名称    | 说明                         | 最低版本 |
-| ------- | ---------------------------- | -------- |
-| default | 默认插槽，用于渲染传送内容   | 1.11.0   |
+| 名称    | 说明                       | 最低版本 |
+| ------- | -------------------------- | -------- |
+| default | 默认插槽，用于渲染传送内容 | 1.11.0   |

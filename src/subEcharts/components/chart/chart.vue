@@ -3,36 +3,26 @@
 </template>
 
 <script setup>
-import { PieChart } from "echarts/charts";
-import {
-  DatasetComponent,
-  LegendComponent,
-  TooltipComponent,
-} from "echarts/components";
-import * as echarts from "echarts/core";
-import { CanvasRenderer } from "echarts/renderers";
+import { PieChart } from "echarts/charts"
+import { DatasetComponent, LegendComponent, TooltipComponent } from "echarts/components"
+import * as echarts from "echarts/core"
+import { CanvasRenderer } from "echarts/renderers"
 
-echarts.use([
-  LegendComponent,
-  TooltipComponent,
-  DatasetComponent,
-  PieChart,
-  CanvasRenderer,
-]);
+echarts.use([LegendComponent, TooltipComponent, DatasetComponent, PieChart, CanvasRenderer])
 
 const option = ref({
   legend: {
     top: 10,
-    left: "center",
+    left: "center"
   },
   tooltip: {
     trigger: "item",
     textStyle: {
       // #ifdef MP-WEIXIN
       // 临时解决微信小程序 tooltip 文字阴影问题
-      textShadowBlur: 1,
+      textShadowBlur: 1
       // #endif
-    },
+    }
   },
   series: [
     {
@@ -40,20 +30,20 @@ const option = ref({
       radius: ["30%", "52%"],
       label: {
         show: false,
-        position: "center",
+        position: "center"
       },
       itemStyle: {
         borderWidth: 2,
         borderColor: "#ffffff",
-        borderRadius: 10,
+        borderRadius: 10
       },
       emphasis: {
         label: {
           show: true,
-          fontSize: 20,
-        },
-      },
-    },
+          fontSize: 20
+        }
+      }
+    }
   ],
   dataset: {
     dimensions: ["来源", "数量"],
@@ -62,8 +52,8 @@ const option = ref({
       ["Direct", 735],
       ["Email", 580],
       ["Union Ads", 484],
-      ["Video Ads", 300],
-    ],
-  },
-});
+      ["Video Ads", 300]
+    ]
+  }
+})
 </script>

@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/config-provider.md'
+url: "https://wot-ui.cn/component/config-provider.md"
 ---
 
 # ConfigProvider 全局配置
@@ -38,10 +38,10 @@ url: 'https://wot-ui.cn/component/config-provider.md'
 ```ts
 export default {
   setup() {
-    const theme = ref('light')
+    const theme = ref("light")
 
     setTimeout(() => {
-      theme.value = 'dark'
+      theme.value = "dark"
     }, 1000)
 
     return { theme }
@@ -90,15 +90,15 @@ page {
 ```
 
 ```ts
-import { ref, reactive } from 'vue'
+import { ref, reactive } from "vue"
 
 export default {
   setup() {
     // themeVars 内的值会被转换成对应 CSS 变量
     // 比如 buttonPrimaryBg 会转换成 `--wot-button-primary-bg-color`
     const themeVars = reactive({
-      buttonPrimaryBgColor: '#07c160',
-      buttonPrimaryColor: '#07c160'
+      buttonPrimaryBgColor: "#07c160",
+      buttonPrimaryColor: "#07c160"
     })
     return {
       themeVars
@@ -112,10 +112,10 @@ export default {
 在 TypeScript 中定义 `themeVars` 时，建议使用 **wot-design-uni** 提供的 **ConfigProviderThemeVars** 类型，可以提供完善的类型提示：
 
 ```ts
-import type { ConfigProviderThemeVars } from 'wot-design-uni';
+import type { ConfigProviderThemeVars } from "wot-design-uni"
 
 const themeVars: ConfigProviderThemeVars = {
-  colorTheme: 'red'
+  colorTheme: "red"
 }
 ```
 
@@ -147,15 +147,15 @@ pnpm add -D @uni-ku/root
 
 ### 引入
 
-* CLI项目: 直接编辑 根目录下的 vite.config.(js|ts)
-* HBuilderX项目: 需要在根目录下 创建 vite.config.(js|ts)
+- CLI项目: 直接编辑 根目录下的 vite.config.(js|ts)
+- HBuilderX项目: 需要在根目录下 创建 vite.config.(js|ts)
 
 ```ts
 // vite.config.(js|ts)
 
-import { defineConfig } from 'vite'
-import UniKuRoot from '@uni-ku/root'
-import Uni from '@dcloudio/vite-plugin-uni'
+import { defineConfig } from "vite"
+import UniKuRoot from "@uni-ku/root"
+import Uni from "@dcloudio/vite-plugin-uni"
 
 export default defineConfig({
   plugins: [
@@ -174,8 +174,8 @@ export default defineConfig({
 
 1. 创建根组件并处理全局配置组件
 
-* CLI项目: 在 **src** 目录下创建下 App.ku.vue
-* HBuilderX项目: 在 **根** 目录下创建 App.ku.vue
+- CLI项目: 在 **src** 目录下创建下 App.ku.vue
+- HBuilderX项目: 在 **根** 目录下创建 App.ku.vue
 
 :::tip
 在 App.ku.vue 中标签 `<KuRootView />` 代表指定视图存放位置
@@ -185,11 +185,11 @@ export default defineConfig({
 <!-- src/App.ku.vue | App.ku.vue -->
 
 <script setup lang="ts">
-import { useTheme } from './composables/useTheme'
+import { useTheme } from "./composables/useTheme"
 
 const { theme, themeVars } = useTheme({
-  buttonPrimaryBgColor: '#07c160',
-  buttonPrimaryColor: '#07c160'
+  buttonPrimaryBgColor: "#07c160",
+  buttonPrimaryColor: "#07c160"
 })
 </script>
 
@@ -207,23 +207,23 @@ const { theme, themeVars } = useTheme({
 ```ts
 // src/composables/useTheme.ts
 
-import type { ConfigProviderThemeVars } from 'wot-design-uni'
-import { ref } from 'vue'
+import type { ConfigProviderThemeVars } from "wot-design-uni"
+import { ref } from "vue"
 
-const theme = ref<'light' | 'dark'>()
+const theme = ref<"light" | "dark">()
 const themeVars = ref<ConfigProviderThemeVars>()
 
 export function useTheme(vars?: ConfigProviderThemeVars) {
   vars && (themeVars.value = vars)
 
-  function toggleTheme(mode?: 'light' | 'dark') {
-    theme.value = mode || (theme.value === 'light' ? 'dark' : 'light')
+  function toggleTheme(mode?: "light" | "dark") {
+    theme.value = mode || (theme.value === "light" ? "dark" : "light")
   }
 
   return {
     theme,
     themeVars,
-    toggleTheme,
+    toggleTheme
   }
 }
 ```
@@ -234,15 +234,13 @@ export function useTheme(vars?: ConfigProviderThemeVars) {
 <!-- src/pages/*.vue -->
 
 <script setup lang="ts">
-import { useTheme } from '@/composables/useTheme'
+import { useTheme } from "@/composables/useTheme"
 
 const { theme, toggleTheme } = useTheme()
 </script>
 
 <template>
-  <button @click="toggleTheme">
-    切换主题，当前模式：{{ theme }}
-  </button>
+  <button @click="toggleTheme">切换主题，当前模式：{{ theme }}</button>
 </template>
 ```
 
@@ -259,7 +257,7 @@ const { theme, toggleTheme } = useTheme()
 #### 引入
 
 ```ts
-import { useConfigProvider } from 'wot-design-uni'
+import { useConfigProvider } from "wot-design-uni"
 ```
 
 #### 使用
@@ -268,12 +266,12 @@ import { useConfigProvider } from 'wot-design-uni'
 
 ```vue
 <script setup lang="ts">
-import { reactive } from 'vue'
-import { useConfigProvider } from 'wot-design-uni'
+import { reactive } from "vue"
+import { useConfigProvider } from "wot-design-uni"
 
 const themeVars = reactive({
-  buttonPrimaryBgColor: '#07c160',
-  buttonPrimaryColor: '#07c160'
+  buttonPrimaryBgColor: "#07c160",
+  buttonPrimaryColor: "#07c160"
 })
 
 // 在当前组件提供配置，使其对子组件（包括插槽内容和 root-portal）可见
@@ -283,14 +281,14 @@ useConfigProvider({ themeVars })
 
 ## Attributes
 
-| 参数       | 说明                                             | 类型   | 可选值         | 默认值 | 最低版本 |
-| ---------- | ------------------------------------------------ | ------ | -------------- | ------ | -------- |
-| theme      | 主题风格，设置为 `dark` 来开启深色模式，全局生效 | string | `dark`/`light` | -      | -        |
+| 参数       | 说明                                             | 类型                      | 可选值         | 默认值 | 最低版本 |
+| ---------- | ------------------------------------------------ | ------------------------- | -------------- | ------ | -------- |
+| theme      | 主题风格，设置为 `dark` 来开启深色模式，全局生效 | string                    | `dark`/`light` | -      | -        |
 | theme-vars | 自定义主题变量                                   | `ConfigProviderThemeVars` | -              | -      | -        |
 
 ## 外部样式类
 
-| 类名         | 说明       | 最低版本         |
-| ------------ | ---------- | ---------------- |
-| custom-class | 根节点样式 | 1.3.9 |
-| custom-style | 根节点样式 | 1.3.9 |
+| 类名         | 说明       | 最低版本 |
+| ------------ | ---------- | -------- |
+| custom-class | 根节点样式 | 1.3.9    |
+| custom-style | 根节点样式 | 1.3.9    |

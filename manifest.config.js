@@ -1,21 +1,16 @@
-import path from "node:path";
-import process from "node:process";
-import { loadEnv } from "vite";
-import { defineManifestConfig } from "@uni-helper/vite-plugin-uni-manifest";
+import path from "node:path"
+import process from "node:process"
+import { loadEnv } from "vite"
+import { defineManifestConfig } from "@uni-helper/vite-plugin-uni-manifest"
 // 手动解析命令行参数获取 mode
 function getMode() {
-  const args = process.argv.slice(2);
-  const modeFlagIndex = args.findIndex((arg) => arg === "--mode");
-  return modeFlagIndex !== -1
-    ? args[modeFlagIndex + 1]
-    : args[0] === "build"
-      ? "production"
-      : "development"; // 默认 development
+  const args = process.argv.slice(2)
+  const modeFlagIndex = args.findIndex(arg => arg === "--mode")
+  return modeFlagIndex !== -1 ? args[modeFlagIndex + 1] : args[0] === "build" ? "production" : "development" // 默认 development
 }
 // 获取环境变量的范例
-const env = loadEnv(getMode(), path.resolve(process.cwd(), "env"));
-const { VITE_APP_TITLE, VITE_UNI_APPID, VITE_WX_APPID, VITE_APP_PUBLIC_BASE } =
-  env;
+const env = loadEnv(getMode(), path.resolve(process.cwd(), "env"))
+const { VITE_APP_TITLE, VITE_UNI_APPID, VITE_WX_APPID, VITE_APP_PUBLIC_BASE } = env
 
 export default defineManifestConfig({
   name: VITE_APP_TITLE,
@@ -29,8 +24,8 @@ export default defineManifestConfig({
     darkmode: true,
     themeLocation: "theme.json",
     router: {
-      base: VITE_APP_PUBLIC_BASE,
-    },
+      base: VITE_APP_PUBLIC_BASE
+    }
   },
   /* 5+App特有相关 */
   "app-plus": {
@@ -41,7 +36,7 @@ export default defineManifestConfig({
       alwaysShowBeforeRender: true,
       waiting: true,
       autoclose: true,
-      delay: 0,
+      delay: 0
     },
     /* 模块配置 */
     modules: {},
@@ -64,8 +59,8 @@ export default defineManifestConfig({
           '<uses-permission android:name="android.permission.WAKE_LOCK"/>',
           '<uses-permission android:name="android.permission.FLASHLIGHT"/>',
           '<uses-feature android:name="android.hardware.camera"/>',
-          '<uses-permission android:name="android.permission.WRITE_SETTINGS"/>',
-        ],
+          '<uses-permission android:name="android.permission.WRITE_SETTINGS"/>'
+        ]
       },
       /* ios打包配置 */
       ios: {},
@@ -74,9 +69,9 @@ export default defineManifestConfig({
       /* 图标配置 */
       icons: {
         android: {},
-        ios: {},
-      },
-    },
+        ios: {}
+      }
+    }
   },
   /* 快应用特有相关 */
   quickapp: {},
@@ -84,34 +79,34 @@ export default defineManifestConfig({
   "mp-weixin": {
     appid: VITE_WX_APPID,
     setting: {
-      urlCheck: false,
+      urlCheck: false
     },
     optimization: {
-      subPackages: true,
+      subPackages: true
     },
     usingComponents: true,
     darkmode: true,
-    themeLocation: "theme.json",
+    themeLocation: "theme.json"
   },
   "mp-alipay": {
-    usingComponents: true,
+    usingComponents: true
   },
   "mp-baidu": {
-    usingComponents: true,
+    usingComponents: true
   },
   "mp-toutiao": {
-    usingComponents: true,
+    usingComponents: true
   },
   /* HarmonyOS应用特有相关 */
   "app-harmony": {
-    distribute: {},
+    distribute: {}
   },
   /* HarmonyOS元服务特有相关 */
   "mp-harmony": {
-    distribute: {},
+    distribute: {}
   },
   uniStatistics: {
-    enable: false,
+    enable: false
   },
-  vueVersion: "3",
-});
+  vueVersion: "3"
+})

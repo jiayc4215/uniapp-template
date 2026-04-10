@@ -1,5 +1,5 @@
 ---
-url: 'https://wot-ui.cn/component/layout.md'
+url: "https://wot-ui.cn/component/layout.md"
 ---
 
 # Layout 布局
@@ -36,7 +36,7 @@ url: 'https://wot-ui.cn/component/layout.md'
 ```scss
 .bg-dark1,
 .bg-dark,
-.bg-light{
+.bg-light {
   border-radius: 4px;
   min-height: 30px;
   text-align: center;
@@ -86,25 +86,25 @@ url: 'https://wot-ui.cn/component/layout.md'
 
 ## Row Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|--------|
-| gutter | 列元素之间的间距（单位为px） | number | - | 0 | - |
+| 参数   | 说明                         | 类型   | 可选值 | 默认值 | 最低版本 |
+| ------ | ---------------------------- | ------ | ------ | ------ | -------- |
+| gutter | 列元素之间的间距（单位为px） | number | -      | 0      | -        |
 
 ## Col Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 最低版本 |
-|-----|------|-----|-------|-------|---------|
-| span | 列元素宽度 | number | - | 24 | - |
-| offset | 列元素偏移距离 | number | - | 0 | - |
+| 参数   | 说明           | 类型   | 可选值 | 默认值 | 最低版本 |
+| ------ | -------------- | ------ | ------ | ------ | -------- |
+| span   | 列元素宽度     | number | -      | 24     | -        |
+| offset | 列元素偏移距离 | number | -      | 0      | -        |
 
 ## Row 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | Row 根节点样式 | - |
+| 类名         | 说明           | 最低版本 |
+| ------------ | -------------- | -------- |
+| custom-class | Row 根节点样式 | -        |
 
 ## Col 外部样式类
 
-| 类名 | 说明 | 最低版本 |
-|-----|------|--------|
-| custom-class | Col 根节点样式 | - |
+| 类名         | 说明           | 最低版本 |
+| ------------ | -------------- | -------- |
+| custom-class | Col 根节点样式 | -        |
