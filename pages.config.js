@@ -1,4 +1,5 @@
 import { defineUniPages } from "@uni-helper/vite-plugin-uni-pages"
+import { tabBar } from "./src/tabbar/config"
 
 export default defineUniPages({
   globalStyle: {
@@ -18,20 +19,5 @@ export default defineUniPages({
       "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
     }
   },
-  tabBar: {
-    color: "@tabColor",
-    selectedColor: "@tabSelectedColor",
-    backgroundColor: "@tabBgColor",
-    borderStyle: "@tabBorderStyle",
-    list: [
-      {
-        pagePath: "pages/index/index",
-        text: "首页"
-      },
-      {
-        pagePath: "pages/home/index",
-        text: "home"
-      }
-    ]
-  }
+  tabBar
 })

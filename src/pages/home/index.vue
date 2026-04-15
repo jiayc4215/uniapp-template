@@ -5,6 +5,12 @@
 
 <script setup>
 import Chart from "@/subEcharts/components/chart/chart.vue"
+definePage({
+  style: {
+    navigationBarTitleText: "发现"
+  },
+  rules: ["user"]
+})
 defineOptions({
   componentPlaceholder: {
     Chart: "view"

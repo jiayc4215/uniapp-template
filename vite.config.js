@@ -19,6 +19,9 @@ import dayjs from "dayjs"
 import eruda from "./scripts/vite-plugin-eruda"
 import Optimization from "@uni-ku/bundle-optimizer"
 import { isMpWeixin } from "@uni-helper/uni-env"
+import basicSsl from "@vitejs/plugin-basic-ssl"
+import postcssLogical from "postcss-logical"
+import postcssOKLabFunction from "@csstools/postcss-oklab-function"
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, path.resolve(process.cwd(), "env"))
@@ -33,12 +36,18 @@ export default defineConfig(({ command, mode }) => {
     VITE_SHOW_SOURCEMAP
   } = env
   const { UNI_PLATFORM } = process.env
+  // 开发环境下如果没配置代理前缀，我们要默认一个，否则空字符串会拦截所有本地页面并代理到后端导致所有页面超时！
+  let proxyPrefix = VITE_APP_PROXY_PREFIX
+  if (command === "serve" && !proxyPrefix) {
+    proxyPrefix = "/api"
+  }
 
   console.log("command, mode -> ", command, mode)
   return defineConfig({
     envDir: "./env", // 自定义env目录
     base: VITE_APP_PUBLIC_BASE,
     plugins: [
+      basicSsl(),
       UniEcharts(),
       UniPages({
         exclude: ["**/components/**/**.*"],
@@ -64,7 +73,11 @@ export default defineConfig(({ command, mode }) => {
         // 组件名是否包含目录名
         directoryAsNamespace: false
       }), // 必须在 Uni() 之前
-      Uni(),
+      Uni({
+        viteLegacyOptions: {
+          targets: ["defaults", "android >= 6", "ios >= 10"]
+        }
+      }),
       Optimization({
         enable: isMpWeixin,
         logger: false
@@ -104,21 +117,23 @@ export default defineConfig(({ command, mode }) => {
     ],
     css: {
       postcss: {
-        plugins: [tailwindcss()]
+        plugins: [tailwindcss(), postcssLogical(), postcssOKLabFunction()]
       }
     },
     server: {
+      https: true,
       host: "0.0.0.0",
       hmr: true,
       port: Number.parseInt(VITE_APP_PORT, 10),
       // 仅 H5 端生效，其他端不生效（其他端走build，不走devServer)
       proxy: JSON.parse(VITE_APP_PROXY_ENABLE)
         ? {
-            [VITE_APP_PROXY_PREFIX]: {
+            [proxyPrefix]: {
               target: VITE_SERVER_BASEURL,
               changeOrigin: true,
+              secure: false, // 解决代理到 https 导致的超时问题
               // 后端有/api前缀则不做处理，没有则需要去掉
-              rewrite: path => path.replace(new RegExp(`^${VITE_APP_PROXY_PREFIX}`), "")
+              rewrite: path => path.replace(new RegExp(`^${proxyPrefix}`), "")
             }
           }
         : undefined
@@ -135,7 +150,7 @@ export default defineConfig(({ command, mode }) => {
     build: {
       // 方便非h5端调试
       sourcemap: VITE_SHOW_SOURCEMAP === "true", // 默认是false
-      target: "es6",
+      ...(isH5 ? {} : { target: "es6" }),
       // 开发环境不用压缩
       minify: mode === "development" ? false : "esbuild"
     }

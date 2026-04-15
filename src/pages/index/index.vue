@@ -16,10 +16,11 @@ import { isMpWeixin } from "@uni-helper/uni-env"
 definePage({
   style: {
     navigationBarTitleText: "首页"
-  }
+  },
+  rules: ["admin", "user"]
 })
 
-const title = ref("Hello")
+const title = ref("角色演示首页")
 
 const goToLogin = () => {
   uni.navigateTo({
