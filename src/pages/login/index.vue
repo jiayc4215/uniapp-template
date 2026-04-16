@@ -58,19 +58,7 @@
         </view>
       </wd-form>
 
-      <view class="mb-[48rpx] flex justify-end px-[8rpx] text-[24rpx]">
-        <view class="text-gray-400">忘记密码?</view>
-      </view>
-
       <wd-button block @click="doLogin" size="large" shape="circle"> 登 录 </wd-button>
-    </view>
-
-    <view class="flex items-start text-[24rpx] text-gray-400">
-      <wd-checkbox v-model="isAgree" shape="square" active-color="#16a34a" custom-style="margin-top: 4rpx;" />
-      <view class="ml-[8rpx] leading-relaxed">
-        登录前请先阅读并同意
-        <text class="text-green-600">《用户服务协议》</text> 和 <text class="text-green-600">《隐私政策》</text>
-      </view>
     </view>
   </view>
 </template>
@@ -88,7 +76,7 @@ definePage({
 })
 
 const currentRole = ref("admin")
-const isAgree = ref(false)
+
 const formRef = ref(null)
 
 const form = reactive({
@@ -100,14 +88,7 @@ const isUser = computed(() => currentRole.value === "user")
 
 /* 校验规则 */
 const rules = {
-  username: [
-    { required: true, message: "请输入账号" },
-    {
-      validator: value => /^[a-zA-Z0-9_@.]{3,20}$/.test(value),
-      message: "格式不正确",
-      trigger: "blur"
-    }
-  ],
+  username: [{ required: true, message: "请输入账号" }],
   password: [{ required: true, message: "请输入密码" }]
 }
 
@@ -117,14 +98,11 @@ function switchRole(role) {
 
 /* 登录提交 */
 async function doLogin() {
-  if (!isAgree.value) {
-    return uni.toast({ title: "请先阅读并同意协议" })
-  }
-
   try {
-    uni.showLoading({ title: "登录中..." })
     const { valid } = await formRef.value.validate()
     if (!valid) return
+    uni.showLoading({ title: "登录中..." })
+
     await tokenStore.login({ ...form, role: currentRole.value })
     const url = "/pages/index/index"
 

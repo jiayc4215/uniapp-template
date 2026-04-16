@@ -1,11 +1,12 @@
-<!-- src/App.ku.vue | App.ku.vue -->
-
 <script setup>
-import { useTheme } from "./composables/useTheme"
+import { ref } from "vue"
 import Tabbar from "@/tabbar/index.vue"
 import { isPageTabbar } from "./tabbar/store"
 import { currRoute } from "./utils/router"
-const { themeVars, theme } = useTheme()
+import { useTheme } from "./composables/useTheme"
+
+const { theme, themeVars } = useTheme()
+
 const isCurrentPageTabbar = ref(true)
 onShow(() => {
   const { path } = currRoute()

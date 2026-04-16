@@ -3,16 +3,19 @@
     <image class="logo" src="/static/logo.png"></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>
-      <view>{{ isMpWeixin ? "微信" : "h5" }}</view>
     </view>
     <view class="mt-8">
-      <wd-button @click="goToLogin">Go to Login</wd-button>
+      <wd-button @click="handleLogout">退出登录</wd-button>
     </view>
   </view>
 </template>
 
 <script setup>
-import { isMpWeixin } from "@uni-helper/uni-env"
+import { ref } from "vue"
+import { useTokenStore } from "@/store/token"
+
+const tokenStore = useTokenStore()
+
 definePage({
   style: {
     navigationBarTitleText: "首页"
@@ -22,8 +25,9 @@ definePage({
 
 const title = ref("角色演示首页")
 
-const goToLogin = () => {
-  uni.navigateTo({
+const handleLogout = async () => {
+  await tokenStore.logout()
+  uni.reLaunch({
     url: "/pages/login/index"
   })
 }

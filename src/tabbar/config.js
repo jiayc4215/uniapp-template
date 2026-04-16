@@ -10,42 +10,42 @@ export const customTabbarList = [
   {
     text: "首页",
     pagePath: "pages/index/index",
-    icon: "i-boxicons-home-alt-filled",
+    icon: "i-mdi-home",
     roles: ["admin"],
     iconType: "tailwind"
   },
   {
     pagePath: "pages/admin-dashboard/index",
     text: "管理台",
-    icon: "i-boxicons-file-detail-filled",
+    icon: "i-mdi-view-dashboard",
     roles: ["admin"],
     iconType: "tailwind"
   },
   {
     pagePath: "pages/admin-profile/index",
     text: "我的",
-    icon: "i-boxicons-user-filled",
+    icon: "i-mdi-account",
     roles: ["admin"],
     iconType: "tailwind"
   },
   {
     pagePath: "pages/index/index",
     text: "首页",
-    icon: "i-boxicons-home-alt-filled",
+    icon: "i-mdi-home",
     roles: ["user"],
     iconType: "tailwind"
   },
   {
     pagePath: "pages/home/index",
     text: "发现",
-    icon: "i-boxicons-qr-filled",
+    icon: "i-mdi-compass",
     roles: ["user"],
     iconType: "tailwind"
   },
   {
     pagePath: "pages/user-profile/index",
     text: "我的",
-    icon: "i-boxicons-user-filled",
+    icon: "i-mdi-account",
     roles: ["user"],
     iconType: "tailwind"
   }

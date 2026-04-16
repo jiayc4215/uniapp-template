@@ -12,7 +12,7 @@ mock("/mock/auth/login", "post", options => {
     }
   }
 })
-mock("/mock/auth/logout", "post", () => {
+mock("/mock/auth/logout", "get", () => {
   return {
     code: 200,
     message: "success",

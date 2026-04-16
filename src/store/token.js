@@ -30,6 +30,7 @@ export const useTokenStore = defineStore(
     const login = async loginForm => {
       try {
         const res = await _login(loginForm)
+
         await _postLogin(res)
         return res
       } catch (err) {

@@ -1,5 +1,33 @@
 @import "tailwindcss";
 @source not "dist";
-
-/* 添加下面这一行，路径为你创建的 tailwind.config.js 文件路径 */
 @config "../tailwind.config.js";
+/** 主题色，用法如: text-primary */
+@theme inline {
+  --color-primary: var(--wot-color-theme, #11a64a);
+  --color-success: var(--wot-color-success, #34d19d);
+  --color-warning: var(--wot-color-warning, #f0883a);
+  --color-danger: var(--wot-color-danger, #fa4350);
+}
+/* 基础样式 */
+.page-wraper {
+  font-size: 28rpx;
+  color: #333333;
+  background-color: #f7f8fa;
+  box-sizing: border-box;
+  min-height: calc(100vh - var(--window-top));
+}
+
+/*  
+  tailwindcss dark:bg-(--wot-dark-background) 
+  普通css以下那种都可以 tailwindcss会编译为第二种
+*/
+/* .page-wraper.dark {
+  color: #ffffff;
+  background-color: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  page {
+    background: #1b1b1b;
+  }
+} */

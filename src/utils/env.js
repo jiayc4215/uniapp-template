@@ -54,7 +54,6 @@ export function getEnvBaseUrl() {
 export const getBaseUrl = () => {
   // 生产环境不开启mock
   if (isMock === "true" && NODE_ENV === "development") {
-    console.log("mock")
     return "/mock"
   }
 
