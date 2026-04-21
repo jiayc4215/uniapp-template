@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import Chart from "@/subEcharts/components/chart/chart.vue"
+import Chart from "@/echarts-modules/components/chart/chart.vue"
 definePage({
   style: {
     navigationBarTitleText: "发现"
@@ -32,7 +32,7 @@ defineOptions({
 })
 const jumpSubEcharts = () => {
   uni.navigateTo({
-    url: "/subEcharts/index"
+    url: "/echarts-modules/index"
   })
 }
 </script>

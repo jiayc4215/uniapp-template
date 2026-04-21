@@ -56,7 +56,7 @@ export default defineConfig(({ command, mode }) => {
         exclude: ["**/components/**/**.*"],
         // pages 目录为 src/pages，分包目录不能配置在pages目录下！！
         // 是个数组，可以配置多个，但是不能为pages里面的目录！！
-        subPackages: ["src/subEcharts"],
+        subPackages: ["src/echarts-modules", "src/public-modules"],
         dts: "src/types/pages.d.ts"
       }),
       UniKuRoot({
@@ -68,7 +68,7 @@ export default defineConfig(({ command, mode }) => {
       Components({
         resolvers: [UniEchartsResolver()],
         // 扫描组件目录
-        dirs: ["src/components"],
+        dirs: ["src/components", "src/public-modules/components", "src/echarts-modules/components"],
         // 扫描子目录
         deep: true,
         // 组件类型声明文件
