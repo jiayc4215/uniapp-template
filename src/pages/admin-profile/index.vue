@@ -15,10 +15,6 @@
     <!-- 主模块 -->
     <view class="mb-4 rounded-[24rpx] bg-white">
       <wd-cell title="切换版本" center size="large" border is-link @click="versionPopupVisible = true">
-        <template #icon>
-          <view class="i-boxicons-devices-filled mr-[5rpx] text-[22px] text-blue-500"></view>
-        </template>
-
         <text class="text-[24rpx] text-gray-400">{{ versionLabel }}</text>
       </wd-cell>
     </view>

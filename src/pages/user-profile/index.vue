@@ -14,11 +14,7 @@
 
     <!-- 主模块 -->
     <view class="mb-4 rounded-[24rpx] bg-white">
-      <wd-cell title="扫一扫" center size="large" border is-link @click="scanChange">
-        <template #icon>
-          <view class="i-boxicons-devices-filled mr-[5rpx] text-[22px] text-blue-500"></view>
-        </template>
-      </wd-cell>
+      <wd-cell title="扫一扫" center size="large" border is-link @click="scanChange"> </wd-cell>
     </view>
 
     <!-- 退出登录按钮 -->
