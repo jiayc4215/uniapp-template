@@ -4,17 +4,11 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
-    <view class="mt-8">
-      <wd-button @click="handleLogout">退出登录</wd-button>
-    </view>
   </view>
 </template>
 
 <script setup>
 import { ref } from "vue"
-import { useTokenStore } from "@/store/token"
-
-const tokenStore = useTokenStore()
 
 definePage({
   style: {
@@ -24,13 +18,6 @@ definePage({
 })
 
 const title = ref("角色演示首页")
-
-const handleLogout = async () => {
-  await tokenStore.logout()
-  uni.reLaunch({
-    url: "/pages/login/index"
-  })
-}
 </script>
 
 <style>

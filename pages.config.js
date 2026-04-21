@@ -5,7 +5,7 @@ export default defineUniPages({
   globalStyle: {
     navigationBarBackgroundColor: "@navBgColor",
     navigationBarTextStyle: "@navTxtStyle",
-    navigationBarTitleText: "Wot Starter",
+    navigationBarTitleText: "uniapp",
 
     // 页面背景配置
     backgroundColor: "@bgColor",
