@@ -1,5 +1,5 @@
 import { tabbarStore } from "@/tabbar/store"
-import { getAllPages } from "@/utils/index"
+import { getAllPages } from "@/utils/router"
 import { useTokenStore } from "@/store/token"
 import { useUserStore } from "@/store/user"
 import { LOGIN_PAGE, EXCLUDE_LOGIN_PATH_LIST } from "./config"
@@ -43,6 +43,8 @@ export const permission = {
       const fullPath = to.fullPath
       // 2. 更新 Tabbar 索引
       tabbarStore.setAutoCurIdx(path)
+
+      console.log("tokenStore.hasLogin", tokenStore.hasLogin)
 
       /* has token*/
       if (tokenStore.hasLogin) {

@@ -1,25 +1,21 @@
-<script>
-export default {
-  onLaunch: function () {
-    console.log("App Launch")
-  },
-  onShow: function () {
-    console.log("App Show")
-  },
-  onHide: function () {
-    console.log("App Hide")
-  }
-}
+<script setup>
+import { onHide, onLaunch, onShow } from "@dcloudio/uni-app"
+import { getCurrentInstance } from "vue"
+import { permission } from "./router/permission"
+
+const { proxy } = getCurrentInstance()
+const router = proxy.$router
+
+router && permission.install(router)
+
+onLaunch(options => {
+  console.log("App.vue onLaunch", options)
+})
+onShow(() => {})
+onHide(() => {
+  console.log("App Hide")
+})
 </script>
-
 <style lang="scss">
-.page-wraper {
-  min-height: calc(100vh - var(--window-top) - var(--window-bottom));
-  box-sizing: border-box;
-  background: #f9f9f9;
-}
-
-.wot-theme-dark.page-wraper {
-  background: #222;
-}
+/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 </style>

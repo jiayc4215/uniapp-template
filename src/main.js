@@ -2,6 +2,7 @@ import extendApi from "./utils/extendApi"
 import store from "./store"
 import { createSSRApp } from "vue"
 import { routeInterceptor } from "./router/interceptor"
+import { initRootFontSize, useFont } from "./composables/useFont"
 import "./main.css"
 import App from "./App.vue"
 const NODE_ENV = import.meta.env.MODE
@@ -18,6 +19,11 @@ export function createApp() {
   uni.toast = extendApi.toast
   uni.modal = extendApi.modal
   const app = createSSRApp(App)
+  // 初始化字体
+  initRootFontSize()
+  //挂载获取字体的方法
+  const { rootFontSize } = useFont()
+  app.config.globalProperties.$getRootFontSize = () => `${rootFontSize.value}px`
   app.use(store)
   app.use(routeInterceptor)
   return {

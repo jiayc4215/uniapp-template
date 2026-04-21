@@ -22,6 +22,9 @@ import { isMpWeixin } from "@uni-helper/uni-env"
 import basicSsl from "@vitejs/plugin-basic-ssl"
 import postcssLogical from "postcss-logical"
 import postcssOKLabFunction from "@csstools/postcss-oklab-function"
+import postcssRemToResponsivePixel from "postcss-rem-to-responsive-pixel"
+import pxtoremPlugin from "./scripts/pxtorem-plugin"
+import PageRootInsertElement from "./scripts/page-root-insert-element"
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, path.resolve(process.cwd(), "env"))
@@ -78,6 +81,32 @@ export default defineConfig(({ command, mode }) => {
           targets: ["defaults", "android >= 6", "ios >= 10"]
         }
       }),
+      // 处理 twindcss text-[22rpx]
+      pxtoremPlugin({
+        rootValue: 32, // 16px=32rpx默认根节点字体大小
+        unit: "rpx"
+      }),
+      // 转换px为rem 处理wot-ui的px
+      pxtoremPlugin({
+        rootValue: 16,
+        unit: "px"
+      }),
+
+      // 此处不适应默认转换，需要自定义配置
+      // 1.要忽略font
+      // 2.要注意执行顺序，应该在rem转换之前
+      UnifiedViteWeappTailwindcssPlugin({
+        // rem2rpx: true,
+        // disabled: WeappTailwindcssDisabled,
+        cssEntries: [
+          // tailwindcss@4 必须配置 cssEntries 并且使用绝对路径，否则 tailwindcss 生成的类名不会参与转译。
+          path.resolve(__dirname, "src/main.css")
+        ]
+      }),
+
+      // 插入page-meta
+      PageRootInsertElement(`\n  <page-meta :root-font-size="$getRootFontSize()"></page-meta>`),
+
       Optimization({
         enable: isMpWeixin,
         logger: false
@@ -98,11 +127,6 @@ export default defineConfig(({ command, mode }) => {
           filepath: "src/types/eslintrc-auto-import.json"
         }
       }),
-      UnifiedViteWeappTailwindcssPlugin({
-        rem2rpx: true,
-        disabled: WeappTailwindcssDisabled,
-        cssEntries: [path.resolve(__dirname, "src/main.css")]
-      }),
       UNI_PLATFORM === "h5" && {
         name: "html-transform",
         transformIndexHtml(html) {
@@ -117,7 +141,20 @@ export default defineConfig(({ command, mode }) => {
     ],
     css: {
       postcss: {
-        plugins: [tailwindcss(), postcssLogical(), postcssOKLabFunction()]
+        plugins: [
+          tailwindcss(),
+          postcssLogical(),
+          postcssOKLabFunction(),
+          postcssRemToResponsivePixel({
+            // 32 意味着 1rem = 32rpx
+            rootValue: 32,
+            // 这里使用的是白名单匹配，不支持 postcss-pxtorem 的 ! 排除语法 不处理font
+            propList: ["*", "!font", "!font-size", "!line-height", "!letter-spacing"],
+            // 转化的单位,可以变成 px / rpx
+            transformUnit: "rpx",
+            disabled: WeappTailwindcssDisabled
+          })
+        ]
       }
     },
     server: {

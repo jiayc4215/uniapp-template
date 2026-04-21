@@ -1,4 +1,4 @@
-import { getAllPages } from "@/utils"
+import { getAllPages } from "@/utils/router"
 
 export const LOGIN_STRATEGY_MAP = {
   DEFAULT_NEED_LOGIN: 1 // 白名单策略，默认不可以进入APP，需要强制登录
