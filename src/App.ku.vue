@@ -1,11 +1,16 @@
 <script setup>
 import { ref } from "vue"
 import Tabbar from "@/tabbar/index.vue"
+
 import { isPageTabbar } from "./tabbar/store"
 import { currRoute } from "./utils/router"
-import { useTheme } from "./composables/useTheme"
+// import { useTheme } from "./composables/useTheme"
+import { useManualTheme } from "./composables/useManualTheme"
 
-const { theme, themeVars } = useTheme()
+const { themeVars, theme } = useManualTheme()
+
+// const { theme, themeVars } = useTheme()
+console.log(themeVars)
 
 const isCurrentPageTabbar = ref(true)
 onShow(() => {
@@ -36,7 +41,7 @@ defineExpose({
    :theme="theme" 这个主题配置是针对组件库的 你自己写一个view 就要自己适配 
    （项目不需要 后期可手动添加）
     -->
-    <wd-config-provider :theme-vars="themeVars" :custom-class="`page-wraper ${theme}`">
+    <wd-config-provider :theme-vars="themeVars" :theme="theme" :custom-class="`page-wraper ${theme}`">
       <KuRootView />
       <block v-if="isCurrentPageTabbar">
         <wd-gap safe-area-bottom height="var(--wot-tabbar-height, 50px)" />

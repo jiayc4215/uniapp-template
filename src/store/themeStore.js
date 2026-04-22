@@ -1,6 +1,11 @@
 import { defineStore } from "pinia"
-import { themeColorOptions, themeConfig } from "@/composables/theme"
+import { themeColorOptions } from "@/composables/theme"
 
+export function buildThemeVars(color) {
+  return {
+    ...color.primaryShades
+  }
+}
 /**
  * 简化版系统主题状态管理
  * 仅支持跟随系统主题，不提供手动切换功能
@@ -20,8 +25,7 @@ export const useThemeStore = defineStore("theme", {
       darkColor: "#ffffff",
       darkColor2: "#e0e0e0",
       darkColor3: "#a0a0a0",
-      colorTheme: themeColorOptions[0].primary,
-      ...themeConfig
+      ...buildThemeVars(themeColorOptions[0])
     }
   }),
 

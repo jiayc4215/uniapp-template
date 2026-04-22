@@ -16,7 +16,7 @@ export default defineUniPages({
   easycom: {
     autoscan: true,
     custom: {
-      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
+      "^wd-(.*)": "@wot-ui/ui/components/wd-$1/wd-$1.vue"
     }
   },
   tabBar

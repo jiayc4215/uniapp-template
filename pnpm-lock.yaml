@@ -68,6 +68,9 @@ importers:
       '@uni-helper/vite-plugin-uni-pages':
         specifier: ^0.3.23
         version: 0.3.24(vite@5.2.8(@types/node@25.6.0)(less@4.5.1)(lightningcss@1.32.0)(sass@1.77.8)(terser@5.46.1))
+      '@wot-ui/ui':
+        specifier: ^2.0.0
+        version: 2.0.0(vue@3.4.21(typescript@5.9.2))
       dayjs:
         specifier: ^1.11.20
         version: 1.11.20
@@ -98,9 +101,6 @@ importers:
       vue-i18n:
         specifier: ^9.1.9
         version: 9.14.5(vue@3.4.21(typescript@5.9.2))
-      wot-design-uni:
-        specifier: ^1.14.0
-        version: 1.14.0(vue@3.4.21(typescript@5.9.2))
     devDependencies:
       '@commitlint/cli':
         specifier: ^20.4.2
@@ -3397,6 +3397,12 @@ packages:
   '@weapp-tailwindcss/shared@1.1.3':
     resolution: {integrity: sha512-UXABvDZerj5goxh8bE6fhOJwQpgTrv/J2M3aJM8l69xs9WMKILlZ9A88i/oYxIxN5xX+pOMmOkz73dQ5Z8YtfA==}
     engines: {node: ^20.19.0 || >=22.12.0}
+
+  '@wot-ui/ui@2.0.0':
+    resolution: {integrity: sha512-1vpSfzv8mnR2yAbhJFMmKu9/85/UNlVrY1eE2OEmwy0K17BESmQmWBI+EEM4x5Yix+EjwJSdcQET9sznjjRPcA==}
+    engines: {HBuilderX: ^3.8.7}
+    peerDependencies:
+      vue: '>=3.2.47'
 
   a-sync-waterfall@1.0.1:
     resolution: {integrity: sha512-RYTOHHdWipFUliRFMCS4X2Yn2X8M87V/OpSqWzKKOGhzqyUxzyVmhHDH9sAvG+ZuQf/TAOFsLCpMw09I1ufUnA==}
@@ -8842,12 +8848,6 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
-  wot-design-uni@1.14.0:
-    resolution: {integrity: sha512-FaBXtmxxAkZNZUxR2xeKBg/Agck+SPaFFFeCvbBzAFeqM/5m2Y/v/7te7rhMJpZFkMoAgtJR1yaWR0DnjOmTnA==}
-    engines: {HBuilderX: ^3.8.7}
-    peerDependencies:
-      vue: '>=3.2.47'
-
   wrap-ansi@6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
     engines: {node: '>=8'}
@@ -13499,6 +13499,10 @@ snapshots:
   '@weapp-tailwindcss/shared@1.1.3':
     dependencies:
       pathe: 2.0.3
+
+  '@wot-ui/ui@2.0.0(vue@3.4.21(typescript@5.9.2))':
+    dependencies:
+      vue: 3.4.21(typescript@5.9.2)
 
   a-sync-waterfall@1.0.1: {}
 
@@ -20059,10 +20063,6 @@ snapshots:
       winston-transport: 4.9.0
 
   word-wrap@1.2.5: {}
-
-  wot-design-uni@1.14.0(vue@3.4.21(typescript@5.9.2)):
-    dependencies:
-      vue: 3.4.21(typescript@5.9.2)
 
   wrap-ansi@6.2.0:
     dependencies:
