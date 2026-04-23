@@ -12,11 +12,15 @@
           (coverSupport ? ", viewport-fit=cover" : "") +
           '" />'
       )
+      if (globalThis === undefined) {
+        var globalThis = window
+      }
     </script>
     <title>%VITE_APP_TITLE%</title>
     <!--preload-links-->
     <!--app-context-->
   </head>
+
   <body>
     <div id="app"><!--app-html--></div>
     <script type="module" src="/src/main.js"></script>

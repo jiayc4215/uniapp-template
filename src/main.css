@@ -5,27 +5,12 @@
 
 /** 主题色，用法如: text-primary */
 @theme inline {
-  --color-primary: var(--wot-color-theme, #11a64a);
-  --color-success: var(--wot-color-success, #34d19d);
-  --color-warning: var(--wot-color-warning, #f0883a);
-  --color-danger: var(--wot-color-danger, #fa4350);
+  --color-primary: var(--wot-primary-6);
+  --color-success: var(--wot-success-main);
+  --color-warning: var(--wot-warning-main);
+  --color-danger: var(--wot-danger-main);
 }
 /* 基础样式 */
-
-/*  
-  tailwindcss dark:bg-(--wot-dark-background) 
-  普通css以下那种都可以 tailwindcss会编译为第二种
-*/
-/* .page-wraper.dark {
-  color: #ffffff;
-  background-color: #1a1a1a;
-}
-
-@media (prefers-color-scheme: dark) {
-  page {
-    background: #1b1b1b;
-  }
-} */
 page,
 .wot-font-scale-vars {
   --wot-fs-big: 24px;

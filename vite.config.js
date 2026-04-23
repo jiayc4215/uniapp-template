@@ -96,8 +96,8 @@ export default defineConfig(({ command, mode }) => {
       // 1.要忽略font
       // 2.要注意执行顺序，应该在rem转换之前
       UnifiedViteWeappTailwindcssPlugin({
-        // rem2rpx: true,
-        // disabled: WeappTailwindcssDisabled,
+        rem2rpx: false,
+        disabled: WeappTailwindcssDisabled,
         cssEntries: [
           // tailwindcss@4 必须配置 cssEntries 并且使用绝对路径，否则 tailwindcss 生成的类名不会参与转译。
           path.resolve(__dirname, "src/main.css")
