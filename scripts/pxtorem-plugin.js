@@ -5,13 +5,13 @@ export default function pxtoremPlugin(options = {}) {
   const defaultOptions = {
     rootValue: 16, // 根元素字体大小，1rem = 16px
     unitPrecision: 5, // 转换精度
-    propList: ["font", "font-size", "line-height", "letter-spacing", "*-fs", "*-fs-*", "*-font-size", "--wot-fs-*"],
+    propList: ["font", "font-size", "line-height", "letter-spacing", "*-fs", "*-fs-*", "*-font-size", "--wot-*"],
     selectorBlackList: [], // 忽略的选择器
     replace: true, // 是否替换
     mediaQuery: false, // 是否转换媒体查询
     minPixelValue: 0, // 最小转换像素值
     exclude: null, // 排除的文件
-    unit: "px" // 转换单位
+    unit: "px" // 转换单位·
   }
 
   // 合并参数配置
