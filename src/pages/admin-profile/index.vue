@@ -1,21 +1,21 @@
 <template>
-  <view class="px-4">
+  <view class="bg-(--wot-filled-bottom) px-4 text-(--wot-text-main)">
     <!-- 头像区域 -->
-    <view class="mb-4 flex items-center rounded-[24rpx] bg-white p-4" @click="handleInfo">
-      <wd-icon name="user" size="38" color="#11a64a"></wd-icon>
+    <view class="mb-4 flex items-center rounded-[24rpx] bg-(--wot-filled-oppo) p-4" @click="handleInfo">
+      <wd-icon name="user" size="38" color="var(--wot-primary-6)"></wd-icon>
       <view class="ml-4 flex-1">
         <view class="flex items-center">
           <text class="text-[36rpx] font-bold">管理员</text>
           <wd-tag type="primary" plain class="ml-[16rpx]">{{ userInfo?.role || "--" }}</wd-tag>
         </view>
-        <view class="mt-[12rpx] text-[26rpx] text-gray-500">{{ userInfo?.username || "--" }}</view>
+        <view class="mt-[12rpx] text-[26rpx] text-(--wot-text-auxiliary)">{{ userInfo?.username || "--" }}</view>
       </view>
     </view>
 
     <!-- 主模块 -->
-    <view class="mb-4 rounded-[24rpx] bg-white">
+    <view class="mb-4 rounded-[24rpx] bg-(--wot-filled-oppo)">
       <wd-cell title="切换版本" center size="large" border is-link @click="versionPopupVisible = true">
-        <text class="text-[24rpx] text-gray-400">{{ versionLabel }}</text>
+        <text class="text-[24rpx] text-(--wot-text-auxiliary)">{{ versionLabel }}</text>
       </wd-cell>
     </view>
 

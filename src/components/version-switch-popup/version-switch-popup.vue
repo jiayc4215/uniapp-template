@@ -8,36 +8,40 @@
     custom-class="wot-font-scale-vars"
     :custom-style="'padding-bottom: max(24rpx, env(safe-area-inset-bottom));'"
   >
-    <view class="bg-white px-[24rpx] pt-[32rpx]">
+    <view class="bg-(--wot-filled-oppo) px-[24rpx] pt-[32rpx] text-(--wot-text-main)">
       <view class="mb-6 text-center font-bold">{{ title }}</view>
 
       <view class="mb-6 flex flex-col gap-3">
         <view
           v-for="item in options"
           :key="item.value"
-          class="flex items-center justify-between rounded-2xl border bg-white px-4 py-4"
-          :class="selectedValue === item.value ? 'border-primary bg-green-50 shadow-sm' : 'border-gray-100'"
+          class="flex items-center justify-between rounded-2xl border bg-(--wot-filled-oppo) px-4 py-4"
+          :class="
+            selectedValue === item.value
+              ? 'border-primary bg-(--wot-primary-1) shadow-sm'
+              : 'border-(--wot-border-main)'
+          "
           @click="selectedValue = item.value"
         >
           <view class="flex min-w-0 flex-1 items-center">
             <view
               class="mr-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-semibold"
-              :class="item.value > 16 ? 'text-warning bg-orange-50' : 'text-primary bg-green-50'"
+              :class="item.value > 16 ? 'text-warning bg-(--wot-warning-surface)' : 'text-primary bg-(--wot-primary-1)'"
             >
               <text>{{ item.iconText }}</text>
             </view>
             <view class="min-w-0">
               <view class="font-medium">{{ item.label }}</view>
-              <view class="mt-1 text-sm text-gray-400">{{ item.description }}</view>
+              <view class="mt-1 text-sm text-(--wot-text-auxiliary)">{{ item.description }}</view>
             </view>
           </view>
 
           <view class="ml-3">
             <view
               class="flex h-[34rpx] w-[34rpx] items-center justify-center rounded-full border"
-              :class="selectedValue === item.value ? 'border-primary bg-primary' : 'border-gray-200'"
+              :class="selectedValue === item.value ? 'border-primary bg-primary' : 'border-(--wot-border-main)'"
             >
-              <wd-icon v-if="selectedValue === item.value" name="check" size="20rpx" color="#fff" />
+              <wd-icon v-if="selectedValue === item.value" name="check" size="20rpx" color="var(--wot-text-white)" />
             </view>
           </view>
         </view>

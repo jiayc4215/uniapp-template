@@ -4,13 +4,10 @@ import Tabbar from "@/tabbar/index.vue"
 
 import { isPageTabbar } from "./tabbar/store"
 import { currRoute } from "./utils/router"
-// import { useTheme } from "./composables/useTheme"
+
 import { useManualTheme } from "./composables/useManualTheme"
 
 const { themeVars, theme } = useManualTheme()
-
-// const { theme, themeVars } = useTheme()
-console.log(themeVars)
 
 const isCurrentPageTabbar = ref(true)
 onShow(() => {

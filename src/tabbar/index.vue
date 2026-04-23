@@ -50,8 +50,8 @@ onLoad(() => {
 })
 // #endif
 
-const activeColor = "#16a34a"
-const inactiveColor = "#666"
+const activeColor = "var(--wot-primary-6)"
+const inactiveColor = "var(--wot-text-auxiliary)"
 
 function getColorByIndex(index) {
   return tabbarStore.curIdx === index ? activeColor : inactiveColor
@@ -96,9 +96,9 @@ function getColorByIndex(index) {
   left: 0;
   right: 0;
   z-index: 1000;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--wot-border-main);
   box-sizing: border-box;
-  background: #fff;
+  background: var(--wot-filled-oppo);
 }
 
 .tabbar-content {
@@ -139,7 +139,7 @@ function getColorByIndex(index) {
   width: 250rpx;
   height: 250rpx;
   border-radius: 50%;
-  background-color: #fff;
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.08);
+  background-color: var(--wot-filled-oppo);
+  box-shadow: inset 0 0 0 2px var(--wot-border-light);
 }
 </style>

@@ -34,7 +34,7 @@ const option = ref({
       },
       itemStyle: {
         borderWidth: 2,
-        borderColor: "#ffffff",
+        borderColor: "var(--wot-filled-oppo)",
         borderRadius: 10
       },
       emphasis: {

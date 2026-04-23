@@ -21,12 +21,9 @@ onHide(() => {
 @use "@wot-ui/ui/styles/theme/index.scss" as *;
 .page-wraper {
   font-size: 28rpx;
-  color: #333333;
-  background-color: #f7f8fa;
+  color: var(--wot-text-main);
+  background-color: var(--wot-filled-bottom);
   box-sizing: border-box;
   min-height: calc(100vh - var(--window-top));
-}
-.wot-theme-dark.page-wraper {
-  background: #222;
 }
 </style>

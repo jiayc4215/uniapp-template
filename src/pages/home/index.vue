@@ -1,17 +1,17 @@
 <template>
-  <view class="bg-gray-50 p-5">
+  <view class="bg-(--wot-filled-bottom) p-5 text-(--wot-text-main)">
     <!-- 异步 Echarts 入口 -->
-    <view class="rounded-3 mb-2 bg-white p-3 shadow-sm">
+    <view class="rounded-3 mb-2 bg-(--wot-filled-oppo) p-3 shadow-sm">
       <view
-        class="rounded-2 bg-primary hover:bg-primary/80 px-6 py-3 text-center font-medium text-white transition-colors"
+        class="rounded-2 bg-primary hover:bg-primary/80 px-6 py-3 text-center font-medium text-(--wot-text-white) transition-colors"
         @click="jumpSubEcharts"
       >
         跳转分包
       </view>
     </view>
     <!-- 饼图 -->
-    <view class="rounded-3 mb-5 bg-white p-5 shadow-sm">
-      <view class="mb-5 text-center text-base font-medium text-gray-800"> 异步分包Echarts </view>
+    <view class="rounded-3 mb-5 bg-(--wot-filled-oppo) p-5 shadow-sm">
+      <view class="mb-5 text-center text-base font-medium text-(--wot-text-main)"> 异步分包Echarts </view>
       <Chart />
     </view>
   </view>

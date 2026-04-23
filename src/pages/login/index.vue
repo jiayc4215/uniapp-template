@@ -1,37 +1,44 @@
 <template>
-  <view class="box-border flex flex-col items-center px-[32rpx] pt-[64rpx]">
+  <view
+    class="box-border flex flex-col items-center bg-(--wot-filled-bottom) px-[32rpx] pt-[64rpx] text-(--wot-text-main)"
+  >
     <view class="mb-[64rpx] flex flex-col items-center">
-      <image src="/static/logo.png" class="mb-[32rpx] h-[180rpx] w-[180rpx] rounded-[32rpx] bg-gray-200" />
+      <image
+        src="/static/logo.png"
+        class="mb-[32rpx] h-[180rpx] w-[180rpx] rounded-[32rpx] bg-(--wot-filled-content)"
+      />
       <view class="text-[40rpx] font-bold tracking-wider">uniapp</view>
-      <view class="mt-[16rpx] text-[24rpx] text-gray-400">vite+vue3+js模版</view>
+      <view class="mt-[16rpx] text-[24rpx] text-(--wot-text-auxiliary)">vite+vue3+js模版</view>
     </view>
 
-    <view class="relative mb-[64rpx] flex w-full overflow-hidden rounded-[24rpx] bg-gray-200 p-[8rpx]">
+    <view class="relative mb-[64rpx] flex w-full overflow-hidden rounded-[24rpx] bg-(--wot-filled-content) p-[8rpx]">
       <view
-        class="absolute top-[8rpx] left-[8rpx] h-[calc(100%-16rpx)] w-[calc(50%-8rpx)] rounded-[20rpx] bg-green-600 transition-transform duration-300"
+        class="bg-primary absolute top-[8rpx] left-[8rpx] h-[calc(100%-16rpx)] w-[calc(50%-8rpx)] rounded-[20rpx] transition-transform duration-300"
         :style="{ transform: isUser ? 'translateX(100%)' : 'translateX(0)' }"
       />
       <view
         class="relative z-10 flex-1 py-[24rpx] text-center transition-colors"
-        :class="!isUser ? 'text-white' : 'text-gray-500'"
+        :class="!isUser ? 'text-(--wot-text-white)' : 'text-(--wot-text-auxiliary)'"
         @click="switchRole('admin')"
       >
         admin
       </view>
       <view
         class="relative z-10 flex-1 py-[24rpx] text-center transition-colors"
-        :class="isUser ? 'text-white' : 'text-gray-500'"
+        :class="isUser ? 'text-(--wot-text-white)' : 'text-(--wot-text-auxiliary)'"
         @click="switchRole('user')"
       >
         user
       </view>
     </view>
 
-    <view class="mb-[64rpx] w-full rounded-[48rpx] bg-white p-[48rpx] shadow-sm">
+    <view class="mb-[64rpx] w-full rounded-[48rpx] bg-(--wot-filled-oppo) p-[48rpx] shadow-sm">
       <view class="mb-[48rpx] text-center text-[32rpx] font-bold">账号密码登录</view>
 
       <wd-form ref="formRef" :model="form">
-        <view class="mb-[32rpx] overflow-hidden rounded-[24rpx] border border-gray-100 bg-gray-50">
+        <view
+          class="mb-[32rpx] overflow-hidden rounded-[24rpx] border border-(--wot-border-main) bg-(--wot-filled-bottom)"
+        >
           <wd-input
             v-model="form.username"
             prop="username"
@@ -43,7 +50,9 @@
           />
         </view>
 
-        <view class="mb-[32rpx] overflow-hidden rounded-[24rpx] border border-gray-100 bg-gray-50">
+        <view
+          class="mb-[32rpx] overflow-hidden rounded-[24rpx] border border-(--wot-border-main) bg-(--wot-filled-bottom)"
+        >
           <wd-input
             v-model="form.password"
             prop="password"
