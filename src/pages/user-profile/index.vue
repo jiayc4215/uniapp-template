@@ -18,7 +18,7 @@
     </view>
 
     <!-- 退出登录按钮 -->
-    <wd-button block plain @click="handleLogout" size="large" type="error"> 退出登录 </wd-button>
+    <wd-button class="w-full" round @click="handleLogout" size="large" type="danger"> 退出登录 </wd-button>
   </view>
 </template>
 

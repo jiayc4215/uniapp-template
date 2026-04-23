@@ -5,7 +5,7 @@ export default function pxtoremPlugin(options = {}) {
   const defaultOptions = {
     rootValue: 16, // 根元素字体大小，1rem = 16px
     unitPrecision: 5, // 转换精度
-    propList: ["font", "font-size", "line-height", "letter-spacing", "*-fs", "*-fs-*", "*-font-size", "--wot-*"],
+    propList: ["font", "font-size", "line-height", "letter-spacing", "--wot-n-*"],
     selectorBlackList: [], // 忽略的选择器
     replace: true, // 是否替换
     mediaQuery: false, // 是否转换媒体查询
