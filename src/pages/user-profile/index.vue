@@ -1,19 +1,19 @@
 <template>
-  <view class="bg-(--wot-filled-bottom) px-4 text-(--wot-text-main)">
+  <view class="bg-fill-bottom text-text-main px-4">
     <!-- 头像区域 -->
-    <view class="mb-4 flex items-center rounded-[24rpx] bg-(--wot-filled-oppo) p-4" @click="handleInfo">
+    <view class="bg-fill-oppo mb-4 flex items-center rounded-[24rpx] p-4" @click="handleInfo">
       <wd-icon name="user" size="38" color="var(--wot-primary-6)"></wd-icon>
       <view class="ml-4 flex-1">
         <view class="flex items-center">
           <text class="text-[36rpx] font-bold">用户</text>
           <wd-tag type="primary" plain class="ml-[16rpx]">{{ userInfo?.role || "--" }}</wd-tag>
         </view>
-        <view class="mt-[12rpx] text-[26rpx] text-(--wot-text-auxiliary)">{{ userInfo?.username || "--" }}</view>
+        <view class="text-text-auxiliary mt-[12rpx] text-[26rpx]">{{ userInfo?.username || "--" }}</view>
       </view>
     </view>
 
     <!-- 主模块 -->
-    <view class="mb-4 rounded-[24rpx] bg-(--wot-filled-oppo)">
+    <view class="bg-fill-oppo mb-4 rounded-[24rpx]">
       <wd-cell title="扫一扫" center size="large" border is-link @click="scanChange"> </wd-cell>
     </view>
 

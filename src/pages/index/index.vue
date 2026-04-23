@@ -39,13 +39,13 @@ function openUrl(url) {
 </script>
 
 <template>
-  <view class="box-border bg-(--wot-filled-bottom) py-3 text-(--wot-text-main)">
-    <view class="rounded-3 mx-3 box-border bg-(--wot-filled-oppo) px-4 py-6 text-center">
-      <text class="text-5 mb-3 block text-left font-bold text-(--wot-text-main)"> Wot Starter </text>
-      <text class="text-30rpx mb-3 block text-left leading-relaxed text-(--wot-text-secondary)">
+  <view class="bg-fill-bottom text-text-main box-border py-3">
+    <view class="rounded-3 bg-fill-oppo mx-3 box-border px-4 py-6 text-center">
+      <text class="text-5 text-text-main mb-3 block text-left font-bold"> Wot Starter </text>
+      <text class="text-30rpx text-text-secondary mb-3 block text-left leading-relaxed">
         ⚡️ 基于 vitesse-uni-app 由 vite & uni-app 驱动的、深度整合 Wot UI 组件库的快速启动模板
       </text>
-      <text class="text-3 block text-left leading-relaxed text-(--wot-text-auxiliary)">
+      <text class="text-3 text-text-auxiliary block text-left leading-relaxed">
         背靠 Uni Helper、Wot UI 团队，告别 HBuilderX ，拥抱现代前端开发工具链
       </text>
     </view>
@@ -96,15 +96,12 @@ function openUrl(url) {
         <view
           v-for="option in themeColorOptions"
           :key="option.value"
-          class="flex items-center justify-between border-b border-(--wot-border-main) py-3 last:border-b-0"
+          class="border-line-main flex items-center justify-between border-b py-3 last:border-b-0"
           @click="handleThemeColorSelect(option)"
         >
           <view class="flex items-center gap-3">
-            <view
-              class="h-6 w-6 rounded-full border-2 border-(--wot-border-main)"
-              :style="{ backgroundColor: option.primary }"
-            />
-            <text class="text-4 text-(--wot-text-main)">
+            <view class="border-line-main h-6 w-6 rounded-full border-2" :style="{ backgroundColor: option.primary }" />
+            <text class="text-4 text-text-main">
               {{ option.name }}
             </text>
           </view>

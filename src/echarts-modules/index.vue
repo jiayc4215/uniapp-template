@@ -1,8 +1,8 @@
 <template>
-  <view class="bg-(--wot-filled-bottom) p-5 text-(--wot-text-main)">
+  <view class="bg-fill-bottom text-text-main p-5">
     <!-- 饼图 -->
-    <view class="rounded-3 mb-5 bg-(--wot-filled-oppo) p-5 shadow-sm">
-      <view class="mb-5 text-center text-base font-medium text-(--wot-text-main)"> 饼图示例 </view>
+    <view class="rounded-3 bg-fill-oppo mb-5 p-5 shadow-sm">
+      <view class="text-text-main mb-5 text-center text-base font-medium"> 饼图示例 </view>
       <Chart />
     </view>
   </view>

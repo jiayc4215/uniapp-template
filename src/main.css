@@ -3,10 +3,32 @@
 @config "../tailwind.config.js";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/** 主题色，用法如: text-primary */
+/**
+ * 把 Wot 的 CSS 变量映射成 Tailwind v4 可直接消费的语义色。
+ * 例如：`text-text-main`、`bg-fill-oppo`、`border-line-main`
+ */
 @theme inline {
   --color-primary: var(--wot-primary-6);
   --color-success: var(--wot-success-main);
   --color-warning: var(--wot-warning-main);
   --color-danger: var(--wot-danger-main);
+
+  /* 文本语义色 */
+  --color-text-main: var(--wot-text-main);
+  --color-text-secondary: var(--wot-text-secondary);
+  --color-text-auxiliary: var(--wot-text-auxiliary);
+  --color-text-white: var(--wot-text-white);
+
+  /* 填充/容器背景色 */
+  --color-fill-content: var(--wot-filled-content);
+  --color-fill-bottom: var(--wot-filled-bottom);
+  --color-fill-oppo: var(--wot-filled-oppo);
+
+  /* 边框语义色 */
+  --color-line-main: var(--wot-border-main);
+  --color-line-light: var(--wot-border-light);
+
+  /* soft 用于弱化态背景，不建议直接当正文主色使用 */
+  --color-primary-soft: var(--wot-primary-1);
+  --color-warning-soft: var(--wot-warning-surface);
 }
