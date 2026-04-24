@@ -41,7 +41,7 @@ function openUrl(url) {
 <template>
   <view class="bg-fill-bottom text-text-main box-border py-3">
     <view class="rounded-3 bg-fill-oppo mx-3 box-border px-4 py-6 text-center">
-      <text class="text-5 text-text-main mb-3 block text-left font-bold"> Wot Starter </text>
+      <text class="text-5 text-text-main mb-3 block text-left font-bold"> uniapp-template </text>
       <text class="text-30rpx text-text-secondary mb-3 block text-left leading-relaxed">
         ⚡️ 基于 vitesse-uni-app 由 vite & uni-app 驱动的、深度整合 Wot UI 组件库的快速启动模板
       </text>
@@ -70,18 +70,17 @@ function openUrl(url) {
     <demo-block title="工具链介绍" transparent>
       <wd-cell-group border custom-class="rounded-2! overflow-hidden">
         <wd-cell title="🧩 WotUI组件库" is-link @click="openUrl('https://wot-ui.cn/')" />
-        <!-- <wd-cell title="🧠 Agent Skills" is-link @click="navigateTo('skills')" /> -->
-
-        <wd-cell title="🚦 Router 路由管理" is-link @click="navigateTo('router')" />
-        <wd-cell title="🌐 Alova 网络请求" is-link @click="navigateTo('request')" />
-        <wd-cell title="🎨 Icon 图标" is-link @click="navigateTo('icon')" />
-        <wd-cell title="✨ Unocss 原子化" is-link @click="navigateTo('styles')" />
-        <wd-cell title="🍍 Pinia 持久化" is-link @click="navigateTo('pinia')" />
-        <wd-cell title="💬 Fedback 反馈组件" is-link @click="navigateTo('feedback')" />
-        <!-- <wd-cell title="🌱 CreateUni 脚手架" is-link @click="navigateTo('create-uni') " /> -->
-        <wd-cell title="🔄 CI/CD 持续集成" is-link @click="navigateTo('ci')" />
-        <wd-cell title="🦾  uni-ku/root" is-link @click="navigateTo('root')" />
-        <wd-cell title="📊 uni-echarts" is-link @click="navigateTo('echarts')" />
+        <wd-cell title="🧠 H5扫描 jsQR" is-link @click="openUrl('https://ext.dcloud.net.cn/plugin?id=7007')" />
+        <wd-cell title="🚦 Mock数据" is-link @click="openUrl('https://lavyun.github.io/better-mock')" />
+        <wd-cell title="🌐 uni-helper" is-link @click="openUrl('https://uni-helper.js.org/')" />
+        <wd-cell title="🎨 Icon 图标" is-link @click="openUrl('https://iconify.design/')" />
+        <wd-cell title="✨ tailwindcss 原子化" is-link @click="openUrl('https://tw.icebreaker.top/')" />
+        <wd-cell title="🍍 Pinia 持久化" is-link @click="openUrl('https://pinia.vuejs.org/')" />
+        <wd-cell title="💬 UQRCode 二维码" is-link @click="openUrl('https://ext.dcloud.net.cn/plugin?id=1287')" />
+        <wd-cell title="🌱 小程序 分包优化" is-link @click="openUrl('https://github.com/uni-ku/bundle-optimizer')" />
+        <wd-cell title="🔄 CI/CD 持续集成" is-link @click="openUrl('https://github.com/Moonofweisheng/uni-mini-ci')" />
+        <wd-cell title="🦾  uni-ku/root" is-link @click="openUrl('https://github.com/uni-ku/root')" />
+        <wd-cell title="📊 uni-echarts" is-link @click="openUrl('https://uni-echarts.xiaohe.ink/')" />
       </wd-cell-group>
     </demo-block>
 

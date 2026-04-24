@@ -1,11 +1,11 @@
 @import "tailwindcss";
 @source not "dist";
 @config "../tailwind.config.js";
-@custom-variant dark (&:where(.dark, .dark *));
 
 /**
  * 把 Wot 的 CSS 变量映射成 Tailwind v4 可直接消费的语义色。
  * 例如：`text-text-main`、`bg-fill-oppo`、`border-line-main`
+ see https://github.com/wot-ui/unocss-preset
  */
 @theme inline {
   --color-primary: var(--wot-primary-6);
