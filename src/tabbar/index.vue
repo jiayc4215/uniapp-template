@@ -86,7 +86,7 @@ function getColorByIndex(index) {
 </template>
 <style scoped lang="scss">
 .tabbar-wrapper {
-  height: 50px;
+  height: var(--wot-tabbar-height, 50px);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
@@ -102,7 +102,7 @@ function getColorByIndex(index) {
 }
 
 .tabbar-content {
-  height: 50px;
+  height: var(--wot-tabbar-height, 50px);
   display: flex;
   align-items: center;
 }

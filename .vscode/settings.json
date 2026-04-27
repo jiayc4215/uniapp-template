@@ -12,7 +12,7 @@
     "*.css": "tailwindcss"
   },
 
-  "tailwindCSS.experimental.configFile": "src/main.css",
+  "tailwindCSS.experimental.configFile": "tailwind.config.js",
   // iconify 提示
   "iconify.includes": ["mdi"]
 }

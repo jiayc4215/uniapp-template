@@ -1,21 +1,21 @@
 <template>
-  <view class="bg-fill-bottom text-text-main px-4">
+  <view class="bg-fill-bottom px-4 text-text-main">
     <!-- 头像区域 -->
-    <view class="bg-fill-oppo mb-4 flex items-center rounded-[24rpx] p-4" @click="handleInfo">
+    <view class="mb-4 flex items-center rounded-[24rpx] bg-fill-oppo p-4" @click="handleInfo">
       <wd-icon name="user" size="38" color="var(--wot-primary-6)"></wd-icon>
       <view class="ml-4 flex-1">
         <view class="flex items-center">
           <text class="text-[36rpx] font-bold">管理员</text>
           <wd-tag type="primary" plain class="ml-[16rpx]">{{ userInfo?.role || "--" }}</wd-tag>
         </view>
-        <view class="text-text-auxiliary mt-[12rpx] text-[26rpx]">{{ userInfo?.username || "--" }}</view>
+        <view class="mt-[12rpx] text-[26rpx] text-text-auxiliary">{{ userInfo?.username || "--" }}</view>
       </view>
     </view>
 
     <!-- 主模块 -->
-    <view class="bg-fill-oppo mb-4 rounded-[24rpx]">
-      <wd-cell title="切换版本" center size="large" border is-link @click="versionPopupVisible = true">
-        <text class="text-text-auxiliary text-[24rpx]">{{ versionLabel }}</text>
+    <view class="mb-4 rounded-[24rpx] bg-fill-oppo">
+      <wd-cell title="大字模式" center size="large" border is-link @click="versionPopupVisible = true">
+        <text class="text-[24rpx] text-text-auxiliary">{{ versionLabel }}</text>
       </wd-cell>
     </view>
 
@@ -47,8 +47,9 @@ const userInfo = store.userInfo
 const versionPopupVisible = ref(false)
 const { rootFontSize, setRootFontSize } = useFont()
 const versionMap = {
-  16: "标准版",
-  20: "关怀版"
+  16: "标准",
+  18: "舒适",
+  20: "关怀"
 }
 const versionLabel = computed(() => versionMap[rootFontSize.value] || `${rootFontSize.value}px`)
 /** 跳转个人信息页面 */

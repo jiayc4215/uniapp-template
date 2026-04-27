@@ -7,7 +7,8 @@ const isApp = process.env.UNI_PLATFORM === "app"
 const WeappTailwindcssDisabled = isH5 || isApp
 import Uni from "@uni-helper/plugin-uni"
 import { UnifiedViteWeappTailwindcssPlugin } from "weapp-tailwindcss/vite"
-import tailwindcss from "@tailwindcss/postcss"
+import tailwindcss from "tailwindcss"
+import autoprefixer from "autoprefixer"
 import UniPages from "@uni-helper/vite-plugin-uni-pages"
 import UniManifest from "@uni-helper/vite-plugin-uni-manifest"
 import UniKuRoot from "@uni-ku/root"
@@ -97,11 +98,7 @@ export default defineConfig(({ command, mode }) => {
       // 2.要注意执行顺序，应该在rem转换之前
       UnifiedViteWeappTailwindcssPlugin({
         rem2rpx: false,
-        disabled: WeappTailwindcssDisabled,
-        cssEntries: [
-          // tailwindcss@4 必须配置 cssEntries 并且使用绝对路径，否则 tailwindcss 生成的类名不会参与转译。
-          path.resolve(__dirname, "src/main.css")
-        ]
+        disabled: WeappTailwindcssDisabled
       }),
 
       // 插入page-meta
@@ -143,6 +140,7 @@ export default defineConfig(({ command, mode }) => {
       postcss: {
         plugins: [
           tailwindcss(),
+          autoprefixer(),
           postcssLogical(),
           postcssOKLabFunction(),
           postcssRemToResponsivePixel({

@@ -32,7 +32,7 @@ defineProps({
 
 .tabbar-text {
   margin-top: 2px;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .text-20px {
