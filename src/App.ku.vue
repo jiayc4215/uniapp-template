@@ -2,7 +2,7 @@
 import { ref } from "vue"
 import Tabbar from "@/tabbar/index.vue"
 
-import { isPageTabbar } from "./tabbar/store"
+import { isPageTabbar, tabbarStore } from "./tabbar/store"
 import { currRoute } from "./utils/router"
 
 import { useManualTheme } from "./composables/useManualTheme"
@@ -18,6 +18,10 @@ onShow(() => {
     isCurrentPageTabbar.value = true
   } else {
     isCurrentPageTabbar.value = isPageTabbar(path)
+  }
+  //修正 tabbar 默认选中
+  if (isCurrentPageTabbar.value) {
+    tabbarStore.setAutoCurIdx(path)
   }
 })
 const showTabbar = () => {
