@@ -6,10 +6,13 @@
     root-portal
     :z-index="99999"
     custom-class="wot-font-scale-vars"
-    :custom-style="'padding-bottom: max(24rpx, env(safe-area-inset-bottom));'"
+    custom-style="background-color: transparent;"
   >
     <wd-config-provider :theme="theme" :theme-vars="themeVars" custom-class="wot-font-scale-vars">
-      <view class="bg-fill-oppo text-text-main px-[24rpx] pt-[32rpx]">
+      <view
+        class="bg-fill-oppo text-text-main rounded-t-[32rpx] px-[24rpx] pt-[32rpx]"
+        :style="'padding-bottom: max(24rpx, env(safe-area-inset-bottom));'"
+      >
         <view class="mb-6 text-center font-bold">{{ title }}</view>
 
         <view class="mb-6 flex flex-col gap-3">
