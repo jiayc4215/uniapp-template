@@ -18,7 +18,8 @@ export const sidebar = [
       { text: "Eruda 调试插件", link: "/plugin/eruda" },
       { text: "oklab-function", link: "/plugin/oklab-function" },
       { text: "UQRCode", link: "/plugin/uqrcode" },
-      { text: "postcss-logical", link: "/plugin/postcss-logical" }
+      { text: "postcss-logical", link: "/plugin/postcss-logical" },
+      { text: "Pinia 状态管理", link: "/plugin/pinia" }
     ]
   },
   {
@@ -32,7 +33,18 @@ export const sidebar = [
       { text: "Better mock", link: "/develop/better-mock" },
       { text: "uni-app 弹窗方案", link: "/develop/dialog" },
       { text: "uni-app 动态字体大小", link: "/develop/font" },
-      { text: "jsQR", link: "/develop/jsQR" }
+      { text: "jsQR", link: "/develop/jsQR" },
+      { text: "uni-echarts", link: "/develop/uni-echarts" }
+    ]
+  },
+  {
+    text: "扩展阅读",
+    items: [
+      { text: "Vite 开发环境配置 HTTPS", link: "/expand/https" },
+      { text: "清理 node_modules", link: "/expand/node_modules" },
+      { text: "锁定 Node 版本", link: "/expand/node" },
+      { text: "强制使用 pnpm", link: "/expand/only-allow" },
+      { text: "pnpm overrides", link: "/expand/overrides" }
     ]
   },
   {
@@ -42,7 +54,11 @@ export const sidebar = [
       {
         text: "Agent Skills、Rules、Prompt、MCP，一文把它们理清楚了",
         link: "/ai/ai"
-      }
+      },
+      { text: "CC Switch 安装指南", link: "/ai/ccdown" },
+      { text: "CC Switch 使用指南", link: "/ai/cc-switch" },
+      { text: "Wot UI 与 AI 编程", link: "/ai/wotui-ai" },
+      { text: "llms.txt 与 VitePress", link: "/ai/llms-vite" }
     ]
   },
   {

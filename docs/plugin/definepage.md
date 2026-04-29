@@ -1,3 +1,5 @@
+# 深入解析 @uni-helper/vite-plugin-uni-pages 的 definePage 宏
+
 > 深入解析 @uni-helper/vite-plugin-uni-pages 的 definePage 宏：技术实现与优势分析
 
 在 uni-app 生态中，路由管理一直是开发者关注的重点。近日，`@uni-helper/vite-plugin-uni-pages` 插件引入了 `definePage` 宏功能 (由@[Edwin Hui](https://github.com/edwinhuish)在[PR 228](https://github.com/uni-helper/vite-plugin-uni-pages/pull/228)实现)，
