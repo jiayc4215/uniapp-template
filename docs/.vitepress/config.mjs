@@ -5,6 +5,7 @@ import { sidebar } from "./sidebar"
 export default defineConfig({
   title: "uniapp-template",
   description: "uni-app + Vue 3 + Vite 多端项目模板文档",
+  base: "/uniapp-template/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
