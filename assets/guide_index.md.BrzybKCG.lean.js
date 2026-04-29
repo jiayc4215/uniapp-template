@@ -1,1 +1,0 @@
-import{_ as i,o,c as d,ai as a}from"./chunks/framework.pZSBfn92.js";const h=JSON.parse('{"title":"介绍","description":"","frontmatter":{},"headers":[],"relativePath":"guide/index.md","filePath":"guide/index.md"}'),c={name:"guide/index.md"};function l(n,e,r,t,s,p){return o(),d("div",null,[...e[0]||(e[0]=[a("",8)])])}const m=i(c,[["render",l]]);export{h as __pageData,m as default};
