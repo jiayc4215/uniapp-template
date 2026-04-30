@@ -185,6 +185,10 @@ pnpm upload:mp --version=1.0.1 --desc="版本说明" --robot=2
   - `build/ci_keys/private.key`
 - 微信公众平台已开通小程序代码上传能力，并配置上传 IP 白名单
 
+## 项目文档
+
+完整文档地址：[uniapp-template 文档](https://jiayc4215.github.io/uniapp-template/)。
+
 ## 说明
 
 - 当前仓库更偏向“项目模板 + 能力示例”，适合作为 uni-app 多端项目启动基础

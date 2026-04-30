@@ -12,6 +12,7 @@ export default defineConfig({
       { text: "指南", link: "/guide/", activeMatch: "^/guide/" },
       { text: "插件", link: "/plugin/uni-helper", activeMatch: "^/plugin/" },
       { text: "开发", link: "/develop/dark-mode", activeMatch: "^/develop/" },
+      { text: "实践项目", link: "/practice/", activeMatch: "^/practice/" },
       { text: "社区群", link: "/contact-me", activeMatch: "^/contact-me" }
     ],
 

@@ -29,7 +29,8 @@ export const sidebar = [
       { text: "uni-app 拥抱 ESM", link: "/develop/esm" },
       { text: "分包优化", link: "/develop/bundle-optimizer" },
       { text: "主题管理", link: "/develop/dark-mode" },
-      { text: "持续集成工具", link: "/develop/uni-mini-ci" },
+      { text: "小程序 持续集成", link: "/develop/uni-mini-ci" },
+      { text: "H5 持续集成", link: "/develop/h5-ci" },
       { text: "Better mock", link: "/develop/better-mock" },
       { text: "uni-app 弹窗方案", link: "/develop/dialog" },
       { text: "uni-app 动态字体大小", link: "/develop/font" },
@@ -46,6 +47,10 @@ export const sidebar = [
       { text: "强制使用 pnpm", link: "/expand/only-allow" },
       { text: "pnpm overrides", link: "/expand/overrides" }
     ]
+  },
+  {
+    text: "实践项目",
+    items: [{ text: "项目列表", link: "/practice/" }]
   },
   {
     text: "AI",
