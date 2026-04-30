@@ -214,7 +214,9 @@ definePage(() => ({
 
 ### 1. 安装依赖
 
-:pm-install{name="-D @uni-helper/vite-plugin-uni-pages @uni-helper/uni-env"}
+```
+pnpm i -D @uni-helper/vite-plugin-uni-pages @uni-helper/uni-env
+```
 
 ### 2. 配置 Vite 插件
 
