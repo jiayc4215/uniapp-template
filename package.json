@@ -1,6 +1,6 @@
 {
   "name": "uniapp-template",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "preinstall": "only-allow pnpm",
