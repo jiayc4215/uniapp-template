@@ -1,8 +1,26 @@
 {
   // 保存文件时是否自动格式化
   "editor.formatOnSave": true,
+  // 默认格式化工具使用 Prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit" // 保存时自动修复 ESLint 报错
+  },
+  // 针对特定语言强制指定默认格式化工具为 Prettier，避免多格式化程序冲突导致保存时不格式化
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // twwindcss 提示
   "editor.quickSuggestions": {

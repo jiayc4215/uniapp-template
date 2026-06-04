@@ -54,10 +54,16 @@ export default function pageRootinsertElementPlugin(content = "") {
         // 替换原template内容
         const newCode = code.replace(templateContent, newTemplateContent)
 
-        return newCode
+        return {
+          code: newCode,
+          map: null
+        }
       } catch (e) {
         console.warn("page-root-insert-element插件处理失败:", e.message)
-        return code
+        return {
+          code,
+          map: null
+        }
       }
     }
   }

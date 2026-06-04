@@ -11,6 +11,7 @@
     "lint:prettier": "prettier --write \"**/*.{js,ts,mjs,cjs,json,tsx,css,less,scss,vue,html,md}\"",
     "commit": "git-cz",
     "upload:mp": "npm run build:mp-weixin && node ./scripts/upload-weixin.js",
+    "release": "release-it --no-ci",
     "dev": "unh dev --mode development",
     "build": "unh build --mode production",
     "prepare": "unh prepare && husky",
@@ -81,6 +82,8 @@
     "vue-i18n": "^9.1.9"
   },
   "devDependencies": {
+    "release-it": "^19.2.4",
+    "@release-it/conventional-changelog": "^10.0.6",
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
     "@csstools/postcss-oklab-function": "^5.0.3",

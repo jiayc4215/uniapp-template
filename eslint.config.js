@@ -3,9 +3,15 @@ import globals from "globals" //环境
 import pluginVue from "eslint-plugin-vue" //vue规范
 import { defineConfig } from "eslint/config" //配置
 import eslintConfigPrettier from "eslint-config-prettier" // prettier
-const ignores = ["**/dist/**", "**/node_modules/**", ".*"]
 import { FlatCompat } from "@eslint/eslintrc"
+import fs from "node:fs"
+
+const ignores = ["**/dist/**", "**/node_modules/**", ".*"]
 const compat = new FlatCompat()
+
+// 安全检查预防断层文件不存在
+const autoImportPath = "./src/types/eslintrc-auto-import.json"
+const autoImportConfig = fs.existsSync(autoImportPath) ? compat.extends(autoImportPath) : []
 
 export default defineConfig([
   // 1. 全局忽略
@@ -15,7 +21,7 @@ export default defineConfig([
   // 2. 继承各个插件的推荐配置 (它们是独立的配置对象)
   pluginVue.configs["flat/essential"], //vue规范
   // 自动导入的配置 兼容AutoImport
-  ...compat.extends("./src/types/eslintrc-auto-import.json"),
+  ...autoImportConfig,
   // 3. 自定义全局设置
   {
     files: ["**/*.{js,mjs,cjs,vue}"], //匹配文件
