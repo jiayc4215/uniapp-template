@@ -1,6 +1,7 @@
 // en-US.json
 {
   "greeting": "Hello,{0}!",
+  "index-title": "Home",
   "welcome": "Welcome to use",
   "button": "Button",
   "common": {

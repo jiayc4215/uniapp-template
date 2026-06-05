@@ -5,7 +5,7 @@ import { useI18n } from "vue-i18n"
 
 definePage({
   style: {
-    navigationBarTitleText: "首页"
+    navigationBarTitleText: "%index-title%"
   },
   rules: ["admin", "user"]
 })
@@ -55,6 +55,17 @@ function handleLangSelect(langValue) {
   setLocale(langValue)
   showLangSheet.value = false
 }
+
+// 动态监听语言更新导航栏标题（支持小程序/H5/App在切换语言时实时刷新）
+watch(
+  currentLang,
+  () => {
+    uni.setNavigationBarTitle({
+      title: t("index-title")
+    })
+  },
+  { immediate: true }
+)
 
 function openUrl(url) {
   window.open(url, "_blank")
