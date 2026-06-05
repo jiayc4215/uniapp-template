@@ -1,14 +1,34 @@
-// zh-CN.json
 {
-  "greeting": "你好,{0}!",
-  "index-title": "首页",
-  "welcome": "欢迎使用",
+  "bei-kao-uni-helperwot-ui-tuan-dui-gao-bie-hbuilderx-yong-bao-xian-dai-qian-duan-kai-fa-gong-ju-lian": "背靠 Uni Helper、Wot UI 团队，告别 HBuilderX ，拥抱现代前端开发工具链",
   "button": "按钮",
+  "cicd-chi-xu-ji-cheng": "🔄 CI/CD 持续集成",
+  "english": "English",
+  "gong-ju-lian-jie-shao": "工具链介绍",
+  "greeting": "你好,{0}!",
+  "h5-sao-miao-jsqr": "🧠 H5扫描 jsQR",
+  "ha-ha-ha-232111": "哈哈哈{0}{1}",
+  "icon-tu-biao": "🎨 Icon 图标",
+  "index-title": "首页",
+  "ji-yu-vitesseuniapp-you-vite": "⚡️ 基于 vitesse-uni-app 由 vite",
+  "jian-ti-zhong-wen": "简体中文",
+  "mock-shu-ju": "🚦 Mock数据",
+  "pinia-chi-jiu-hua": "🍍 Pinia 持久化",
   "settings": {
-    "title": "基础设置",
     "darkMode": "暗黑模式",
     "followSystem": "跟随系统",
+    "language": "语言切换",
     "themeColor": "选择主题色",
-    "language": "语言切换"
-  }
+    "title": "基础设置"
+  },
+  "settings.themeColor": "选择主题色",
+  "tailwindcss-yuan-zi-hua": "✨ tailwindcss 原子化",
+  "uni-echarts": "📊 uni-echarts",
+  "uni-helper": "🌐 uni-helper",
+  "uni-ku-root": "🦾  uni-ku/root",
+  "uniapp-qu-dong-de-shen-du-zheng-he-wot-ui-zu-jian-ku-de-kuai-su-qi-dong-mo-ban": "& uni-app 驱动的、深度整合 Wot UI 组件库的快速启动模板",
+  "uqrcode-er-wei-ma": "💬 UQRCode 二维码",
+  "welcome": "欢迎使用",
+  "wotui-zu-jian-ku": "🧩 WotUI组件库",
+  "xiao-cheng-xu-fen-bao-you-hua": "🌱 小程序 分包优化",
+  "xuan-ze-yu-yan": "选择语言"
 }

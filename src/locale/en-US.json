@@ -1,22 +1,44 @@
-// en-US.json
 {
-  "greeting": "Hello,{0}!",
-  "index-title": "Home",
-  "welcome": "Welcome to use",
+  "bei-kao-uni-helperwot-ui-tuan-dui-gao-bie-hbuilderx-yong-bao-xian-dai-qian-duan-kai-fa-gong-ju-lian": "Backed by Uni Helper and Wot UI team, bid farewell to HBuilderX and embrace the modern front-end development toolchain",
   "button": "Button",
+  "cicd-chi-xu-ji-cheng": "🔄  Continuous CI/CD integration",
   "common": {
-    "confirm": "Confirm",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   },
+  "english": "English",
+  "gong-ju-lian-jie-shao": "Introduction to toolchain",
+  "greeting": "Hello,{0}!",
+  "h5-sao-miao-jsqr": "🧠  H5 Scan JSQR",
+  "ha-ha-ha-232111": "Hahaha {0} {1}",
   "home": {
     "title": "Home",
     "welcome": "Welcome back"
   },
+  "icon-tu-biao": "🎨  Icon icon",
+  "index-title": "Home",
+  "ji-yu-vitesseuniapp-you-vite": "⚡ Based on Vitesse uni app by Vitesse",
+  "jian-ti-zhong-wen": "Simplified Chinese",
+  "mock-shu-ju": "🚦  Mock data",
+  "pinia-chi-jiu-hua": "🍍  Pinia persistence",
   "settings": {
-    "title": "Basic Settings",
     "darkMode": "Dark Mode",
     "followSystem": "Follow System",
+    "language": "Language",
     "themeColor": "Theme Color",
-    "language": "Language"
-  }
+    "title": "Basic Settings"
+  },
+  "settings.__i18n_ally_root__.darkMode": "Dark Mode",
+  "settings.__i18n_ally_root__.title": "Basic Settings",
+  "settings.themeColor": "Select theme color",
+  "tailwindcss-yuan-zi-hua": "✨  Tailwindcss Atomization",
+  "uni-echarts": "📊  uni-echarts",
+  "uni-helper": "🌐  uni-helper",
+  "uni-ku-root": "🦾   uni-ku/root",
+  "uniapp-qu-dong-de-shen-du-zheng-he-wot-ui-zu-jian-ku-de-kuai-su-qi-dong-mo-ban": "&Uni app driven, deeply integrated Wot UI component library quick launch template",
+  "uqrcode-er-wei-ma": "💬  UQRCode QR code",
+  "welcome": "Welcome to use",
+  "wotui-zu-jian-ku": "🧩  WotUI Component Library",
+  "xiao-cheng-xu-fen-bao-you-hua": "🌱  Mini Program Subcontracting Optimization",
+  "xuan-ze-yu-yan": "Select language"
 }

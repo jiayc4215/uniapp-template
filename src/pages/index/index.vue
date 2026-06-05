@@ -41,13 +41,13 @@ function handleThemeColorSelect(option) {
 
 // 语言切换相关
 const showLangSheet = ref(false)
-const langOptions = [
-  { name: "简体中文", value: "zh-CN" },
-  { name: "English", value: "en-US" }
-]
+const langOptions = computed(() => [
+  { name: t("jian-ti-zhong-wen"), value: "zh-CN" },
+  { name: t("english"), value: "en-US" }
+])
 
 const currentLangText = computed(() => {
-  const option = langOptions.find(opt => opt.value === currentLang.value)
+  const option = langOptions.value.find(opt => opt.value === currentLang.value)
   return option ? option.name : currentLang.value
 })
 
@@ -78,11 +78,13 @@ function openUrl(url) {
       <text class="text-5 text-text-main mb-3 block text-left font-bold">
         {{ t("greeting", ["uniapp-template"]) }}
       </text>
+      <text>{{ $t("ha-ha-ha-232111", 232, 111) }}</text>
       <text class="text-30rpx text-text-secondary mb-3 block text-left leading-relaxed">
-        ⚡️ 基于 vitesse-uni-app 由 vite & uni-app 驱动的、深度整合 Wot UI 组件库的快速启动模板
+        {{ $t("ji-yu-vitesseuniapp-you-vite") }}
+        {{ $t("uniapp-qu-dong-de-shen-du-zheng-he-wot-ui-zu-jian-ku-de-kuai-su-qi-dong-mo-ban") }}
       </text>
       <text class="text-3 text-text-auxiliary block text-left leading-relaxed">
-        背靠 Uni Helper、Wot UI 团队，告别 HBuilderX ，拥抱现代前端开发工具链
+        {{ $t("bei-kao-uni-helperwot-ui-tuan-dui-gao-bie-hbuilderx-yong-bao-xian-dai-qian-duan-kai-fa-gong-ju-lian") }}
       </text>
     </view>
 
@@ -108,27 +110,35 @@ function openUrl(url) {
       </wd-cell-group>
     </demo-block>
 
-    <demo-block title="工具链介绍" transparent>
+    <demo-block :title="t('gong-ju-lian-jie-shao')" transparent>
       <wd-cell-group border custom-class="rounded-2! overflow-hidden">
-        <wd-cell title="🧩 WotUI组件库" is-link @click="openUrl('https://wot-ui.cn/')" />
-        <wd-cell title="🧠 H5扫描 jsQR" is-link @click="openUrl('https://ext.dcloud.net.cn/plugin?id=7007')" />
-        <wd-cell title="🚦 Mock数据" is-link @click="openUrl('https://lavyun.github.io/better-mock')" />
-        <wd-cell title="🌐 uni-helper" is-link @click="openUrl('https://uni-helper.js.org/')" />
-        <wd-cell title="🎨 Icon 图标" is-link @click="openUrl('https://iconify.design/')" />
-        <wd-cell title="✨ tailwindcss 原子化" is-link @click="openUrl('https://tw.icebreaker.top/')" />
-        <wd-cell title="🍍 Pinia 持久化" is-link @click="openUrl('https://pinia.vuejs.org/')" />
-        <wd-cell title="💬 UQRCode 二维码" is-link @click="openUrl('https://ext.dcloud.net.cn/plugin?id=1287')" />
-        <wd-cell title="🌱 小程序 分包优化" is-link @click="openUrl('https://github.com/uni-ku/bundle-optimizer')" />
-        <wd-cell title="🔄 CI/CD 持续集成" is-link @click="openUrl('https://github.com/Moonofweisheng/uni-mini-ci')" />
-        <wd-cell title="🦾  uni-ku/root" is-link @click="openUrl('https://github.com/uni-ku/root')" />
-        <wd-cell title="📊 uni-echarts" is-link @click="openUrl('https://uni-echarts.xiaohe.ink/')" />
+        <wd-cell :title="t('wotui-zu-jian-ku')" is-link @click="openUrl('https://wot-ui.cn/')" />
+        <wd-cell :title="t('h5-sao-miao-jsqr')" is-link @click="openUrl('https://ext.dcloud.net.cn/plugin?id=7007')" />
+        <wd-cell :title="t('mock-shu-ju')" is-link @click="openUrl('https://lavyun.github.io/better-mock')" />
+        <wd-cell :title="t('uni-helper')" is-link @click="openUrl('https://uni-helper.js.org/')" />
+        <wd-cell :title="t('icon-tu-biao')" is-link @click="openUrl('https://iconify.design/')" />
+        <wd-cell :title="t('tailwindcss-yuan-zi-hua')" is-link @click="openUrl('https://tw.icebreaker.top/')" />
+        <wd-cell :title="t('pinia-chi-jiu-hua')" is-link @click="openUrl('https://pinia.vuejs.org/')" />
+        <wd-cell :title="t('uqrcode-er-wei-ma')" is-link @click="openUrl('https://ext.dcloud.net.cn/plugin?id=1287')" />
+        <wd-cell
+          :title="t('xiao-cheng-xu-fen-bao-you-hua')"
+          is-link
+          @click="openUrl('https://github.com/uni-ku/bundle-optimizer')"
+        />
+        <wd-cell
+          :title="t('cicd-chi-xu-ji-cheng')"
+          is-link
+          @click="openUrl('https://github.com/Moonofweisheng/uni-mini-ci')"
+        />
+        <wd-cell :title="t('uni-ku-root')" is-link @click="openUrl('https://github.com/uni-ku/root')" />
+        <wd-cell :title="t('uni-echarts')" is-link @click="openUrl('https://uni-echarts.xiaohe.ink/')" />
       </wd-cell-group>
     </demo-block>
 
     <!-- 主题色选择 ActionSheet -->
     <wd-action-sheet
       v-model="showThemeColorSheet"
-      title="选择主题色"
+      :title="t('settings.themeColor')"
       :close-on-click-action="true"
       @cancel="closeThemeColorPicker"
     >
@@ -152,7 +162,7 @@ function openUrl(url) {
     </wd-action-sheet>
 
     <!-- 语言选择 ActionSheet -->
-    <wd-action-sheet v-model="showLangSheet" title="选择语言" :close-on-click-action="true">
+    <wd-action-sheet v-model="showLangSheet" :title="$t('xuan-ze-yu-yan')" :close-on-click-action="true">
       <view class="px-4 pb-4">
         <view
           v-for="option in langOptions"

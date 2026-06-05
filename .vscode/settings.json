@@ -32,5 +32,38 @@
 
   "tailwindCSS.experimental.configFile": "src/main.css",
   // iconify 提示
-  "iconify.includes": ["mdi"]
+  "iconify.includes": ["mdi"],
+  // i18n 提示与自动翻译配置 (i18n-ally)
+  "i18n-ally.sourceLanguage": "zh-CN", // 项目的源语言（基准语言），用来作为自动翻译的参考基准
+  "i18n-ally.displayLanguage": "zh-CN", // VS Code 插件界面中默认显示的语言（如悬浮提示中显示的翻译预览）
+  "i18n-ally.localesPaths": ["src/locale"], // 翻译文件（如 zh-CN.json, en-US.json）的存放目录
+  "i18n-ally.keystyle": "flat", // 翻译键的样式：flat（扁平单层，如 "settings.title"）或 nested（嵌套 JSON 对象）
+  "i18n-ally.sortKeys": true, // 保存翻译文件时，是否按字母顺序对多语言键名进行自动排序
+  "i18n-ally.extract.parsers.html": {
+    "attributes": ["text", "title", "alt", "placeholder", "label", "aria-label"], // 提取文本时，允许扫描和提取的 HTML/组件属性
+    "ignoredTags": ["script", "style"], // 提取文本时忽略的 HTML 标签，避免误提取
+    "vBind": true, // 是否支持提取 Vue 绑定属性（如 :title="xxx"）
+    "inlineText": true // 是否支持提取 HTML 标签内的普通行内文本
+  },
+  "i18n-ally.refactor.templates": [
+    {
+      "source": "html-inline",
+      "template": "{{ $t('{key}'{args}) }}" // 行内普通文本提取后替换生成的模板格式
+    },
+    {
+      "source": "html-attribute",
+      "template": "$t('{key}'{args})" // HTML 属性中的文本提取后替换生成的模板格式
+    },
+    {
+      "source": "js-string",
+      "template": "t('{key}'{args})" // JS 字符串提取后替换生成的模板格式 (适用于 Vue3 script)
+    },
+    {
+      "source": "js-template",
+      "template": "t('{key}'{args})" // JS 模板字符串提取后替换生成的模板格式 (适用于 Vue3 script)
+    }
+  ],
+  "i18n-ally.translate.engines": ["baidu"], // 自动翻译使用的引擎（这里配置为百度翻译）
+  "i18n-ally.translate.baidu.appid": "appid", // 百度翻译 API 申请的开发者 App ID
+  "i18n-ally.translate.baidu.apiSecret": "apiSecret" // 百度翻译 API 的开发者密钥 (Secret Key)
 }
