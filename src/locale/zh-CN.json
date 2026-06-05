@@ -1,6 +1,7 @@
 // zh-CN.json
 {
-  "hello": "你好",
+  "greeting": "你好,{0}!",
+
   "welcome": "欢迎使用",
   "button": "按钮",
   "settings": {

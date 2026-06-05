@@ -4,6 +4,7 @@ import zhCN from "./zh-CN.json"
 import enUS from "./en-US.json"
 import { Locale } from "@wot-ui/ui"
 import WotEnUS from "@wot-ui/ui/locale/lang/en-US"
+import { interpolateTemplate } from "./utils"
 
 Locale.add({ "en-US": WotEnUS })
 
@@ -28,5 +29,17 @@ const i18n = createI18n({
 // 同步组件库语言
 Locale.use(i18n.global.locale.value)
 uni.setLocale(i18n.global.locale.value)
+
+// 扩展t函数，支持数组参数插值
+// 这是解决小程序和App端不支持插值方式的关键步骤
+const originalT = i18n.global.t
+i18n.global.t = (key, param1, param2) => {
+  const result = originalT(key, param1, param2)
+  // 检测是否传入了数组参数，如果是则使用我们的插值方法处理
+  if (Array.isArray(param1)) {
+    return interpolateTemplate(result, param1)
+  }
+  return result
+}
 
 export default i18n

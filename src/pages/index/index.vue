@@ -64,7 +64,9 @@ function openUrl(url) {
 <template>
   <view class="bg-fill-bottom text-text-main box-border py-3">
     <view class="rounded-3 bg-fill-oppo mx-3 box-border px-4 py-6 text-center">
-      <text class="text-5 text-text-main mb-3 block text-left font-bold"> uniapp-template </text>
+      <text class="text-5 text-text-main mb-3 block text-left font-bold">
+        {{ t("greeting", ["uniapp-template"]) }}
+      </text>
       <text class="text-30rpx text-text-secondary mb-3 block text-left leading-relaxed">
         ⚡️ 基于 vitesse-uni-app 由 vite & uni-app 驱动的、深度整合 Wot UI 组件库的快速启动模板
       </text>

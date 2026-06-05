@@ -1,6 +1,6 @@
 // en-US.json
 {
-  "hello": "Hello",
+  "greeting": "Hello,{0}!",
   "welcome": "Welcome to use",
   "button": "Button",
   "common": {
