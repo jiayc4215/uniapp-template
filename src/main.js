@@ -5,6 +5,7 @@ import { routeInterceptor } from "./router/interceptor"
 import { initRootFontSize, useFont } from "./composables/useFont"
 import "./main.css"
 import App from "./App.vue"
+import i18n from "./locale"
 const NODE_ENV = import.meta.env.MODE
 const isMock = import.meta.env.VITE_APP_MOCK
 
@@ -26,6 +27,7 @@ export function createApp() {
   app.config.globalProperties.$getRootFontSize = () => `${rootFontSize.value}px`
   app.use(store)
   app.use(routeInterceptor)
+  app.use(i18n)
   return {
     app
   }

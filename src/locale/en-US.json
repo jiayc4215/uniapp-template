@@ -1,0 +1,21 @@
+// en-US.json
+{
+  "hello": "Hello",
+  "welcome": "Welcome to use",
+  "button": "Button",
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome back"
+  },
+  "settings": {
+    "title": "Basic Settings",
+    "darkMode": "Dark Mode",
+    "followSystem": "Follow System",
+    "themeColor": "Theme Color",
+    "language": "Language"
+  }
+}

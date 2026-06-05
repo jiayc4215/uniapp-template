@@ -2,14 +2,17 @@
 import { onHide, onLaunch, onShow } from "@dcloudio/uni-app"
 import { getCurrentInstance } from "vue"
 import { permission } from "./router/permission"
-
+import { useI18nSync } from "./composables/useI18nSync"
 const { proxy } = getCurrentInstance()
+// 初始化国际化设置
+const { setLocale } = useI18nSync()
+
 const router = proxy.$router
-
 router && permission.install(router)
-
 onLaunch(options => {
   console.log("App.vue onLaunch", options)
+  const storedLocale = uni.getStorageSync("currentLang") || "zh-CN"
+  setLocale(storedLocale)
 })
 onShow(() => {})
 onHide(() => {

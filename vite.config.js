@@ -184,6 +184,11 @@ export default defineConfig(({ command, mode }) => {
     esbuild: {
       drop: VITE_DELETE_CONSOLE === "true" ? ["console", "debugger"] : []
     },
+    // 目前 Vite 会将预构建的依赖项缓存到 node_modules/.vite，
+    // tip:组件库的国际化的实现是基于reactive实现的数据共享，在dev阶段就会出现页面使用预构建产物中的国际化数据，而组件库使用组件库内部的国际化数据，
+    optimizeDeps: {
+      exclude: ["@wot-ui/ui"]
+    },
     build: {
       // 方便非h5端调试
       sourcemap: VITE_SHOW_SOURCEMAP === "true", // 默认是false

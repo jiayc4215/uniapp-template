@@ -1,5 +1,8 @@
 <script setup>
 import { useManualTheme } from "@/composables/useManualTheme"
+import { useI18nSync } from "@/composables/useI18nSync"
+import { useI18n } from "vue-i18n"
+
 definePage({
   style: {
     navigationBarTitleText: "首页"
@@ -19,6 +22,9 @@ const {
   setFollowSystem
 } = useManualTheme()
 
+const { currentLang, setLocale } = useI18nSync()
+const { t } = useI18n()
+
 const isDark = computed({
   get() {
     return theme.value === "dark"
@@ -31,6 +37,23 @@ const isDark = computed({
 // 处理主题色选择
 function handleThemeColorSelect(option) {
   selectThemeColor(option)
+}
+
+// 语言切换相关
+const showLangSheet = ref(false)
+const langOptions = [
+  { name: "简体中文", value: "zh-CN" },
+  { name: "English", value: "en-US" }
+]
+
+const currentLangText = computed(() => {
+  const option = langOptions.find(opt => opt.value === currentLang.value)
+  return option ? option.name : currentLang.value
+})
+
+function handleLangSelect(langValue) {
+  setLocale(langValue)
+  showLangSheet.value = false
 }
 
 function openUrl(url) {
@@ -50,18 +73,23 @@ function openUrl(url) {
       </text>
     </view>
 
-    <demo-block title="基础设置" transparent>
+    <demo-block :title="t('settings.title')" transparent>
       <wd-cell-group border custom-class="rounded-2! overflow-hidden">
-        <wd-cell title="暗黑模式">
+        <wd-cell :title="t('settings.darkMode')">
           <wd-switch v-model="isDark" size="18px" />
         </wd-cell>
-        <wd-cell title="跟随系统">
-          <wd-button size="small" @click="setFollowSystem"> 跟随系统 </wd-button>
+        <wd-cell :title="t('settings.followSystem')">
+          <wd-button size="small" @click="setFollowSystem"> {{ t("settings.followSystem") }} </wd-button>
         </wd-cell>
-        <wd-cell title="选择主题色" is-link @click="openThemeColorPicker">
+        <wd-cell :title="t('settings.themeColor')" is-link @click="openThemeColorPicker">
           <view class="flex items-center justify-end gap-2">
             <view class="h-4 w-4 rounded-full" :style="{ backgroundColor: currentThemeColor.primary }" />
             <text>{{ currentThemeColor.name }}</text>
+          </view>
+        </wd-cell>
+        <wd-cell :title="t('settings.language')" is-link @click="showLangSheet = true">
+          <view class="flex items-center justify-end gap-2">
+            <text>{{ currentLangText }}</text>
           </view>
         </wd-cell>
       </wd-cell-group>
@@ -105,6 +133,24 @@ function openUrl(url) {
             </text>
           </view>
           <wd-icon v-if="currentThemeColor.value === option.value" name="check" :color="option.primary" size="20px" />
+        </view>
+      </view>
+      <wd-gap :height="50" />
+    </wd-action-sheet>
+
+    <!-- 语言选择 ActionSheet -->
+    <wd-action-sheet v-model="showLangSheet" title="选择语言" :close-on-click-action="true">
+      <view class="px-4 pb-4">
+        <view
+          v-for="option in langOptions"
+          :key="option.value"
+          class="border-line-main flex items-center justify-between border-b py-3 last:border-b-0"
+          @click="handleLangSelect(option.value)"
+        >
+          <text class="text-4 text-text-main">
+            {{ option.name }}
+          </text>
+          <wd-icon v-if="currentLang === option.value" name="check" :color="currentThemeColor.primary" size="20px" />
         </view>
       </view>
       <wd-gap :height="50" />

@@ -1,0 +1,13 @@
+// zh-CN.json
+{
+  "hello": "你好",
+  "welcome": "欢迎使用",
+  "button": "按钮",
+  "settings": {
+    "title": "基础设置",
+    "darkMode": "暗黑模式",
+    "followSystem": "跟随系统",
+    "themeColor": "选择主题色",
+    "language": "语言切换"
+  }
+}
